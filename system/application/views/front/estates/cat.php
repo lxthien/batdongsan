@@ -5,7 +5,7 @@
     <div class="linkdautrang"><a href="<?=$base_url.$estatesCategoryUrl?>" title="<?=$estatesCategoryName;?>"><?=$estatesCategoryName;?></a></div>
     <div class="linkdautrang"><a class="linkdautrang-active" href="<?=$base_url.$estatesCategoryUrl.'/'.$type->name_none;?>" title="<?=$type->name;?>"><?=$type->name;?></a></div>
 </div>
-
+<div class="cl"></div>
 <!--main-->
 <div class="main" style="width:960px;float:left;margin-top:5px; margin-left:12px; ">
     <!--left-->

@@ -45,7 +45,7 @@ class festates extends MY_Controller{
         $estatesVip->order_by('created', 'desc');
         $estatesVip->where_related_estatecatalogue('id', $estatesCategoryId);
         $estatesVip->where('isVip', 1);
-        $estatesVip->get_paged($offset,$limit,TRUE);
+        $estatesVip->get(4);
         $dis['estatesVip'] = $estatesVip;
 
         /*get estates by category*/
@@ -155,7 +155,7 @@ class festates extends MY_Controller{
         $estatesVip->order_by('created', 'desc');
         $estatesVip->where_related_estatecatalogue('id', $estatesCategoryId);
         $estatesVip->where('isVip', 1);
-        $estatesVip->get_paged($offset,$limit,TRUE);
+        $estatesVip->get_paged(4);
         $dis['estatesVip'] = $estatesVip;
 
         /*get estates by category and type*/

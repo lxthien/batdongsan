@@ -34,29 +34,26 @@
  * @return	string
  */
 if (!function_exists('image')) {
-    function image($image_path, $preset,$noimage = "") {
+    function image($image_path, $preset, $noimage = "") {
         $ci = &get_instance();
         
         // load the allowed image presets
-        if($image_path == "")
-        {
-            if($noimage == "")
-            {
+        if($image_path == "") {
+            if($noimage == "") {
                 $image_path = 'img/default/no-img.gif';
-            }
-            else
-            {
-                if($noimage == "logo")
-                {
+            } else {
+                if($noimage == "logo") {
                     $image_path = 'img/default/logo_white.png';
-                }
-                else
-                {
+                } else {
                     $image_path = $noimage;
                 }
             }
-                
         }
+
+        if (!file_exists($image_path)) {
+            $image_path = 'img/default/no-img.gif';
+        }
+
         $ci->load->config("images");
         $sizes = $ci->config->item("image_sizes");
         

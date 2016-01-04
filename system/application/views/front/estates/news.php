@@ -4,92 +4,55 @@
     <div class="linkdautrang"><a href="<?=$base_url;?>">Trang chủ</a></div>
     <div class="linkdautrang"><a class="linkdautrang-active" href="<?=$base_url.$estatesCategoryUrl?>" title="<?=$estatesCategoryName?>"><?=$estatesCategoryName?></a></div>
 </div>
-
+<div class="cl"></div>
 <!--main-->
-<div class="main" style="width:960px;float:left;margin-top:5px; margin-left:12px; ">
-<!--left-->
-<div class="left estates">
-    <div class="hotnew border-left-right-none">
-        <div class="titlenew-add">
-            <h1><?php echo $estatesCategoryName.' '.$atAddress; ?></h1>
-        </div>
-        <div class="boxnew">
-            <?php if($estates->result_count() > 0){ ?>
-                <?php foreach($estates as $row):
-                ?>
-                <div class="sreentindb <?php if($row->isVip == 1): ?>vip<?php endif; ?>">
-                    <?php if($row->isVip == 1): ?><img class="icon-vip" src="<?=$base_url?>images/icon-vip.png" alt="Tin Vip"/><?php endif; ?>
-                    <div class="sreentindb">
-                        <div class="sreentieude">
-                            <div class="tieude">
-                                <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?=$row->title;?>">
-                                    <?php echo strlen($row->title) < 150 ? $row->title : cut_string($row->title, 150).'...';?>
+<div class="main">
+    <!--left-->
+    <div class="left estates">
+        <div class="border-left-right-none">
+            <div class="top-vip fl">
+                <div class="title-top-vip fl">
+                    <h1>Tin bán nổi bật</h1>
+                </div>
+                <div class="list-top-vip fl">
+                    <?php foreach ($estatesVip as $row): ?>
+                    <div class="top-vip-item">
+                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html"><img src="<?php echo image($row->photo, 'estate_355_232') ?>"></a>
+                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html">
+                            <span><?php echo $row->title; ?></span>
+                        </a>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="lists-top-1 fl">
+                <div class="lists-top-1-item fl">
+                    <?php $i=0; foreach($this->typeHouseSale as $row): $i++; ?>
+                    <div class="list-top-1 fl">
+                        <div class="title-list-top-1 fl">
+                            <h1><?php echo $row->name;?></h1>
+                        </div>
+                        <div class="list-top-1s fl">
+                            <?php foreach ($estatesVip as $row): ?>
+                            <div class="top-1-item fl">
+                                <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
+                                    <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
+                                </a>
+                                <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
+                                    <span><?php echo $row->title; ?></span>
                                 </a>
                             </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="sreenboxnew">
-                        <?php if($row->photo != null): ?>
-                            <div class="boxhinh">
-                                <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?=$row->title;?>">
-                                    <img alt="<?php echo $row->title; ?>" src="<?php echo image($row->photo, 'estate_120_95') ?>" />
-                                </a>
-                            </div>
-                        <?php else: ?>
-                            <div class="boxhinh">
-                                <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?=$row->title;?>">
-                                    <img alt="<?php echo $row->title; ?>" src="<?=$base_url?>images/no-image.png" />
-                                </a>
-                            </div>
-                        <?php endif; ?>
-                        <div class="noidung">
-                            <p class="row">
-                                <span class="area">
-                                    <?php if($row->isArea == 0): ?>
-                                        <?=$row->area_text;?> m<sup>2</sup>
-                                    <?php else: ?>
-                                        <?='KXĐ'?>
-                                    <?php endif; ?>
-                                </span>
-                                <span class="price">
-                                    <?php if($row->isPrice == 0): ?>
-                                        <?=$row->price_text.' '.getpricetype($row->price_type);?>
-                                    <?php else: ?>
-                                        <?='Thương lượng'?>
-                                    <?php endif; ?>
-                                </span>
-                                <?php if($row->estateuser->mobile != ''): ?>
-                                    <span class="phone">
-                                        <img alt="phone icon" src="<?php echo $base_url.'images/icon-phone.png' ?>" style="height: 15px; vertical-align: middle;"/><?=$row->estateuser->mobile;?>
-                                    </span>
-                                <?php endif; ?>
-                            </p>
-                            <p class="row-2"><a href="<?php echo $base_url.$row->estatetype->name_none.'/'.$row->estatedistrict->name_none.'/'.$row->estatecity->name_none; ?>"><?=$row->estatedistrict->name;?> | <?=$row->estatecity->name;?></a></p>
-                            <p class="des">
-                                <?=strlen(strip_tags($row->description)) < 300 ? strip_tags($row->description): cut_string2(strip_tags($row->description), 300).' ...';?>
-                            </p>
-                            <p class="date"><?php echo date('d/m/Y',strtotime($row->created)); ?></p>
-                        </div>
-                    </div>
+                    <?php endforeach; unset($row); ?>
                 </div>
-                <div class="line <?php if($row->isVip == 1): ?>line-vip<?php endif; ?>"></div>
-                <?php endforeach; unset($row); ?>
-                <div class="phantrang">
-                    <div class="back">
-                        <?=$this->pagination->create_links();?>
-                    </div>
-                </div>
-            <?php }else{ ?>
-                <div class="sreentindb" style="width:610px; float:left; margin-bottom:1px; text-align: center; padding: 10px 0px;">
-                    Chưa có bài viết cho danh mục này
-                </div>
-            <?php } ?>
+            </div>
         </div>
+        <!--end hotnew-->
     </div>
-    <!--end hotnew-->
-</div>
-<!--end left-->
+    <!--end left-->
     <?=$this->load->view('front/estates/col-right', $dis);?>
-    <?=$this->load->view('front/includes/footer');?>
 </div>
 <!--end main-->
+<div class="cl"></div>

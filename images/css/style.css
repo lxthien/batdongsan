@@ -10,7 +10,6 @@ body{
     color:#000;
     margin:0;
     padding:0;
-    background-color: #ece8e5;
 }
 img {
     border: 0;
@@ -82,7 +81,6 @@ body{
     font-size:12px;
     margin-left: 0px;
     margin-right: 0px;
-    background-color:#eeeeee;
     z-index: 3;
 }
 a:link {
@@ -101,7 +99,7 @@ a:active {
 
 
 /* header*/
-.header{ width:940px; float:left; margin-left:20px; height:115px; margin-top:3px; }
+.header{float:left;}
 .headerleft{ width:655px; height:100px; margin-top:5px; float:right; margin-right:5px;}
 .headerleft img {width:655px; height:100px;  float:right; margin-top:5px;}
 .logo a {  width:264px;height:115px; margin:5px 10px 0px 5px; float:left;}
@@ -136,15 +134,13 @@ a:active {
 .home a:hover {background:url(../iconho,e.png); width:57px; height:34px; float:left; background-color: #0a6e00}
 .home a.active{background-color: #0a6e00;}
 /* menu*/
-.header-menu
-{  
+.header-menu {
     font-size:12px;
-    font-family:Geneva, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight:bold;
-    width: 980px;
-    height: 35px;
+    width: 1000px;
+    height: 44px;
     float:left;
-
 }
 #left-page-nav
 {
@@ -158,9 +154,9 @@ a:active {
 
 #page-navigative-menu
 {
-    width: 975px;
-    color: Black;
-    background: #109502;
+    width: 1000px;
+    color: black;
+    background: #0e8b01;
     float: left;
     padding-left: 5px;
 }
@@ -440,10 +436,10 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
     text-decoration: none;
 }
 
-.left{width:660px; float:left; margin-right:0px; border-right: 1px solid #cccccc;}
+.left{width:745px; float:left;}
 .left.home-page{border-right: 1px solid #ffffff;}
 .left2{width:751px; float:left; }
-.right{width:300px; float:right; margin-right: 0px;}
+.right{width:270px; float:right; margin-right: 0px;}
 .right2{width:170px;  float:right; margin-right:17px; }
 
 .left .hotnew .boxnew{width:640px; float:left; margin-top:10px;}
@@ -520,7 +516,7 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 .tieudethamdinh a{ width:343px; height:25px; color:#0078cc; font-size:11px; font-weight:bold;}
 .tieudethamdinh a:hover{ width:343px; height:25px; color:#0078cc; text-decoration:underline;font-size:11px;font-weight:bold;}
 
-.boxnoibat{margin-bottom: 10px; width:312px;  float:left; border: 1px #CCCCCC  solid; background-color:#FFFFFF; padding-bottom:-5px;}
+.boxnoibat{margin-bottom: 10px; width:243px; float:left; border: 1px #CCCCCC solid; background-color:#FFFFFF;}
 .tinkhacnoibat a {float:left; width:290px; height:25px; color:#666666; font-size:13px; margin-bottom:5px;}
 .tinkhacnoibat a:hover { float:left;width:290px; height:25px;color:#0078cc; font-size:13px;margin-bottom:5px;}
 .tendiaphuong a{ color:#0078cc; font-size:12px; font-weight:bold; margin-left:5px; margin-top:-2px; float:left;}
@@ -546,20 +542,17 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 .tieudeduan2 a:hover { color:#028287; width:140px; height:30px;font-weight:bold; font-size:12px; float:left;}
 
 
-.right{
-    margin-right: 10px;
-}
 .right .boxnoibat{
-    width: 300px;
+    width: 245px;
 }
 .right .boxnoibat .line3{
-    width: 300px;
+    width: 245px;
 }
 .right .qc img{
-    width: 300px;
+    width: 245px;
 }
 .right .boxduan-homepage{
-    width: 300px; border-bottom-width: 1px;
+    width: 245px; border-bottom-width: 1px;
 }
 
 
@@ -1571,7 +1564,7 @@ p.notice-msg{
 
 
 .main{
-    width: 980px !important;
+    width: 1030px !important;
     margin-left: 0 !important;
 }
 .home .main{
@@ -1587,7 +1580,7 @@ p.notice-msg{
 }
 
 
-.main-header{width: 100%; height: 141px;background: url("../header.png");}
+.main-header{width: 100%; height: 97px; padding: 15px 0;}
 
 /**
  * Menu

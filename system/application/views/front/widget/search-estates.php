@@ -1,3 +1,11 @@
+<div class="boxtimkiembds-simple">
+    <form action="" method="post">
+        <div class="main-search-simple">
+            <input type="text" placeholder="Nhập theo từ khóa ...">
+            <button>Tìm kiếm</button>
+        </div>
+    </form>
+</div>
 <div class="boxtimkiembds">
     <span class="title-top-box">Tìm kiếm bất động sản</span>
     <div class="sreenboxseach2" style=" width:300px;  margin-bottom:20px; float:left;">

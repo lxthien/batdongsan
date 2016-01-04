@@ -4,7 +4,9 @@
     <?php else: ?>
         <?php echo $this->load->view('front/includes/nha-dat-cho-thue-tai'); ?>
     <?php endif; ?>
-
+    
+    <?php echo $this->load->view('front/widget/search-estates'); ?>
+    
     <div class="boxnoibat">
         <span class="title-top-box">Danh mục <?php echo $estatesCategoryName; ?></span>
         <?php if( $this->uri->segment(1) == 'nha-dat-ban' ): ?>
@@ -32,5 +34,4 @@
             <?php endforeach; unset($row); ?>
         <?php endif; ?>
     </div>
-    <?php echo $this->load->view('front/widget/search-estates'); ?>
 </div>
