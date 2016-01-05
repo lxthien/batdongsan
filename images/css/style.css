@@ -442,16 +442,19 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 .right{width:270px; float:right; margin-right: 0px;}
 .right2{width:170px;  float:right; margin-right:17px; }
 
-.left .hotnew .boxnew{width:640px; float:left; margin-top:10px;}
+.left .hotnew .boxnew{width:743px; float:left; margin-top:10px; border: 1px solid #cccccc;}
+.left .hotnew .boxnew .line {
+    float: left; width: 743px; margin-bottom: 0px; border-bottom: 1px solid #cccccc;
+}
 
 .estates .hotnew{border-top: none;}
 
-.hotnew{border:1px  #CCCCCC solid;float:left; width:640px; margin-left:10px; margin-bottom:10px;}
+.hotnew{border:1px #CCCCCC solid; float:left; width: 745px;}
 .hotnew2{border: 1px #CCCCCC solid;float:left; width:751px; margin-left:15px; margin-bottom:10px;}
 
-.tinrao {border: 1px #CCCCCC  solid;float:left; width:610px;  margin-left:15px; margin-top:10px; margin-bottom:5px;}
-.tieude a{  height:20px;  color:#333333; font-size:13px; font-weight:bold;}
-.tieude a:hover{  height:20px;  color:#0078cc; text-decoration:underline;font-size:13px;font-weight:bold;}
+.tinrao {border: 1px #CCCCCC solid;float:left; width:610px;  margin-left:15px; margin-top:10px; margin-bottom:5px;}
+.tieude a{color:#000000; font-size:15px; font-weight: bold; line-height: 18px;}
+.tieude a:hover{color:#bb7700; font-size:15px; font-weight:bold;}
 .tieude2 a{ width:160px; height:20px; float:left;color:#0078cc; margin-top:1px;font-size:13px; margin-bottom:5px;font-weight:bold;}
 .tieude2 a:hover{ width:160px; height:20px;  color:#0078cc; text-decoration:underline;float:left; margin-bottom:5px; margin-top:1px;font-size:13px;font-weight:bold;}
 .tieude3 a{ width:160px; height:20px; float:left;color:#666666; margin-top:5px;font-size:12px;font-weight:bold;}
@@ -461,7 +464,7 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 .tieuderao a{height:25px; color:#0078cc; font-size:13px; font-weight:bold;}
 .tieuderao a:hover{height:25px; color:#0078cc; text-decoration:underline;font-size:13px;font-weight:bold;}
 .boxhinh {width:150px; height:120px; border:1px #999 solid; margin-left:7px; margin-top:10px; margin-right:7px; float:left;}
-.boxhinh img {width: 150px; height: 120px; float:left;}
+.boxhinh img {width: 200px; height: 145px; float:left;}
 .boxhinh2 {width:266px; height:185px; border:1px #999999 solid; margin-left:21px; margin-top:5px; margin-right:7px; margin-bottom:8px;float:left;}
 .boxhinh2 img {width:264px; height:183px; margin-left:1px; margin-top:1px; float:left;}
 .boxhinh3  {margin-left:10px;  margin-right:7px; float:left;}
@@ -666,13 +669,20 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 
 /*  cac trang chuc nang*/
 .titlenew{width:auto;height:29px; padding-left:10px; padding-right:10px;float:left; background-color:#0078cc; margin-left:15px; margin-top:-14px;}
+.titlenew-add {border-bottom: 1px solid #000000;}
 .titlenew-add span{display: block; text-align: left; padding: 5px 0; color: #292929; font-size: 20px; font-weight: bolder; border-bottom: 1px solid #292929;}
-.titlenew-add h1{display: block; text-align: left; padding: 5px 0; color: #292929; font-size: 20px; font-weight: bolder; border-bottom: 1px solid #292929;}
+.titlenew-add h1{
+    text-transform: uppercase; font-size: 18px; background: #bb7700; display: inline-block; padding: 3px 15px;
+    line-height: 23px; border-top-left-radius: 3px; border-top-right-radius: 3px; color: #ffffff;
+}
 .titlenew2{ width:auto; padding-left:10px; padding-right:10px; float:left; height:29px; background-color:#028287; margin-left:20px; margin-top:-14px;}
 
 .tinxemnhieu a {float:left; width:343px; height:25px; color:#666666; font-size:13px; margin-bottom:5px;}
 .tinxemnhieu a:hover { float:left;width:343px; height:25px;color:#0078cc; font-size:13px;margin-bottom:5px;}
-.boxtimkiembds{width:300px; border: 1px #CCCCCC  solid;float:left; background-color:#FFFFFF;}
+.boxtimkiembds{width: 268px; float:left; background-color:#eeeeee; border: 1px solid #cccccc;}
+.boxtimkiembds .sreenboxseach2 {
+
+}
 .timkiembds2 a { background:url(../timkiem2.png); width:100px; height:34px; float:right; margin-right:105px; margin-bottom:-10px;}
 .timkiembds2 input[type="submit"] {
     background:url(../timkiem2.png);
@@ -1283,10 +1293,9 @@ label.error {
 	display: block;
 	text-align: center;
 	padding: 9px 0;
-	/*background: url("../bg-box-news.jpg") repeat-x #fff;*/
-	margin-bottom: 8px;
+	width: 60%;
 	line-height: 12px;
-    background-color: #0f9502;
+    background-color: #0f9502; text-transform: uppercase;
 }
 .box-news-mod span{
     display: block;
@@ -1576,7 +1585,10 @@ p.notice-msg{
 	width: 462px;
 }
 .hotnew .sreentindb .sreenboxnew .noidung{
-    width: 462px; margin-top: 3px; height:125px; float:left; margin-top:3px;
+    width: 510px; height:145px; float: right;
+}
+.hotnew .sreentindb .sreenboxnew .noidung .tieude {
+    margin-bottom: 5px;
 }
 
 
@@ -1626,9 +1638,17 @@ p.notice-msg{
 
 .news-related h3{color: #292929; font-size: 18px; font-family: Helvetica,Arial,sans-serif; font-weight: 600; border-bottom: 1px solid #000000; padding-bottom: 5px; margin-bottom: 10px; margin-top: 30px;}
 
-.sreentindb{width:638px;float:left;margin-bottom:1px;height: 165px;position: relative;border: 1px solid #ffffff;}
-.sreentindb .boxhinh{margin-left: 8px; width: 150px; height: 120px; margin-top: 5px;}
-.sreentindb .noidung p.row{line-height: 22px; height: 22px; margin-bottom: 5px;}
+.left .hotnew .boxnew .sreentindb{
+    width: 723px; padding: 10px; float:left; height: 145px; position: relative;
+}
+.sreentindb .boxhinh{width: 200px; height: 145px; margin: 0px; border: none;}
+.sreentindb .noidung p.row{line-height: 22px; height: 22px; margin-bottom: 0px;}
+.sreentindb .noidung p.row .first{
+    width: 70px; display: block; float: left; font-size: 14px;
+}
+.sreentindb .noidung p.row .last{
+    display: block; float: left; font-size: 14px;
+}
 .sreentindb .noidung p.row-2{line-height: 20px; padding: 5px 0;}
 .sreentindb .noidung p.row-2 a{color: #666674; font-weight: 600;}
 .sreentindb .noidung p.row-2 a:hover{text-decoration: underline;}
@@ -1639,11 +1659,6 @@ p.notice-msg{
 .sreentindb .sreentieude .tieude a{font-size: 15px; font-family: Helvetica,Arial,sans-serif; color: #243330;width: 597px;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis; float: left; display: inline-block; line-height: 28px; height: 25px;}
 .sreentindb .sreentieude .tieude img{float: left; display: inline-block; margin-top: 4px;}
-
-.sreentindb .noidung p.row span.area{background-color: #0f9502; border-radius: 4px; color: #ffffff;padding: 3px 10px;text-align: center; margin-right: 5px;}
-.sreentindb .noidung p.row span.price{background-color: #ee0e0e; border-radius: 4px; color: #ffffff;padding: 3px 10px;text-align: center;}
-.sreentindb .noidung p.row span.phone{float: right; padding: 3px 0;margin-top: 6px; display: none;}
-.sreentindb .noidung p.des{text-align:justify;color:#49395e; line-height: 18px; height: 55px; overflow: hidden;}
 
 .vip{background-color: #fbfbfb;position: relative;border: 1px solid #6fbf67;}
 .sreentindb .icon-vip{position: absolute; top: 0px; right: 10px; z-index: 100;}

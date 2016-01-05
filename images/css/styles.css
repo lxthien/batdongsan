@@ -193,7 +193,8 @@ h3.home-title-services{
 	width: 270px; position: relative;
 }
 .main-search-simple input[type="text"] {
-	position: absolute; top: 0; left: 0; height: 30px; border: 1px solid #cccccc; line-height: 30px; width: 185px;
+	position: absolute; top: 0; left: 0; height: 30px; border: 1px solid #cccccc; line-height: 30px; width: 150px; padding-right: 5px;
+	padding-left: 30px; background: url("../assets/icon-search.png") no-repeat; background-size: 20px; background-position: 5px 5px;
 }
 .main-search-simple button {
 	border: none; position: absolute; top: 0; right: 0; width: 75px; background: #0f9502; height: 32px; text-transform: uppercase;

@@ -80,3 +80,4 @@ $config["image_sizes"]["slide_zoom"] = array(593,396);
 $config["image_sizes"]["estate_120_95"] = array(120,95);
 $config["image_sizes"]["estate_355_232"] = array(355,232);
 $config["image_sizes"]["estate_165_130"] = array(165,130);
+$config["image_sizes"]["estate_200_145"] = array(200,145);

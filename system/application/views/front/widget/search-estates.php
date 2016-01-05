@@ -7,8 +7,8 @@
     </form>
 </div>
 <div class="boxtimkiembds">
-    <span class="title-top-box">Tìm kiếm bất động sản</span>
-    <div class="sreenboxseach2" style=" width:300px;  margin-bottom:20px; float:left;">
+    <span class="title-top-box">Tìm kiếm nâng cao</span>
+    <div class="sreenboxseach2">
         <form action="<?=$base_url?>tim-kiem-bat-dong-san" method="post">
             <div  class="boxseach" style="width:100px; float:left; margin-left: 55px;">
                 <label>
@@ -22,8 +22,8 @@
                     <p style="font-weight:bold; font-size:14px; color:#CC0000; float:left; margin-top:8px; margin-left:5px;">Cho Thuê</p>
                 </label>
             </div>
-            <div class="sreenseachtimkiembds1 formtimkiem" style="width:300px; height:25px; float:left; margin-bottom:3px; background: none; margin-left: 0;">
-                <select name="estatetype_id" id="estatetype_id" size="1" style="float:left; margin-right:5px; margin-left:8px; width:140px;  height:23px; margin-top:10px; margin-bottom:5px;  border:1px  #CCCCCC solid;">
+            <div class="sreenseachtimkiembds1 formtimkiem" style="width:268px; height:25px; float:left; margin-bottom:3px; background: none; margin-left: 0;">
+                <select name="estatetype_id" id="estatetype_id" size="1" style="float:left; margin-right:5px; margin-left:8px; width:110px; height:23px; margin-top:10px; margin-bottom:5px; border:1px #CCCCCC solid; font-size: 10px;">
                     <option value="" selected="selected">Chọn Loại nhà đất</option>
                 </select>
                 <select name="estatecity_id" id="estatecity_id" size="1" style="float:left; width:140px; margin-right:5px;  height:23px; margin-bottom:5px; margin-top:10px;  border:1px  #CCCCCC solid;">
