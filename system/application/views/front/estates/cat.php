@@ -95,6 +95,5 @@
     </div>
     <!--end left-->
     <?=$this->load->view('front/estates/col-right-2', $dis);?>
-    <?=$this->load->view('front/includes/footer');?>
 </div>
 <!--end main-->

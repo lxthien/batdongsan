@@ -10,11 +10,11 @@
     <div class="linkdautrang"><a class="linkdautrang-active" href="<?=$base_url.$cate->name_none.'/'.$o->estatetype->name_none;?>" title="<?=$o->estatetype->name?>"><?=$o->estatetype->name?></a></div>
 </div>
 
-<div class="main" style="width:960px;float:left;margin-top:5px; margin-left:12px; ">
-<div class="left">
-    <h1 style="margin-left:10px; margin-top:5px; font-size:18px; font-weight:bold; color:#051c94;"><?=ucfirst($o->title);?></h1>
+<div class="main">
+<div class="left left-top-3">
+    <h1 style="font-size:18px; font-weight:bold; color:#051c94;"><?=ucfirst($o->title);?></h1>
     <div class="location-estate" style="padding: 3px 0; float: left; width: 100%; margin-bottom: 10px;">
-        <div style="margin-left: 10px; margin-right: 30px; float: left;">
+        <div style="margin-right: 30px; float: left;">
             <p style="float:left; margin-top:7px;">
                 <span class="bold" style="color: #a50000;">Quận/Huyện: </span>
                 <a style="color: #051c94;" href="<?php echo $base_url.$o->estatetype->name_none.'/'.$o->estatedistrict->name_none.'/'.$o->estatecity->name_none; ?>"><?=$o->estatedistrict->name;?></a>
@@ -44,18 +44,6 @@
                     });
             </script>
             <?php if($o->photo != null): ?>
-            <!--
-            <div class="slide-nha-dat">
-                <ul id="pikame" class="jcarousel-skin-pika">
-                    <li><a href="javascript:void(0)"><img alt="<?php echo $o->title; ?>" src="<?php echo image($o->photo, 'slide_580_380') ?>" /></a></li>
-                    <?php if($photo->result_count() > 0): ?>
-                    <?php foreach($photo as $row): ?>
-                    <li><a href="javascript:void(0)"><img alt="<?php echo $o->title; ?>" src="<?php echo image($row->name, 'slide_580_380') ?>"/></a></li>
-                    <?php endforeach ?>
-                    <?php endif; ?>
-                </ul>
-            </div>-->
-            <!-- Insert to your webpage where you want to display the slider -->
             <div class="slide-nha-dat">
                 <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:640px;margin:0px auto 86px;">
                     <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto;">
@@ -232,15 +220,6 @@
             ?>
             <div class="sreentindb vip">
                 <?php if($row->isVip == 1): ?><img class="icon-vip" src="<?=$base_url?>images/icon-vip.png" alt="Tin Vip"/><?php endif; ?>
-                <div class="sreentindb">
-                    <div class="sreentieude">
-                        <div class="tieude">
-                            <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?=$row->title;?>">
-                                <?php echo strlen($row->title) < 150 ? $row->title : cut_string($row->title, 150).'...';?>
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 <div class="sreenboxnew">
                     <?php if($row->photo != null): ?>
                         <div class="boxhinh">
@@ -252,36 +231,51 @@
                         </div>
                     <?php endif; ?>
                     <div class="noidung">
+                        <div class="tieude">
+                            <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?=$row->title;?>">
+                                <?php echo $row->title; ?>
+                            </a>
+                        </div>
                         <p class="row">
-                            <span class="area">
-                                <?php if($row->isArea == 0): ?>
-                                    <?=$row->area_text;?> m<sup>2</sup>
-                                <?php else: ?>
-                                    <?='KXĐ'?>
-                                <?php endif; ?>
-                            </span>
-                            <span class="price">
+                            <span class="first">Giá</span>
+                            <span class="last">:
                                 <?php if($row->isPrice == 0): ?>
                                     <?=$row->price_text.' '.getpricetype($row->price_type);?>
                                 <?php else: ?>
                                     <?='Thương lượng'?>
                                 <?php endif; ?>
                             </span>
-                            <?php if($row->estateuser->mobile != ''): ?>
-                            <span class="phone">
-                                <img src="<?php echo $base_url.'images/icon-telephone.png' ?>" style="height: 14px; vertical-align: top;"/><?=$row->estateuser->mobile;?>
+                        </p>
+                        <p class="row">
+                            <span class="first">Diện tích</span>
+                            <span class="last">:
+                                <?php if($row->isArea == 0): ?>
+                                    <?=$row->area_text;?> m
+                                <?php else: ?>
+                                    <?='KXĐ'?>
+                                <?php endif; ?>
                             </span>
-                            <?php endif; ?>
                         </p>
-                        <p class="row-2">
-                            <a href="<?php echo $base_url.$row->estatetype->name_none.'/'.$row->estatedistrict->name_none.'/'.$row->estatecity->name_none; ?>"><?=$row->estatedistrict->name;?></a>
-                            <a href="javascript:void(0)">|</a>
-                            <a href="<?php echo $base_url.$row->estatecatalogue->name_none.'-'.$row->estatecity->name_none; ?>"><?=$row->estatecity->name;?></a>
+                        <p class="row">
+                            <span class="first">Hướng</span>
+                            <span class="last">:
+                                <?php if($row->isArea == 0): ?>
+                                    <?=$row->area_text;?> m
+                                <?php else: ?>
+                                    <?='KXĐ'?>
+                                <?php endif; ?>
+                            </span>
                         </p>
-                        <p class="des">
-                            <?=strlen(strip_tags($row->description)) < 300 ? strip_tags($row->description): cut_string2(strip_tags($row->description), 300).' ...';?>
+                        <p class="row">
+                            <span class="first">Vị trí</span>
+                            <span class="last">:
+                                <?php if($row->isArea == 0): ?>
+                                    <?=$row->area_text;?> m
+                                <?php else: ?>
+                                    <?='KXĐ'?>
+                                <?php endif; ?>
+                            </span>
                         </p>
-                        <p class="date"><?php echo date('d/m/Y',strtotime($date)); ?></p>
                     </div>
                 </div>
             </div>
@@ -294,15 +288,6 @@
             ?>
         <div class="sreentindb">
             <?php if($row->isVip == 1): ?><img class="icon-vip" src="<?=$base_url?>images/icon-vip.png" alt="Tin Vip"/><?php endif; ?>
-            <div class="sreentindb">
-                <div class="sreentieude">
-                    <div class="tieude">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?=$row->title;?>">
-                            <?php echo strlen($row->title) < 150 ? $row->title : cut_string($row->title, 150).'...';?>
-                        </a>
-                    </div>
-                </div>
-            </div>
             <div class="sreenboxnew">
                 <?php if($row->photo != null): ?>
                     <div class="boxhinh">
@@ -314,36 +299,51 @@
                     </div>
                 <?php endif; ?>
                 <div class="noidung">
+                    <div class="tieude">
+                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?=$row->title;?>">
+                            <?php echo $row->title; ?>
+                        </a>
+                    </div>
                     <p class="row">
-                            <span class="area">
-                                <?php if($row->isArea == 0): ?>
-                                    <?=$row->area_text;?> m<sup>2</sup>
-                                <?php else: ?>
-                                    <?='KXĐ'?>
-                                <?php endif; ?>
-                            </span>
-                            <span class="price">
-                                <?php if($row->isPrice == 0): ?>
-                                    <?=$row->price_text.' '.getpricetype($row->price_type);?>
-                                <?php else: ?>
-                                    <?='Thương lượng'?>
-                                <?php endif; ?>
-                            </span>
-                        <?php if($row->estateuser->mobile != ''): ?>
-                            <span class="phone">
-                                <img src="<?php echo $base_url.'images/icon-telephone.png' ?>" alt="camera icon" style="height: 14px; vertical-align: top;"/><?=$row->estateuser->mobile;?>
-                            </span>
-                        <?php endif; ?>
+                        <span class="first">Giá</span>
+                        <span class="last">:
+                            <?php if($row->isPrice == 0): ?>
+                                <?=$row->price_text.' '.getpricetype($row->price_type);?>
+                            <?php else: ?>
+                                <?='Thương lượng'?>
+                            <?php endif; ?>
+                        </span>
                     </p>
-                    <p class="row-2">
-                        <a href="<?php echo $base_url.$row->estatetype->name_none.'/'.$row->estatedistrict->name_none.'/'.$row->estatecity->name_none; ?>"><?=$row->estatedistrict->name;?></a>
-                        <a href="javascript:void(0)">|</a>
-                        <a href="<?php echo $base_url.$row->estatecatalogue->name_none.'-'.$row->estatecity->name_none; ?>"><?=$row->estatecity->name;?></a>
+                    <p class="row">
+                        <span class="first">Diện tích</span>
+                        <span class="last">:
+                            <?php if($row->isArea == 0): ?>
+                                <?=$row->area_text;?> m
+                            <?php else: ?>
+                                <?='KXĐ'?>
+                            <?php endif; ?>
+                        </span>
                     </p>
-                    <p class="des">
-                        <?=strlen(strip_tags($row->description)) < 300 ? strip_tags($row->description): cut_string2(strip_tags($row->description), 300).' ...';?>
+                    <p class="row">
+                        <span class="first">Hướng</span>
+                        <span class="last">:
+                            <?php if($row->isArea == 0): ?>
+                                <?=$row->area_text;?> m
+                            <?php else: ?>
+                                <?='KXĐ'?>
+                            <?php endif; ?>
+                        </span>
                     </p>
-                    <p class="date"><?php echo date('d/m/Y',strtotime($date)); ?></p>
+                    <p class="row">
+                        <span class="first">Vị trí</span>
+                        <span class="last">:
+                            <?php if($row->isArea == 0): ?>
+                                <?=$row->area_text;?> m
+                            <?php else: ?>
+                                <?='KXĐ'?>
+                            <?php endif; ?>
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -384,36 +384,51 @@
                     </div>
                 <?php endif; ?>
                 <div class="noidung">
+                    <div class="tieude">
+                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?=$row->title;?>">
+                            <?php echo $row->title; ?>
+                        </a>
+                    </div>
                     <p class="row">
-                        <span class="area">
-                            <?php if($row->isArea == 0): ?>
-                                <?=$row->area_text;?> m<sup>2</sup>
-                            <?php else: ?>
-                                <?='KXĐ'?>
-                            <?php endif; ?>
-                        </span>
-                        <span class="price">
+                        <span class="first">Giá</span>
+                        <span class="last">:
                             <?php if($row->isPrice == 0): ?>
                                 <?=$row->price_text.' '.getpricetype($row->price_type);?>
                             <?php else: ?>
                                 <?='Thương lượng'?>
                             <?php endif; ?>
                         </span>
-                        <?php if($row->estateuser->mobile != ''): ?>
-                            <span class="phone">
-                                <img src="<?php echo $base_url.'images/icon-telephone.png' ?>" style="height: 14px; vertical-align: middle;" alt="telephone icon"/><?=$row->estateuser->mobile;?>
-                            </span>
-                        <?php endif; ?>
                     </p>
-                    <p class="row-2">
-                        <a href="<?php echo $base_url.$row->estatetype->name_none.'/'.$row->estatedistrict->name_none.'/'.$row->estatecity->name_none; ?>"><?=$row->estatedistrict->name;?></a>
-                        <a href="javascript:void(0)">|</a>
-                        <a href="<?php echo $base_url.$row->estatecatalogue->name_none.'-'.$row->estatecity->name_none; ?>"><?=$row->estatecity->name;?></a>
+                    <p class="row">
+                        <span class="first">Diện tích</span>
+                        <span class="last">:
+                            <?php if($row->isArea == 0): ?>
+                                <?=$row->area_text;?> m
+                            <?php else: ?>
+                                <?='KXĐ'?>
+                            <?php endif; ?>
+                        </span>
                     </p>
-                    <p class="des">
-                        <?=strlen(strip_tags($row->description)) < 300 ? strip_tags($row->description): cut_string2(strip_tags($row->description), 300).' ...';?>
+                    <p class="row">
+                        <span class="first">Hướng</span>
+                        <span class="last">:
+                            <?php if($row->isArea == 0): ?>
+                                <?=$row->area_text;?> m
+                            <?php else: ?>
+                                <?='KXĐ'?>
+                            <?php endif; ?>
+                        </span>
                     </p>
-                    <p class="date"><?php echo date('d/m/Y',strtotime($date)); ?></p>
+                    <p class="row">
+                        <span class="first">Vị trí</span>
+                        <span class="last">:
+                            <?php if($row->isArea == 0): ?>
+                                <?=$row->area_text;?> m
+                            <?php else: ?>
+                                <?='KXĐ'?>
+                            <?php endif; ?>
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -517,5 +532,4 @@
     </div>
     <?php endif; ?>
 </div>
-    <?=$this->load->view('front/includes/footer')?>
 </div>

@@ -34,4 +34,7 @@
             <?php endforeach; unset($row); ?>
         <?php endif; ?>
     </div>
+
+    <?php echo $this->load->view('front/includes/adv_right'); ?>
+
 </div>

@@ -65,14 +65,12 @@ $config["image_sizes"]["news_115_70"] = array(115,70);
 $config["image_sizes"]["news_202_106"] = array(200,104);
 $config["image_sizes"]["news_415_270"] = array(415,270);
 $config["image_sizes"]["news_195_100"] = array(195,100);
-
-
 $config["image_sizes"]["news_280_150"] = array(280, 150);
+$config["image_sizes"]["news_228_200"] = array(228, 200);
+
 $config["image_sizes"]["slide_580_380"] = array(580, 380);
 $config["image_sizes"]["slide_640_450"] = array(640, 450);
 $config["image_sizes"]["slide_65_45"] = array(65, 45);
-
-
 $config["image_sizes"]["slide_thumnails"] = array(86,60);
 $config["image_sizes"]["slide_big"] = array(411,274);
 $config["image_sizes"]["slide_zoom"] = array(593,396);

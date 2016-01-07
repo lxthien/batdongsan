@@ -449,8 +449,8 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 
 .estates .hotnew{border-top: none;}
 
-.hotnew{border:1px #CCCCCC solid; float:left; width: 745px;}
-.hotnew2{border: 1px #CCCCCC solid;float:left; width:751px; margin-left:15px; margin-bottom:10px;}
+.hotnew{border:1px #cccccc solid; float:left; width: 723px;}
+.hotnew2{border: 1px #cccccc solid; float:left; width:723px; margin-left:15px; margin-bottom:10px;}
 
 .tinrao {border: 1px #CCCCCC solid;float:left; width:610px;  margin-left:15px; margin-top:10px; margin-bottom:5px;}
 .tieude a{color:#000000; font-size:15px; font-weight: bold; line-height: 18px;}
@@ -546,16 +546,16 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 
 
 .right .boxnoibat{
-    width: 245px;
+    width: 268px;
 }
 .right .boxnoibat .line3{
-    width: 245px;
+    width: 268px;
 }
 .right .qc img{
-    width: 245px;
+    width: 268px;
 }
 .right .boxduan-homepage{
-    width: 245px; border-bottom-width: 1px;
+    width: 268px; border-bottom-width: 1px;
 }
 
 
@@ -679,27 +679,28 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 
 .tinxemnhieu a {float:left; width:343px; height:25px; color:#666666; font-size:13px; margin-bottom:5px;}
 .tinxemnhieu a:hover { float:left;width:343px; height:25px;color:#0078cc; font-size:13px;margin-bottom:5px;}
-.boxtimkiembds{width: 268px; float:left; background-color:#eeeeee; border: 1px solid #cccccc;}
-.boxtimkiembds .sreenboxseach2 {
-
+.boxtimkiembds{width: 268px; float:left; background-color:#eeeeee; border: 1px solid #cccccc; margin-bottom: 10px;}
+.boxtimkiembds .sreenboxseach2 select{
+    font-size: 11px; width: 120px; float:left; margin-right:5px; margin-left:8px; height:23px; margin-top:10px;
+    margin-bottom:5px; border:1px #CCCCCC solid;
+}
+.sreenseachtimkiembds1{
+    height:25px; float:left; margin-bottom:13px; width: 268px;
+}
+.timkiembds2 {
+    margin: 8px 0 10px; width: 268px; float: left; height: 32px;
 }
 .timkiembds2 a { background:url(../timkiem2.png); width:100px; height:34px; float:right; margin-right:105px; margin-bottom:-10px;}
 .timkiembds2 input[type="submit"] {
-    background:url(../timkiem2.png);
-    width:100px;
-    height:34px;
-    float:right;
-    margin-right:105px;
-    margin-bottom:-10px;
-    border: none;
-    cursor: pointer;
+    background:url(../timkiem2.png); width: 100px; height: 34px; float:right; margin-right: 82px; margin-bottom: -10px;
+    border: none; cursor: pointer;
 }
 
 .timkiembds2 a:hover { background:url(../timkiem2.png); width:100px; height:34px; float:right; margin-right:105px;margin-bottom:-10px;}
 .timkiembds3 a { background:url(../timkiem2.png); width:100px; height:34px; float:left; margin-left:5px;}
 .timkiembds3 a:hover { background:url(../timkiem2.png); width:100px; height:34px; float:left; margin-left:5px;}
-.qc { width:313px; float:left;  margin-bottom:3px;}
-.qc img { width:313px; float:left;}
+.qc {width: 270px; float:left;  margin-bottom:3px;}
+.qc img {width: 270px; float:left;}
 
 /*  end cac trang chuc nang*/
 
@@ -709,10 +710,10 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 /* end trang thanh vien*/
 /*  fotter*/
 .fotter{width:960px;background-color:#ebebeb; margin-top:10px; float:left; padding-bottom:10px;}
-.menufoter{width:962px;  background-color:#0078cc; float:left; margin-left:-2px; margin-top:15px; margin-bottom:0px;}
+.menufoter{width:962px;  background-color:#0078cc; float:left; margin-top:15px; margin-bottom:0px;}
 .home1 a { color:#d9d9d9; width:100px; margin-left:25px; height:34px; font-size:13px; font-weight:bold; float:left; }
 .home1 a:hover { color:#FFFFFF;width:100px; height:34px;  margin-left:25px;font-size:13px; font-weight:bold; float:left; }
-.gt a { color:#d9d9d9;  height:34px; margin-right:30px; font-size:13px; font-weight:bold; float:left; }
+.gt a {color:#d9d9d9; height:35px; font-size:13px; font-weight:bold; float:left; }
 .gt a:hover { color:#FFFFFF; height:34px; margin-right:30px; font-size:13px; font-weight:bold; float:left; }
 .box1{width:160px; float:left; }
 .box3{width:160px; float:left;}
@@ -732,6 +733,9 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 .s5 a:hover{background:url(../in.png); width:32px; height:37px; float:left;margin-top:25px;margin-left:10px}
 .link a { color:#3366CC; float:left;}
 .link a:hover { color:#3366CC; float:left; text-decoration:underline;}
+.sreenmenufoter .gt{
+    width: 25%; float: left;
+}
 
 /*  end fotter*/
 
@@ -900,11 +904,11 @@ label.error {
 
 
 .fotter{width:960px;background-color:#ebebeb; margin-top:10px; float:left; padding-bottom:10px;}
-.menufoter{width:981px; background-color: #051c94; float:left; margin-left:-1px; margin-top:15px; margin-bottom:0px;}
+.menufoter{width: 1030px; background-color: #0f9502; float:left; margin-top:15px; margin-bottom:0px;}
 .home1 a {color:#ffffff; width: 98px; margin-left: 0px; margin-right: 0px;height:34px; font-size:13px; font-weight:bold; float:left; }
 .home1 a:hover {color:#FFFFFF; width: 98px; height:34px; margin-right: 0px; margin-left: 0px;font-size:13px; font-weight:bold; float:left; }
-.gt a {color:#ffffff; height:34px; margin-right:25px; font-size:13px; font-weight:bold; float:left; }
-.sreenmenufoter .gt a{margin-right: 28px;}
+.gt a {color:#ffffff; height:35px; text-transform: uppercase; text-align: center; font-size:13px; font-weight:bold; float:left; }
+.sreenmenufoter .gt a{text-transform: uppercase; line-height: 35px; width: 100%; display: block;}
 .sreenmenufoter .gt-end a{margin-right: 0px;}
 .gt a:hover {color:#FFFFFF; height:34px; margin-right: 28px; font-size:13px; font-weight:bold; float:left; }
 .sreenmenufoter .gt-end a:hover{margin-right: 0px;}
