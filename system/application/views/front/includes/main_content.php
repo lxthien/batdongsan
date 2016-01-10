@@ -17,10 +17,10 @@
                         <li><a href="">Bán nhà xưởng</a></li>
                     </ul>
                 </li>
-                <li><h2><a href="">Dự án</a></h2></li>
-                <li><h2><a href="">Tin tức</a></h2></li>
-                <li><h2><a href="">Cẩm nâng</a></h2></li>
-                <li><h2><a href="">Liên hệ</a></h2></li>
+                <li><h2><a href="<?php echo $base_url; ?>du-an">Dự án</a></h2></li>
+                <li><h2><a href="<?php echo $base_url; ?>tin-tuc">Tin tức</a></h2></li>
+                <li><h2><a href="<?php echo $base_url; ?>cam-nang">Cẩm nâng</a></h2></li>
+                <li><h2><a href="<?php echo $base_url; ?>lien-he.html">Liên hệ</a></h2></li>
             </ul>
         </div>
     </div>

@@ -53,6 +53,30 @@
                         <?php endforeach; unset($row); ?>
                     </ul>
                 </li>
+                <li class="dropdown-navigative-menu2 <?=$this->menu_active == 'news' ? 'active' : '';?>">
+                    <div class="sreen1" style=" height:35px; float:left;">
+                        <h2 style="font-size: 15px; margin-top: 4px;"><a href="<?=$base_url?>dich-vu-bds" class="haslin ">Dịch vụ BĐS</a></h2>
+                    </div>
+                    <ul>
+                        <?php $i=0; foreach($this->newsCate as $row): $i++; ?>
+                            <li class="lv1" <?php if($i>1) echo 'style="margin-top:-2px;"';?>>
+                                <a href="<?=$base_url?>tin-tuc/<?=$row->name_none;?>" class="haslink "><?=$row->name_vietnamese;?></a>
+                            </li>
+                        <?php endforeach; unset($row); ?>
+                    </ul>
+                </li>
+                <li class="dropdown-navigative-menu2 <?=$this->menu_active == 'news' ? 'active' : '';?>">
+                    <div class="sreen1" style=" height:35px; float:left;">
+                        <h2 style="font-size: 15px; margin-top: 4px;"><a href="<?=$base_url?>cam-nang" class="haslin ">Cẩm nang</a></h2>
+                    </div>
+                    <ul>
+                        <?php $i=0; foreach($this->newsCate as $row): $i++; ?>
+                            <li class="lv1" <?php if($i>1) echo 'style="margin-top:-2px;"';?>>
+                                <a href="<?=$base_url?>tin-tuc/<?=$row->name_none;?>" class="haslink "><?=$row->name_vietnamese;?></a>
+                            </li>
+                        <?php endforeach; unset($row); ?>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

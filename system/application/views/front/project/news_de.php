@@ -14,62 +14,34 @@
         <h3 style="font-weight: normal"><a class="linkdautrang-active" href="<?=$base_url?>du-an/<?=$category->name_none.'/'.$news->title_none?>.html" title="<?=$news->title_vietnamese;?>"><?=$news->title_vietnamese;?></a></h3>
     </div>
 </div>
-<div class="main" style="width:960px;float:left;margin-top:5px;  margin-left:12px; ">
+
+<div class="main">
     <div class="left">
-        <div class="hotnew">
-            <div class="sreennoidungchitiet" style="width:640px; float:left; margin-bottom:5px;">
-                <div class="sreentieudethitruong" style="width: 640px;">
-                    <div class="tieudethitruongchitiet">
-                        <h1 style="font-size: 25px; color:#051c94;"><?=$news->title_vietnamese;?></h1>
-                    </div>
-                </div>
-                <div class="noidungchitiet" style="width:640px; height:25px; float:left; margin-bottom:5px;">
-                    <p style="font-size:16px; font-weight: 600; margin-top:7px; color:#505050;"><strong>Nội dung tóm tắt:</strong></p>
-                </div>
-                <div align="justify" id="divContents" style="width:640px; line-height: 18px; font-size:14px">
-                    <?=$news->short_vietnamese;?>
+        <div class="chi-tiet-du-an sreenspduan">
+            <div class="sreennoidungchitiet">
+                <div class="sreentieudethitruong">
+                    <h1><?=$news->title_vietnamese;?></h1>
                 </div>
             </div>
-            <div class="sreennoidungchitiet" style="width:640px; float:left;">
-                <div class="noidungchitiet" style="width:640px; height:25px; float:left; margin-bottom:10px;">
-                    <p style="font-size:16px; font-weight: 600; margin-top:5px; color:#505050;"><strong>Thông tin dự án:</strong></p>
-                </div>
-                <p style="text-align:justify; margin-bottom:7px; width:560px; color:#0f9502; float:left; font-size:14px;"><strong>Tỉnh/TP</strong>: <span class="style1 style5"> <?=$news->estatecity->name;?></span></p>
-                <p style="text-align:justify; margin-bottom:7px; width:560px; color:#0f9502; float:left; font-size:14px;"><strong>Quận/Huyện</strong>:  <span class="style1 style6"> <?=$news->estatedistrict->name;?> </span></p>
-                <p style="text-align:justify; margin-bottom:7px; width:560px; color:#0f9502; float:left; font-size:14px;"><strong>Loại dự án</strong>: <span class="style1 style6"> <?=$news->newscatalogue->name_vietnamese;?> </span></p>
-                <p style="text-align:justify; margin-bottom:7px; width:560px; color:#0f9502; float:left; font-size:14px;"><strong>Số vốn đầu tư</strong>: <span class="style1 style6"> <?=$news->equity;?> </span> </p>
-                <p style="text-align:justify; margin-bottom:7px; width:560px; color:#0f9502; float:left; font-size:14px;"><strong>Thời gian khởi công</strong>: <span class="style1 style6"> <?=$news->timeStart;?> </span></p>
-                <p style="text-align:justify; margin-bottom:7px; width:560px; color:#0f9502; float:left; font-size:14px;"><strong>Thời gian hoàn thành</strong>: <span class="style1 style6"> <?=$news->timeCompleted;?> </span></p>
-                <p style="text-align:justify; margin-bottom:7px; width:560px; color:#0f9502; float:left; font-size:14px;"><strong>Chủ đầu tư</strong>: <span class="style1 style6"> <?=$news->investors;?> </span></p>
-            </div>
-            <div class="sreenspduan" style="width:640px; float:left; margin-top:10px; margin-bottom:15px; line-height: 18px; font-size:14px;">
-                <div>
-                    <div align="justify" id="divContents" style="width:640px; line-height: 18px; font-size:14px">
-                        <?=$news->full_vietnamese;?>
-                    </div>
-                    <!--
-                    <div align="justify">
-                        <?=$news->full_vietnamese;?>
-                    </div>
-                    -->
-                </div>
+            <div id="divContents">
+                <?=$news->full_vietnamese;?>
             </div>
             <div class="sreentag2" >
                 <div class="tag"></div>
-                <p style="float:left; width:490px; margin-left:5px; color: #cccccc;">
+                <p>
                     <?php foreach($tag as $tagSub): ?>
                         <a href="<?=$base_url.'tags/'.remove_vn($tagSub)?>"><?=$tagSub;?></a> ,
                     <?php endforeach ?>
                 </p>
             </div>
-            <div class="duankhac" style="margin-left: 0px;">
-                <p style="font-size:16px; font-weight:bold; color:#FFFFFF; margin-left:15px; margin-top:8px;">Dự án khác</p>
+            <div class="duankhac">
+                <h3>Dự án khác</h3>
             </div>
-            <div class="sreenduankhac" style="width:610px; float:left; margin-bottom:5px;">
-                <?php foreach($related_news as $row):
+            <div class="sreenduankhac">
+                <?php $i=0; foreach($related_news as $row): $i++;
                     $cat = new Newscatalogue($row->newscatalogue_id);
                     ?>
-                    <div class="sreenspkhac1" style="margin-bottom: 20px; width:291px; height:116px; float:left; margin-left: <?=$i%2==0 ? '5px' : '20px'?>;">
+                    <div class="sreenspkhac1 <?php echo $i%2==0 ? 'sreenspkhac1-right' : ''?>">
                         <div class="spkhac">
                             <a href="<?=$base_url?>du-an/<?=$cat->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese?>">
 								<img src="<?php echo image('img/news/'.$row->image, 'news_123_116') ?>" alt="<?=$row->title_vietnamese?>" />
@@ -77,8 +49,8 @@
                         </div>
                         <div class="titleduankhac">
                             <h4><a href="<?=$base_url?>du-an/<?=$cat->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese?>"><?=$row->title_vietnamese?></a></h4>
-                            <p align="left" style=" width:140px; float:left ; margin-top:3px; color:#666666;">Chủ đầu tư: <?=$row->investors?></p>
-                            <p  align="left" style=" width:140px; float:left ; margin-top:3px; color:#666666;">Vị trí: <?=$row->estatecity->name?></p>
+                            <p>Chủ đầu tư: <?=$row->investors?></p>
+                            <p>Vị trí: <?=$row->estatecity->name?></p>
                         </div>
                     </div>
                 <?php endforeach; unset($row); ?>
@@ -86,5 +58,4 @@
         </div>
     </div>
     <?=$this->load->view('front/project/col-right')?>
-    <?=$this->load->view('front/includes/footer')?>
 </div>

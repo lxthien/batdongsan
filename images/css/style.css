@@ -635,8 +635,6 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 .tinh{ background-color:#FFFFFF; width:343px; height:25px;}
 .sreenthongtinnhadat>div:nth-child(odd){background-color:#f6f6f6;}
 .danhmucduan{width:343px;  float:left; margin-left:3px;border: 1px #CCCCCC  solid; margin-bottom:3px; background-color:#FFFFFF; border-bottom-color:#028287; border-bottom-width:5px; padding-bottom:5px;}
-.spduan{width:163px; height:152px;border:1px #999999 solid; float:left; margin-bottom:5px;}
-.spduan img { float:left; margin-left:1px; margin-top:1px;}
 .titleduan a{ font-size:12px; font-weight:bold; color:#333333; float:left; width:160px;}
 .titleduan a:hover{ font-size:12px; font-weight:bold; color:#0078cc; float:left;width:160px;}
 .titleduankhac a{ font-size:12px; font-weight:bold; color:#333333; float:left; width:140px;}
@@ -1671,8 +1669,8 @@ p.notice-msg{
 a.of-project{color: #109502; font-weight: 600;}
 a.of-project:hover{text-decoration: underline;}
 
-.linktop{width:960px; float:left; margin-top:12px; margin-bottom:8px;}
-.linktop .linkdautrang{margin-left:5px; width:auto; float:left;}
+.linktop{width: 1030px; float:left; margin: 10px 0;}
+.linktop .linkdautrang{width:auto; float:left;}
 
 
 #divContents p {margin: 0 0 1em; line-height: 20px;}

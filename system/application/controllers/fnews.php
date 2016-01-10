@@ -24,7 +24,7 @@ class fnews extends MY_Controller{
         $newHot->where('hot',1);
         $newHot->where_in('newscatalogue_id',$arrayCateNewsId);
         $newHot->order_by('created', 'desc');
-        $newHot->get(4);
+        $newHot->get(3);
         $dis['newHot'] = $newHot;
         $dis['newHotFirst'] = $newHot->limit(1);
 

@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
-<div class="linktop" style=" width:960px;height:20px; float:left; margin-top:12px; margin-bottom: 2px;">
+
+<div class="linktop">
     <?php $i = 0; foreach($this->newsCate as $row): $i++; ?>
     <div class="linkdautrang" style="<?php echo $i==1?'margin-left:10px;':''; ?> width:auto; float:left;">
         <a class="<?php echo $row->name_none == $this->uri->segment(2, '') ? 'linkdautrang-active' : ''; ?>" href="<?=$base_url?>tin-tuc/<?=$row->name_none?>"><?=$row->name_vietnamese;?></a>
@@ -7,29 +8,12 @@
     <?php endforeach; unset($row); ?>
 </div>
 
-<div class="main" style="width:980px;">
-    <div class="cotleft" style="width:645px; float:left; margin-bottom:10px;">
+<div class="main">
+    <div class="left">
+        <div class="titlenew-add">
+            <h1><?php echo $type->name.' '.$atAddress; ?></h1>
+        </div>
         <?php $i=0; foreach ($news as $row): $i++; ?>
-            <?php if ($i==1): ?>
-            <div class="tintuctop" style="width:645px; float:left;  margin-bottom:10px; margin-top:15px;">
-                <div style="width:318px; float:left;">
-                    <div class="hinhtoptintuccap2">
-                        <a href="<?=$base_url?>tin-tuc/<?=$category->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese;?>">
-                            <img src="<?php echo image('img/news/'.$row->image, 'news_300_220') ?>" alt="<?=$row->title_vietnamese;?>">
-                        </a>
-                    </div>
-                </div>
-                <div style="width:318px; margin-left:7px; margin-top:-3px; float:left;">
-                    <div class="titletintuctopcap2"><a style="width: 100%;" href="<?=$base_url?>tin-tuc/<?=$category->name_none.'/'.$row->title_none?>.html"><p><?=$row->title_vietnamese;?></p></a></div>
-                    <p align="justify" style="float:left;  margin-top:10px; width:310px; margin-left:2px; font-size:14px;">
-                        <span style="margin-left:0px; font-size:14px; font-weight:lighter;">
-                            <?=strlen($row->short_vietnamese) < 300 ? $row->short_vietnamese: cut_string($row->short_vietnamese, 300).'...';?>
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div class="linedot"></div>
-            <?php else: ?>
             <div class="sreentinthitruong">
                 <div class="boxhinhthitruonglon">
                     <a href="<?=$base_url?>tin-tuc/<?=$category->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese;?>">
@@ -57,7 +41,6 @@
                 </div>
             </div>
             <div class="linedot"></div>
-            <?php endif; ?>
         <?php endforeach; ?>
 
         <div class="phantrang">
@@ -66,24 +49,9 @@
             </div>
         </div>
 
-        <div class="phantrang invisiable"
-             style="float:left; width:240px;   margin-left:210px; margin-top:5px; height:20px;">
-            <div class="next"><a href=""><p style="margin-left:3px;margin-top:2px;"> << Sau</p></a></div>
-            <div class="number"><a href=""><p style="margin-left:7px; margin-top:2px;">1</p></a></div>
-            <div class="number"><a href=""><p style="margin-left:6px; margin-top:2px;">2</p></a></div>
-            <div class="number"><a href=""><p style="margin-left:6px; margin-top:2px;">3</p></a></div>
-            <div class="number"><a href=""><p style="margin-left:6px; margin-top:2px;">4</p></a></div>
-            <div class="number"><a href=""><p style="margin-left:6px; margin-top:2px;">5</p></a></div>
-            <div class="next">
-                <a href="">
-                    <p style="margin-left:3px;margin-top:2px;"> Trước >> </p>
-                </a>
-            </div>
-        </div>
     </div>
-    <div style="width:1px; background:#CCCCCC; height:720px; float:left; margin-left:12px; margin-top:15px;"></div>
 
-    <div class="cotright" style="width: 300px; margin-top:15px; float:right; margin-right:9px; ">
+    <div class="cotright right">
         <div style="width:300px; height:29px; float:right; background:#109502; font-size:16px; font-weight:bold; color:#FFFFFF; margin-top:0px; margin-bottom:8px;">
             <p style=" margin-left:10px; margin-top:6px;">Tin mới nhất </p>
         </div>
@@ -130,5 +98,3 @@
         </div>
     </div>
 </div>
-
-<?=$this->load->view('front/includes/footer'); ?>
