@@ -6,8 +6,8 @@
             </div>
             <ul class="dropdown-navigative-menu">
                 <li class="lv0 <?=$this->menu_active == 'nha-dat-ban' ? 'active' : '';?>">
-                    <div class="sreen1" style=" height:35px; float:left;">
-                        <h2 style="font-size: 15px; margin-top: 4px;"><a href="<?=$base_url?>nha-dat-ban" class="haslin ">Nhà đất bán</a></h2>
+                    <div class="sreen1">
+                        <h2><a href="<?=$base_url?>nha-dat-ban" class="haslin ">Nhà đất bán</a></h2>
                     </div>
                     <ul>
                         <?php $i=0; foreach($this->typeHouseSale as $row): $i++; ?>
@@ -18,8 +18,8 @@
                     </ul>
                 </li>
                 <li class="lv0  <?=$this->menu_active == 'nha-dat-cho-thue' ? 'active' : '';?>">
-                    <div class="sreen1" style=" height:35px; float:left;">
-                        <h2 style="font-size: 15px; margin-top: 4px;"><a href="<?=$base_url?>nha-dat-cho-thue" class="haslin ">Nhà đất cho thuê</a></h2>
+                    <div class="sreen1">
+                        <h2><a href="<?=$base_url?>nha-dat-cho-thue" class="haslin ">Nhà đất cho thuê</a></h2>
                     </div>
                     <ul>
                         <?php $i=0; foreach($this->typeHouseLease as $row): $i++; ?>
@@ -30,8 +30,8 @@
                     </ul>
                 </li>
                 <li class="dropdown-navigative-menu2 <?=$this->menu_active == 'project' ? 'active' : '';?>">
-                    <div class="sreen1" style=" height:35px; float:left;">
-                        <h2 style="font-size: 15px; margin-top: 4px;"><a href="<?=$base_url?>du-an" class="haslin ">Dự án</a></h2>
+                    <div class="sreen1">
+                        <h2><a href="<?=$base_url?>du-an" class="haslin ">Dự án</a></h2>
                     </div>
                     <ul>
                         <?php $i=0; foreach($this->projectsCate as $row): $i++; ?>
@@ -42,8 +42,8 @@
                     </ul>
                 </li>
                 <li class="dropdown-navigative-menu2 <?=$this->menu_active == 'news' ? 'active' : '';?>">
-                    <div class="sreen1" style=" height:35px; float:left;">
-                        <h2 style="font-size: 15px; margin-top: 4px;"><a href="<?=$base_url?>tin-tuc" class="haslin ">Tin tức</a></h2>
+                    <div class="sreen1">
+                        <h2><a href="<?=$base_url?>tin-tuc" class="haslin ">Tin tức</a></h2>
                     </div>
                     <ul>
                         <?php $i=0; foreach($this->newsCate as $row): $i++; ?>
@@ -54,8 +54,8 @@
                     </ul>
                 </li>
                 <li class="dropdown-navigative-menu2 <?=$this->menu_active == 'news' ? 'active' : '';?>">
-                    <div class="sreen1" style=" height:35px; float:left;">
-                        <h2 style="font-size: 15px; margin-top: 4px;"><a href="<?=$base_url?>dich-vu-bds" class="haslin ">Dịch vụ BĐS</a></h2>
+                    <div class="sreen1">
+                        <h2><a href="<?=$base_url?>dich-vu-bds" class="haslin ">Dịch vụ BĐS</a></h2>
                     </div>
                     <ul>
                         <?php $i=0; foreach($this->newsCate as $row): $i++; ?>
@@ -66,8 +66,8 @@
                     </ul>
                 </li>
                 <li class="dropdown-navigative-menu2 <?=$this->menu_active == 'news' ? 'active' : '';?>">
-                    <div class="sreen1" style=" height:35px; float:left;">
-                        <h2 style="font-size: 15px; margin-top: 4px;"><a href="<?=$base_url?>cam-nang" class="haslin ">Cẩm nang</a></h2>
+                    <div class="sreen1">
+                        <h2><a href="<?=$base_url?>cam-nang" class="haslin ">Cẩm nang</a></h2>
                     </div>
                     <ul>
                         <?php $i=0; foreach($this->newsCate as $row): $i++; ?>

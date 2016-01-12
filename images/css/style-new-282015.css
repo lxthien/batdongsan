@@ -18,10 +18,10 @@
 .boxhinhlon img { margin-left:1px; margin-top:1px; height:219px; float:left;}
 .tieudenoibat a {width:297px; height:20px; float:left; color:#333333; font-size:16px; font-weight:bold;}
 .tieudenoibat a:hover {width:297px; float:left; color:#0078cc;font-size:16px; font-weight:bold;}
-.tieudenoibat2 a {width:380px; height:20px; float:left; color:#333333; font-size:17px; font-weight:bold;}
-.tieudenoibat2 a:hover {width:380px; height:20px; float:left; color:#061c93;font-size:17px; font-weight:bold; }
-.tieudenoibat3 a {width:380px; height:20px; float:left; color:#0078cc;font-size:14px; font-weight:bold;}
-.tieudenoibat3 a:hover {width:380px; height:20px; float:left; color:#086FB8;font-size:14px; font-weight:bold;}
+.tieudenoibat2 a {float:left; color:#333333; font-size:15px; font-weight:bold;}
+.tieudenoibat2 a:hover {float:left; color:#bb7700; font-weight:bold; }
+.tieudenoibat3 a {float:left; color:#0078cc;font-size:14px; font-weight:bold;}
+.tieudenoibat3 a:hover {float:left; color:#bb7700; font-size:14px; font-weight:bold;}
 .icon4{background:url(../icon2.png); height:5px; width:5px; float:left; margin-left:5px; margin-right:5px; margin-top:2px;}
 .noidungtinnoibat a {color:#333333;width:280px; height:30px; float:left;}
 .noidungtinnoibat a:hover {color:#0078cc;width:280px; height:30px; float:left;}
@@ -54,10 +54,17 @@
 .menutintuc a { font-size:12px; font-weight:bold; color:#333333; float:left;}
 .menutintuc a:hover { font-size:12px; font-weight:bold; color:#0078cc; float:left;}
 .sreencacmuccon {width:590px; float:left; margin-left:20px; margin-bottom:10px;}
-.sreentinthitruong{width:645px; margin-bottom:10px; margin-top:8px;float:left;}
+.sreentinthitruong{width:723px; margin: 0px; float:left;}
 .sreentinthitruong2{width:750px; margin-bottom:10px;float:left;}
-.boxhinhthitruonglon{ width:198px; height:126px; float:left; margin-left:9px; margin-top:8px;}
-.boxhinhthitruonglon img{ width:198px; height:126px; float:left; margin-left:1px; margin-top:1px;}
+.boxhinhthitruonglon{ width:200px; height:145px; float:left;}
+.sreennoidungthitruong {float: right; width: 510px;}
+.sreennoidungthitruong .sreentieudethitruong {width:510px; margin-top:0px; }
+.sreennoidungthitruong .date-news {width:510px; margin-bottom:10px; float:left;}
+.sreennoidungthitruong .date-news p {color:#999999; font-size:12px;}
+.sreennoidungthitruong .sreenndtinthitruong {width: 510px; height:70px; float:left;color:#333333; }
+.sreennoidungthitruong .sreenndtinthitruong p {margin-left:0px; font-size:14px; font-weight:lighter;}
+
+.boxhinhthitruonglon img{ width:200px; height:145px; float:left;}
 .boxhinhthitruongnho{ width:135px; height:100px; float:left;border:1px #999999 solid; margin-left:20px;}
 .boxhinhthitruongnho img{float:left; margin-left:1px; margin-top:1px;}
 .tieudethitruongchitiet{ float:left; color:#0078cc;font-size:16px; font-weight:bold;}
@@ -66,7 +73,7 @@
 .m1 {width:31px; height:22px; float:left; margin-right:1px;}
 .m1 img {width:31px; height:22px; float:left;}
 .noidunggioithieu{ width:543px;  margin-top:10px; margin-left:25px; margin-bottom:10px;}
-.sreennoidungthitruong{float:left; margin-top:15px; width:380px; margin-left:5px;}
+.sreennoidungthitruong{width: 510px;}
 .sreenndtinthitruong{ width:360px; float:left;color:#333333;}
 .phantrang{float:right; width:110px; margin-right:8px; height:20px;}
 .sreentinthitruongchitiet{ width:720px; height:100px; margin-left:15px;}

@@ -189,6 +189,8 @@ h3.home-title-services{
 	font-size: 13px; line-height: 18px; margin-bottom: 18px;
 }
 
+.main-tin-tuc .sreenspduan .line {width: 743px; margin: 10px -10px;}
+
 .right .boxtimkiemduan .sreentimkiemduan {
 	width: 268px; float: left;
 }
@@ -289,6 +291,23 @@ h3.home-title-services{
 }
 .list-news-cat-item .list-news-cats .line {
 	width: 505px; border-bottom: 1px solid #cccccc; margin: 10px -5px;
+}
+
+/*Tin tức col right*/
+.news-right-item {
+	border: 1px solid #cccccc; width: 268px; margin-bottom: 15px; float: left;
+}
+.news-right-item .news-right-title {
+	width:270px; height:29px; float:right; background:#109502; font-size:16px; font-weight:bold; color:#FFFFFF; margin-top:0px; margin-bottom:8px;
+}
+.news-right-item .news-right-title p {
+	margin-left:10px; margin-top:6px;
+}
+.news-right-item .news-right-content {
+	width: 268px; float: left;
+}
+.news-right-item .news-right-content .sreennoibat {
+	width: 258px; float: left padding: 5px;
 }
 
 
