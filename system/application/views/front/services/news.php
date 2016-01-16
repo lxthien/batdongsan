@@ -1,26 +1,99 @@
-<div class="col-right main-article fl">
-    <div class="groupcol2">
-        <div class="constructioncol2">
-            <div class="titleconstructioncol2"><h1><?=lang('services')?></h1></div>
-            <span class="line730"></span>
-            <?php $i=0; foreach($news as $row): $i++; ?>
-                <div class="listnews mainconstructioncol2 <?php if($i%2==0) echo 'listnews-break';?>">
-                    <a title="<?=$row->{'title_'.$this->language};?>" href="<?=$this->lang->lang() == 'vi' ? $base_url.'vi/dich-vu/'.$row->title_none.'.html' : $base_url.'en/services/'.$row->title_none.'.html'; ?>">
-                        <img class="padr-10" src="<?=$base_url?>img/news/<?=$row->image?>" alt="<?=$row->{'title_'.$this->language};?>" width="140" height="90" align="left"/>
+<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
+
+<div class="linktop">
+
+</div>
+
+<div class="main main-tin-tuc">
+    <div class="left">
+        <div class="titlenew-add">
+            <h1><?php echo $category->name_vietnamese; ?></h1>
+        </div>
+        <div class="sreenspduan">
+            <?php $i=0; foreach ($news as $row): $i++; ?>
+            <div class="sreentinthitruong">
+                <div class="boxhinhthitruonglon">
+                    <a href="<?=$base_url.$category->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese;?>">
+                        <img src="<?php echo image('img/news/'.$row->image, 'news_200_145') ?>" alt="<?=$row->title_vietnamese;?>" />
                     </a>
-                    <div class="tajf">
-                        <h1><a title="<?=$row->{'title_'.$this->language};?>" href="<?=$this->lang->lang() == 'vi' ? $base_url.'vi/dich-vu/'.$row->title_none.'.html' : $base_url.'en/services/'.$row->title_none.'.html'; ?>"><?=$row->{'title_'.$this->language};?></a></h1>
+                </div>
+                <div class="sreennoidungthitruong">
+                    <div class="sreentieudethitruong">
+                        <div class="tieudenoibat2">
+                            <a href="<?=$base_url.$category->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese;?>">
+                                <p><?=$row->title_vietnamese;?></p>
+                            </a>
+                        </div>
                     </div>
-                    <div class="tal small italic">
-                        <?=lang('createdDate')?>: <?=get_date_from_sql($row->created);?>
+                    <div class="date-news">
+                        <p>Cập nhật: <?=get_date_from_sql($row->created);?></p>
                     </div>
-                    <div class="mart5 tajf">
-                        <?= strlen($row->{'short_'.$this->language}) > 150 ? cut_string($row->{'short_'.$this->language}, 150).' ...' : $row->{'short_'.$this->language}; ?>
+                    <div class="sreenndtinthitruong">
+                        <p>
+                            <?=strlen($row->short_vietnamese) < 300 ? $row->short_vietnamese: cut_string($row->short_vietnamese, 300).'...';?>
+                        </p>
                     </div>
                 </div>
-            <?php endforeach ?>
-            <div class="cl"></div>
-            <div class="pagination"><?php echo $this->pagination->create_links();?></div>
+            </div>
+            <div class="line"></div>
+            <?php endforeach; ?>
+            
+            <div class="phantrang">
+                <div class="back">
+                    <?=$this->pagination->create_links();?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cotright right">
+        <div class="news-right-item">
+            <div class="news-right-title">
+                <p>Tin dự án</p>
+            </div>
+            <div class="news-right-content">
+                <?php
+                foreach ($newNews as $row):
+                $cat = new Newscatalogue($row->newscatalogue_id);
+                ?>
+                    <div class="sreennoibat">
+                        <div class="boxhinhxemnhieu">
+                            <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html">
+                                <img src="<?=image('img/news/'.$row->image, 'news_115_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
+                            </a>
+                        </div>
+                        <div style="width:140px; float:right;">
+                            <p class="tieudetinxemnhieu">
+                                <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
+                            </p>
+                        </div>
+                    </div>
+                <?php endforeach; unset($row); ?>
+            </div>
+        </div>
+        <div class="news-right-item">
+            <div class="news-right-title">
+                <p>Tin thị trường</p>
+            </div>
+            <div class="news-right-content">
+                <?php
+                foreach ($newViewMost as $row):
+                    $cat = new Newscatalogue($row->newscatalogue_id);
+                ?>
+                    <div class="sreennoibat">
+                        <div class="boxhinhxemnhieu">
+                            <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html">
+                                <img src="<?=image('img/news/'.$row->image, 'news_115_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
+                            </a>
+                        </div>
+                        <div style="width:180px; float:right;">
+                            <p class="tieudetinxemnhieu">
+                                <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
+                            </p>
+                        </div>
+                    </div>
+                <?php endforeach; unset($row); ?>
+            </div>
         </div>
     </div>
 </div>

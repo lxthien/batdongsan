@@ -207,18 +207,17 @@ a:active {
 }
 .dropdown-navigative-menu ul
 {
-    border-bottom:3px #0a6e00 solid;
     min-width: 155px;
     display: none;
     position: absolute;
-
+    width: 290px;
 }
 .dropdown-navigative-menu ul li   /* menu drop hien mau xanh trang*/
 {
     border-top:none;
-    background-color:#FFFFFF;
-    border:1px #CCCCCC solid;
-    height:30px;
+    background-color: #FFFFFF;
+    border-bottom: 1px #CCCCCC solid;
+    height: 30px;
     float: none;
     padding-left: 10px;
     padding-right: 10px;
@@ -226,9 +225,11 @@ a:active {
     text-align: left;
 }
 .dropdown-navigative-menu ul li:last-child /* kcach 2 menu drop*/
-{ border-left:1px #CCCCCC solid;
-    border-right:1px #CCCCCC solid; border-top:1px #CCCCCC solid; margin-top:-1px;
-
+{
+    border-left:1px #CCCCCC solid;
+    border-right:1px #CCCCCC solid;
+    border-top:1px #CCCCCC solid;
+    margin-top:-1px;
 }
 .dropdown-navigative-menu ul li a/* font menu trang*/
 {
@@ -236,14 +237,12 @@ a:active {
     margin-top:1px;
     border-right: none;
     display: inline-block;
-    width: 210px;
     color:#666666;
     text-align: left;
     line-height: 30px;
 }
 .dropdown-navigative-menu ul li.hover, ul.dropdown-navigative-menu ul li:hover, ul.dropdown-navigative-menu ul .li_selected, ul.dropdown-navigative-menu ul li.active
 {
-    border-top:1px #109502 solid;
     background-color:#109502;
     color:#333333;
     border-bottom:1px #109502 solid;
@@ -315,8 +314,7 @@ a:active {
     position: relative;
 }
 .dropdown-navigative-menu2 ul
-{ border-bottom:3px #0a6e00 solid;
-
+{
     min-width: 155px;
     display: none;
     position: absolute;
@@ -344,14 +342,11 @@ a:active {
     margin-top:1px;
     border-right: none;
     display: inline-block;
-    width: 160px;
     color:#666666;
     text-align: left;
 }
 .dropdown-navigative-menu2 ul li.hover, ul.dropdown-navigative-menu2 ul li:hover, ul.dropdown-navigative-menu2 ul .li_selected, ul.dropdown-navigative-menu2 ul li.active
 {
-
-
     background-color:#109502; /* menu drop hien mau xanh la*/
     color:#333333;
 }
@@ -1589,7 +1584,7 @@ p.notice-msg{
  */
 #page-navigative-menu{padding: 0;width: 1030px;}
 .sreenmenu .sreenhome{width:auto;height:40px;margin-left:0px;float:left;}
-.sreenmenu .sreenhome a{width: 65px;background-position: 4px 0px;height: 35px;}
+.sreenmenu .sreenhome a{width: 65px;background-position: 4px 2px; height: 40px;}
 #page-navigative-menu .dropdown-navigative-menu>li{float: left; height: 40px; padding: 0; margin: 0px;}
 #page-navigative-menu .dropdown-navigative-menu>li .sreen1{height: 40px;}
 #page-navigative-menu .dropdown-navigative-menu>li .sreen1 h2{font-size: 15px;}

@@ -86,6 +86,11 @@ $route['doanh-nghiep/(:any)/(:any)']        = "fcompany/detail/$4";
 $route['doanh-nghiep/(:num)']               = "fcompany/index/$2";
 $route['doanh-nghiep/(:any)']               = "fcompany/cat/$1";
 
+// router for service
+$route['dich-vu-bds']                      	= "fservices";
+$route['dich-vu-bds/(:num)']               	= "fservices/index/$2";
+$route['dich-vu-bds/(:any)']               	= "fservices/detail/$1";
+
 // router for news
 $route['tin-tuc']                           = "fnews";
 $route['tin-tuc/(:any)/(:num)']             = "fnews/cat/$3";

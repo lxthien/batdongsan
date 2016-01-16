@@ -23,11 +23,39 @@
         </div>
     </div>
 </div>
-<!-- link foter-->
-<div class="sreenadd" style="width:1030px; background-color:#ebebeb; float:left;">
-    <div style="float:left; font-size:14px; width: 940px; margin: 10px 20px; text-align: center;">
-        <?=getconfigkey('addressCompany')?>
+<div class="footer-items">
+    <div class="footer-item address">
+        <a href="<?php echo $base_url ?>"><img src="<?php echo $base_url ?>images/assets/logo.jpg"></a>
+        <p>ĐC: 448 Trương Công Định, P.8, TP.VT</p>
+        <p>Email: info@sotaynhadat.vn</p>
+        <p>Website: http://sotaynhadat.vn</p>
     </div>
+    <div class="footer-item email-signup">
+        <h5>Đăng ký nhận tin</h5>
+        <p>Đăng ký thư thông báo của chúng tôi để cập nhật thông tin về các dự án của tập đoàn Vingroup</p>
+        <form id="email-signup">
+            
+        </form>
+    </div>
+    <div class="footer-item social">
+        <h5>Liên kết với chúng tôi</h5>
+        <div class="social-main">
+            <a href=""><img src=""></a>
+            <a href=""><img src=""></a>
+            <a href=""><img src=""></a>
+            <a href=""><img src=""></a>
+            <a href=""><img src=""></a>
+        </div>
+    </div>
+    <div class="footer-item static">
+        <h5>Thống kê truy cập</h5>
+        <p>Đang online: 5</p>
+        <p>Đã online: 66735</p>
+    </div>
+</div>
+<!-- link foter-->
+<div class="sreenadd">
+    <p>Copyright (c) 2015 GiaThinhLand. Ghi rõ nguồn gốc khi phát hành thông tin tại website này</p>
 </div>
 <!-- end link foter-->
 <!-- foter-->

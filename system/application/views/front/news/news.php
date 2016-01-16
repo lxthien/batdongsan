@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
 
 <div class="linktop">
-    <div class="linkdautrang"><a href="<?php echo $base_url; ?>">Trang ch&#7911;</a></div>
+    <div class="linkdautrang"><a href="<?php echo $base_url; ?>">Trang chủ</a></div>
     <div class="linkdautrang"><a class="linkdautrang-active" href="<?php echo $base_url.'tin-tuc'; ?>">Tin Tức</a></div>
 </div>
 

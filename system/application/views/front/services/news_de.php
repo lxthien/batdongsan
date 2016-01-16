@@ -1,46 +1,58 @@
-<div class="col-right main-article fl">
-    <div class="groupcol2">
-        <div class="constructioncol2">
-            <div class="titleconstructioncol2 title-nav-article">
-                <h1>
-                    <a title="<?=lang('home')?>" href="<?=$base_url?>"><?=lang('home')?></a> &raquo; <a title="<?=$category->{'name_'.$this->language}?>" href="<?=$this->lang->lang() == 'vi' ? $base_url.'vi/dich-vu' : $base_url.'en/services';?>"><?=$category->{'name_'.$this->language}?></a> &raquo; <a title="<?=$news->{'title_'.$this->language}?>" href="<?=$base_url.$this->lang->lang()?>/dich-vu/<?=$news->title_none.'.html'?>"><?=$news->{'title_'.$this->language}?></a>
-                </h1>
-                <div class="share-article">
-                    <span class='st_plusone_hcount' displayText='Google +1'></span>
-                    <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
+
+<div class="linktop">
+    <div class="linkdautrang">
+        <h3><a href="<?=$base_url?>" title="Sàn nhà đất">Trang chủ</a></h3>
+    </div>
+    <div class="linkdautrang">
+        <h3><a href="<?=$base_url?>dich-vu" title="Dự án">Dịch vụ</a></h3>
+    </div>
+    <div class="linkdautrang">
+        <h3><a class="linkdautrang-active" href="<?=$base_url?>du-an/<?=$category->name_none.'/'.$news->title_none?>.html" title="<?=$news->title_vietnamese;?>"><?=$news->title_vietnamese;?></a></h3>
+    </div>
+</div>
+
+<div class="main">
+    <div class="left">
+        <div class="chi-tiet-du-an sreenspduan">
+            <div class="sreennoidungchitiet">
+                <div class="sreentieudethitruong">
+                    <h1><?=$news->title_vietnamese;?></h1>
                 </div>
             </div>
-            <span class="line730"></span>
-            <div class="titleconstructioncol2 title-news-de">
-                <h1 style="font-size: 15px"><?=$news->{'title_'.$this->language}?></h1>
-                <p><?=lang('createdDate')?>: (<?=$news->created?>)</p>
+            <div id="divContents">
+                <?=$news->full_vietnamese;?>
             </div>
-            <div class="mainarticle">
-                <?=$news->{'full_'.$this->language};?>
-            </div>
-            <div class="share-to-social">
-                <span class='st_facebook_large' displayText='Facebook'></span>
-                <span class='st_googleplus_large' displayText='Google +'></span>
-                <span class='st_twitter_large' displayText='Tweet'></span>
-                <span class='st_linkedin_large' displayText='LinkedIn'></span>
-                <span class='st_email_large' displayText='Email'></span>
-            </div>
-            <div class="comment-facebook">
-                <div class="fb-comments" data-href="<?=$link?>" data-width="710" data-num-posts="20"></div>
-            </div>
-        </div>
-    </div>
-    <div class="groupcol2">
-        <div class="constructioncol2">
-            <div class="titleconstructioncol2 title-relate-news"><h1><?=lang('relatedNews')?></h1></div>
-            <div class="line730black"></div>
-            <div class="mainarticle newssame">
-                <ul>
-                    <?php foreach($related_news as $row): ?>
-                        <li><a title="<?=$row->{'title_'.$this->language};?>" href="<?=$this->lang->lang() == 'vi' ? $base_url.'vi/dich-vu/'.$row->title_none.'.html' : $base_url.'en/services/'.$row->title_none.'.html'; ?>"><?=$row->{'title_'.$this->language}?></a></li>
+            <div class="sreentag2" >
+                <div class="tag"></div>
+                <p>
+                    <?php foreach($tag as $tagSub): ?>
+                        <a href="<?=$base_url.'tags/'.remove_vn($tagSub)?>"><?=$tagSub;?></a> ,
                     <?php endforeach ?>
-                </ul>
+                </p>
+            </div>
+            <div class="duankhac">
+                <h3>Dự án khác</h3>
+            </div>
+            <div class="sreenduankhac">
+                <?php $i=0; foreach($related_news as $row): $i++;
+                    $cat = new Newscatalogue($row->newscatalogue_id);
+                    ?>
+                    <div class="sreenspkhac1 <?php echo $i%2==0 ? 'sreenspkhac1-right' : ''?>">
+                        <div class="spkhac">
+                            <a href="<?=$base_url?>du-an/<?=$cat->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese?>">
+                                <img src="<?php echo image('img/news/'.$row->image, 'news_123_116') ?>" alt="<?=$row->title_vietnamese?>" />
+                            </a>
+                        </div>
+                        <div class="titleduankhac">
+                            <h4><a href="<?=$base_url?>du-an/<?=$cat->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese?>"><?=$row->title_vietnamese?></a></h4>
+                            <p>Chủ đầu tư: <?=$row->investors?></p>
+                            <p>Vị trí: <?=$row->estatecity->name?></p>
+                        </div>
+                    </div>
+                <?php endforeach; unset($row); ?>
             </div>
         </div>
     </div>
+    <?=$this->load->view('front/project/col-right')?>
 </div>
