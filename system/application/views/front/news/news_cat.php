@@ -1,8 +1,6 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
-
 <div class="linktop">
     <?php $i = 0; foreach($this->newsCate as $row): $i++; ?>
-    <div class="linkdautrang" style="<?php echo $i==1?'margin-left:10px;':''; ?> width:auto; float:left;">
+    <div class="linkdautrang">
         <a class="<?php echo $row->name_none == $this->uri->segment(2, '') ? 'linkdautrang-active' : ''; ?>" href="<?=$base_url?>tin-tuc/<?=$row->name_none?>"><?=$row->name_vietnamese;?></a>
     </div>
     <?php endforeach; unset($row); ?>
@@ -51,11 +49,9 @@
     </div>
 
     <div class="cotright right">
-        <div class="news-right-item">
-            <div class="news-right-title">
-                <p>Tin dự án</p>
-            </div>
-            <div class="news-right-content">
+        <div class="news-right-item boxnoibat">
+            <span class="title-top-box">Tin mới nhất</span>
+            <div class="news-right-content boxnoibat-main">
                 <?php
                 foreach ($newNews as $row):
                 $cat = new Newscatalogue($row->newscatalogue_id);
@@ -63,23 +59,19 @@
                     <div class="sreennoibat">
                         <div class="boxhinhxemnhieu">
                             <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html">
-                                <img src="<?=image('img/news/'.$row->image, 'news_115_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
+                                <img src="<?=image('img/news/'.$row->image, 'news_100_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
                             </a>
                         </div>
-                        <div style="width:140px; float:right;">
-                            <p class="tieudetinxemnhieu">
-                                <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
-                            </p>
+                        <div class="tieudetinxemnhieu">
+                            <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
                         </div>
                     </div>
                 <?php endforeach; unset($row); ?>
             </div>
         </div>
-        <div class="news-right-item">
-            <div class="news-right-title">
-                <p>Tin thị trường</p>
-            </div>
-            <div class="news-right-content">
+        <div class="news-right-item boxnoibat">
+            <span class="title-top-box">Tin thị trường</span>
+            <div class="news-right-content boxnoibat-main">
                 <?php
                 foreach ($newViewMost as $row):
                     $cat = new Newscatalogue($row->newscatalogue_id);
@@ -87,13 +79,11 @@
                     <div class="sreennoibat">
                         <div class="boxhinhxemnhieu">
                             <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html">
-                                <img src="<?=image('img/news/'.$row->image, 'news_115_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
+                                <img src="<?=image('img/news/'.$row->image, 'news_100_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
                             </a>
                         </div>
-                        <div style="width:180px; float:right;">
-                            <p class="tieudetinxemnhieu">
-                                <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
-                            </p>
+                        <div class="tieudetinxemnhieu">
+                            <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
                         </div>
                     </div>
                 <?php endforeach; unset($row); ?>

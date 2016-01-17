@@ -49,10 +49,10 @@
     <div class="boxnoibat">
         <span class="title-top-box">Danh mục dự án</span>
         <?php foreach($this->projectsCate as $row): ?>
-            <div class="sreentinnoibat" style="width:268px; height:30px; float:left; margin-bottom:3px;">
+            <div class="sreentinnoibat">
                 <div class="tinkhacnoibat">
                     <a href="<?=$base_url?>du-an/<?=$row->name_none?>" title="<?=$row->name_vietnamese;?>">
-                        <p style="margin-left: 10px; margin-top:9px; font-weight:bold;">
+                        <p>
                             <?=strlen($row->name_vietnamese) < 50 ? $row->name_vietnamese : cut_string($row->name_vietnamese, 50).'...';?>
                         </p>
                     </a>

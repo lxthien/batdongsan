@@ -1,11 +1,7 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
-
-<div class="linktop" style=" width:600px;height:20px; float:left; margin-top:8px; margin-left:25px; margin-bottom:10px; ">
-    <div class="link" style="margin-left:10px; width:auto; float:left;"><a href="<?=$base_url;?>" title="Sàn nhà đất">Trang chủ</a></div>
-    <p style="float:left; margin-left:5px; margin-right:5px;">-</p>
-    <div class="link" style=" width:auto; float:left;"><a href="<?=$base_url;?>du-an" title="Dự án">Dự án</a></div>
-    <p style="float:left; margin-left:5px; margin-right:5px;">-</p>
-    <div class="link" style=" width:auto; float:left;"><a href="<?=$base_url;?>du-an/<?=$category->name_none;?>" title="<?=$category->name_vietnamese;?>"><?=$category->name_vietnamese;?></a></div>
+<div class="linktop">
+    <div class="linkdautrang"><a href="<?=$base_url;?>" title="Sàn nhà đất">Trang chủ</a></div>
+    <div class="linkdautrang"><a href="<?=$base_url;?>du-an" title="Dự án">Dự án</a></div>
+    <div class="linkdautrang"><a href="<?=$base_url;?>du-an/<?=$category->name_none;?>" title="<?=$category->name_vietnamese;?>"><?=$category->name_vietnamese;?></a></div>
 </div>
 
 <div class="main" style="width:960px;float:left;margin-top:5px;  margin-left:12px; ">

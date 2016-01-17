@@ -32,7 +32,7 @@
                 </p>
             </div>
             <div class="duankhac">
-                <h3>Dự án khác</h3>
+                <h3>Dịch vụ khác</h3>
             </div>
             <div class="sreenduankhac">
                 <?php $i=0; foreach($related_news as $row): $i++;

@@ -61,7 +61,7 @@
 .sreennoidungthitruong .sreentieudethitruong {width:510px; margin-top:0px; }
 .sreennoidungthitruong .date-news {width:510px; margin-bottom:10px; float:left;}
 .sreennoidungthitruong .date-news p {color:#999999; font-size:12px;}
-.sreennoidungthitruong .sreenndtinthitruong {width: 510px; height:70px; float:left;color:#333333; }
+.sreennoidungthitruong .sreenndtinthitruong {width: 510px; height:70px; float:left;color:#333333; text-align: justify;}
 .sreennoidungthitruong .sreenndtinthitruong p {margin-left:0px; font-size:14px; font-weight:lighter;}
 
 .boxhinhthitruonglon img{ width:200px; height:145px; float:left;}
@@ -72,14 +72,15 @@
 .tinkhacthitruongchitiet a:hover { color:#0099FF;width:450px; height:20px; float:left;}
 .m1 {width:31px; height:22px; float:left; margin-right:1px;}
 .m1 img {width:31px; height:22px; float:left;}
-.noidunggioithieu{ width:543px;  margin-top:10px; margin-left:25px; margin-bottom:10px;}
+.noidunggioithieu{}
 .sreennoidungthitruong{width: 510px;}
 .sreenndtinthitruong{ width:360px; float:left;color:#333333;}
 .phantrang{float:right; width:110px; margin-right:8px; height:20px;}
 .sreentinthitruongchitiet{ width:720px; height:100px; margin-left:15px;}
-.sreentieudethitruong{ width:720px; float:left; margin-bottom:5px; margin-top:10px; }
-.noidungthitruongchitiet{ width:720px; margin-top:10px; float:left; margin-bottom:10px; font-size: 14px;}
-.sreentag{width:645px; height:18px; float:left; margin-bottom:10px;}
+.sreentieudethitruong{ width:720px; float:left; margin-bottom: 5px; margin-top: 0px; }
+.sreentieudethitruong h1{color: #bb7700;; font-size: 25px;}
+.noidungthitruongchitiet{width:720px; margin-top:10px; float:left; margin-bottom:10px; font-size: 14px;}
+.sreentag{}
 .sreentag a:hover{text-decoration: underline;}
 .sreentag2{width:723px; min-height:18px; float:left; margin-bottom:5px;}
 .sreentag2 p{float:left; width:623px; margin-left:5px; color: #cccccc;}
@@ -104,8 +105,8 @@
 .titleduankhac a{font-size:14px; font-weight:bold; color:#000000; float:left; width: 212px;}
 .titleduankhac a:hover{font-size:14px; font-weight:bold; color:#bb7700; float:left; width: 212px;}
 .titleduankhac p{float: left; text-align: left; width: 212px; font-size: 12px; padding: 3px 0;}
-.spkhac {width:135px; height:120px; float:left; border:none; margin-right: 8px;}
-.spkhac img { float:left; margin-left:1px; margin-top:1px;}
+.spkhac {width:231px; height:145px; float:left; border:none; margin-right: 0px;}
+.spkhac img { float:left;}
 .sreenduankhac{width: 723px; float:left; margin-bottom:5px;}
 .sreenduankhac .sreenspkhac1{margin-bottom: 15px; width:355px; height:120px; float:left;}
 .sreenduankhac .sreenspkhac1-right{float: right;}
@@ -117,7 +118,7 @@
 .noidungtindoanhnhan a { color:#999999;width:250px; height:15px; float:left; }
 .noidungtindoanhnhan a:hover { color:#0099FF;width:250px; height:15px;float:left;}
 .duannoibat{width:312px;  float:left; border: 1px #CCCCCC  solid; margin-bottom:3px; background-color:#FFFFFF; border-bottom-color:#a2a2a2; border-bottom-width:5px; padding-bottom:5px;}
-.boxtimkiemduan{width:312px; border: 1px #CCCCCC  solid;float:left; border-bottom-color:#999999; border-bottom-width:5px; margin-bottom:3px; background-color:#FFFFFF;}
+.boxtimkiemduan{border: 1px #CCCCCC solid; float:left; background-color:#FFFFFF;}
 .timkiembduan a { background:url(../timkiem2.png); width:100px; height:34px; float:left; margin-bottom:-10px;}
 .timkiembduan a:hover { background:url(../timkiem2.png); width:100px; height:34px; float:left;margin-bottom:-10px;}
 .tieudeduannoibat a{ width:125px; height:10px; float:left;color:#0078cc; margin-top:4px;font-size:13px; margin-bottom:3px;font-weight:bold;}

@@ -70,6 +70,9 @@ $config["image_sizes"]["news_228_200"] = array(228, 200);
 $config["image_sizes"]["news_230_155"] = array(230, 155);
 $config["image_sizes"]["news_575_373"] = array(575, 373);
 $config["image_sizes"]["news_425_165"] = array(425, 165);
+$config["image_sizes"]["news_200_145"] = array(200, 145);
+$config["image_sizes"]["news_231_145"] = array(231, 145);
+$config["image_sizes"]["news_100_70"] = array(100, 70);
 
 $config["image_sizes"]["slide_580_380"] = array(580, 380);
 $config["image_sizes"]["slide_640_450"] = array(640, 450);

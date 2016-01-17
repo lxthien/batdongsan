@@ -1,7 +1,6 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
-
 <div class="linktop">
-
+    <div class="linkdautrang"><a href="<?=$base_url;?>" title="Trang chủ">Trang chủ</a></div>
+    <div class="linkdautrang"><a href="<?=$base_url.$category->name_none;?>" title="<?php echo $category->name_vietnamese; ?>"><?php echo $category->name_vietnamese; ?></a></div>
 </div>
 
 <div class="main main-tin-tuc">
@@ -25,13 +24,9 @@
                             </a>
                         </div>
                     </div>
-                    <div class="date-news">
-                        <p>Cập nhật: <?=get_date_from_sql($row->created);?></p>
-                    </div>
+                    <div class="date-news"><p>Cập nhật: <?=get_date_from_sql($row->updated);?></p></div>
                     <div class="sreenndtinthitruong">
-                        <p>
-                            <?=strlen($row->short_vietnamese) < 300 ? $row->short_vietnamese: cut_string($row->short_vietnamese, 300).'...';?>
-                        </p>
+                        <p><?=strlen($row->short_vietnamese) < 300 ? $row->short_vietnamese: cut_string($row->short_vietnamese, 300).'...';?></p>
                     </div>
                 </div>
             </div>
@@ -59,7 +54,7 @@
                     <div class="sreennoibat">
                         <div class="boxhinhxemnhieu">
                             <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html">
-                                <img src="<?=image('img/news/'.$row->image, 'news_115_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
+                                <img src="<?=image('img/news/'.$row->image, 'news_200_145');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
                             </a>
                         </div>
                         <div style="width:140px; float:right;">

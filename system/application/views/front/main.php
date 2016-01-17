@@ -20,8 +20,9 @@
 <meta name="revisit-after" content="1 days"/>
 
 
-<link href="<?=$base_url;?>images/css/style.css?v=100" rel="stylesheet" type="text/css" />
-<link href="<?=$base_url;?>images/css/styles.css?v=100" rel="stylesheet" type="text/css" />
+<link href="<?php echo $base_url;?>images/css/style.css?v=100" rel="stylesheet" type="text/css" />
+<link href="<?php echo $base_url;?>images/css/style-new-282015.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $base_url;?>images/css/styles.css?v=100" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="<?=$base_url;?>favicon.png" />
 <!-- Begin add jquery and jquery ui to website -->
 <script type="text/javascript" src="<?=$base_url?>images/js/jquery-1.7.1.min.js"></script>
@@ -51,8 +52,8 @@
 <!--facy box-->
 
 </head>
-<body <?php echo $this->router->fetch_class() == "home" ? 'class="home-page"' : 'page'; ?>>
-  <?php if($this->router->fetch_class() == "home"): ?>
+<body <?php echo $this->menu_active == "home" ? 'class="home-page"' : 'page'; ?>>
+  <?php if($this->menu_active == "home"): ?>
     <?php $this->load->view($view);?>
   <?php else: ?>
     <div class="wrapper wrapper-2">

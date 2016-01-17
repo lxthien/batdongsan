@@ -91,16 +91,16 @@
 
 <div class="linktop" style="width:600px;height:20px; float:left; margin-top:8px; margin-left:5px; margin-bottom:10px;">
     <div class="linkdautrang"><a href="<?=$base_url?>" title="Sàn nhà đất">Trang chủ</a></div>
-    <div class="linkdautrang"><a  class="linkdautrang-active" href="<?=$base_url?>lien-he.html" title="Liên hệ">Liên hệ với SotayNhadat.vn</a></div>
+    <div class="linkdautrang"><a class="linkdautrang-active" href="<?=$base_url?>lien-he.html" title="Liên hệ">Liên hệ với SotayNhadat.vn</a></div>
 </div>
 
 <!--main-->
-<div class="main" style="width:960px;float:left;margin-top:5px;  margin-left:12px; ">
+<div class="main">
     <!--left-->
     <div class="left">
         <!--lien he-->
         <div class="hotnew">
-            <div class="sreentieudethitruong" style="width: 640px;">
+            <div class="sreentieudethitruong">
                 <div class="tieudethitruongchitiet">
                     <h1 style="font-size: 25px; color:#051c94;">Liên hệ - Góp ý</h1>
                 </div>
@@ -202,34 +202,8 @@
     <!--end left-->
     <!-- right-->
     <div class="right">
-        <!-- tin xem nhieu-->
-        <!--<div class="boxnoibat">
-            <p  style="font-size:16px; font-weight:bold; color:#028287; margin-top:10px; margin-left:25px; float:left;">Tin xem nhi&#7873;u </p>
-            <div class="line20"></div>
-            <div class="sreentinnoibat" style="width:312px; height:30px; float:left; margin-bottom:3px;">
-                <div class="tinkhacnoibat">
-                    <a href=""><p style="margin-left:25px; margin-top:9px; font-weight:bold;">B&aacute;n nh&agrave; &#7903; Qu&#7853;n T&acirc;n B&igrave;nh gi&aacute; r&#7867; b&#7845;t ng&#7901;</p>
-                    </a>
-                </div>
-            </div>
-            <div class="line3"></div>
-            <div class="sreentinnoibat" style="width:312px; height:30px; float:left; margin-bottom:3px;">
-                <div class="tinkhacnoibat">
-                    <a href=""><p style="margin-left:25px; margin-top:9px; font-weight:bold;">B&aacute;n nh&agrave; &#7903; Qu&#7853;n T&acirc;n B&igrave;nh gi&aacute; r&#7867; b&#7845;t ng&#7901;</p>
-                    </a>
-                </div>
-            </div>
-            <div class="line3"></div>
-            <div class="sreentinnoibat" style="width:312px; height:30px; float:left; margin-bottom:3px;">
-                <div class="tinkhacnoibat">
-                    <a href=""><p style="margin-left:25px; margin-top:9px; font-weight:bold;">B&aacute;n nh&agrave; &#7903; Qu&#7853;n T&acirc;n B&igrave;nh gi&aacute; r&#7867; b&#7845;t ng&#7901;</p>
-                    </a>
-                </div>
-            </div>
-        </div>-->
-        <!-- end tin xem nhieu-->
         <!-- tim kiem bds-->
-        <div class="boxtimkiembds" style="margin-bottom: 10px;">
+        <div class="boxtimkiembds">
             <span class="title-top-box">Tìm kiếm bất động sản</span>
             <div class="sreenboxseach2" style=" width:310px;  margin-bottom:20px; float:left;">
                 <form action="<?=$base_url?>tim-kiem-bat-dong-san" method="post">
@@ -248,17 +222,6 @@
                     <div class="sreenseachtimkiembds1" style="width:310px; height:25px; float:left; margin-bottom:3px;">
                         <select name="estatetype_id" id="estatetype_id" size="1" style="float:left; margin-right:5px; margin-left:8px; width:140px;  height:23px; margin-top:10px; margin-bottom:5px;  border:1px  #CCCCCC solid;">
                             <option value="" selected="selected">Chọn Loại nhà đất</option>
-                            <?php /*foreach($this->estateCatalogues as $row):
-                                $estatetype = new Estatetype();
-                                $estatetype->order_by('position', 'asc');
-                                $estatetype->where('estatecatalogue_id', $row->id);
-                                $estatetype->get();
-                                */?><!--
-                                <option disabled="disabled" value=""><?/*=$row->name;*/?></option>
-                                <?php /*foreach($estatetype as $rowType): */?>
-                                <option <?php /*if($object->estatetype_id == $rowType->id) echo 'selected="selected"'; */?> value="<?/*=$rowType->id;*/?>">..........<?/*=$rowType->name;*/?></option>
-                            <?php /*endforeach; unset($rowType); */?>
-                            --><?php //endforeach; unset($row); ?>
                         </select>
                         <select name="estatecity_id" id="estatecity_id" size="1" style="float:left; width:140px; margin-right:5px;  height:23px; margin-bottom:5px; margin-top:10px;  border:1px  #CCCCCC solid;">
                             <option value="">Chọn Tỉnh/TP</option>
@@ -300,7 +263,5 @@
         <?php echo $this->load->view('front/includes/adv_right'); ?>
         <!-- end qc-->
     </div>
-    <!--end right-->
-    <?=$this->load->view('front/includes/footer')?>
 </div>
 <!--end main-->

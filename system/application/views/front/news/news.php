@@ -43,166 +43,29 @@
         </div>
 
         <div class="list-news-cat">
+            <?php foreach($this->newsCate as $rowCat): ?>
+            <?php
+                $news = getNewsByCategory($rowCat->id);
+            ?>
             <div class="list-news-cat-item fl">
                 <div class="title-top-vip fl">
-                    <h1>Tin dự án</h1>
+                    <h1><?=$rowCat->name_vietnamese;?></h1>
                 </div>
                 <div class="list-news-cats fl">
+                    <?php $i=0; foreach($news as $row): $i++; ?>
                     <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
+                        <a href="<?=$base_url.'tin-tuc/'.$rowCat->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title_vietnamese; ?>">
+                            <img src="<?php echo image('img/news/'.$row->image, 'news_240_155') ?>" alt="<?php echo $row->title_vietnamese; ?>">
                         </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
+                        <a class="tool-tip-title" href="<?=$base_url.'tin-tuc/'.$rowCat->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title_vietnamese; ?>">
+                            <span><?php echo $row->title_vietnamese; ?></span>
                         </a>
                     </div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="line"></div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
+                    <?php if ($i==2):?><div class="line"></div><?php endif; ?>
+                    <?php endforeach; unset($row); ?>
                 </div>
             </div>
-            <div class="list-news-cat-item fl">
-                <div class="title-top-vip fl">
-                    <h1>Tin dự án</h1>
-                </div>
-                <div class="list-news-cats fl">
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="line"></div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="list-news-cat-item fl">
-                <div class="title-top-vip fl">
-                    <h1>Tin dự án</h1>
-                </div>
-                <div class="list-news-cats fl">
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="line"></div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="list-news-cat-item fl">
-                <div class="title-top-vip fl">
-                    <h1>Tin dự án</h1>
-                </div>
-                <div class="list-news-cats fl">
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="line"></div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                    <div class="list-news-cats-item">
-                        <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
-                        </a>
-                        <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
-                            <span><?php echo $row->title; ?></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; unset($row); ?>
         </div>
     </div>
 </div>

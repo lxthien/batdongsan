@@ -1,4 +1,17 @@
 <?php
+
+function getNewsByCategory($categoryID) {
+    $CI =& get_instance();
+
+    $cat_news = new Article();
+    $cat_news->where(array('recycle'=>0));
+    $cat_news->where('newscatalogue_id', $categoryID);
+    $cat_news->order_by('created','desc');
+    $cat_news->get(4);
+    
+    return $cat_news;
+}
+
 function count_static_by_area($url_type, $url_district, $url_areas){
     $CI =& get_instance();
 

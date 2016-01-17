@@ -13,13 +13,32 @@
                 </li>
                 <li><h2><a href="">Nhà đất cho thuê</a></h2>
                     <ul>
-                        <li><a href="">Bán nhà ở</a></li>
-                        <li><a href="">Bán nhà xưởng</a></li>
+                        <?php foreach($this->typeHouseLease as $row): ?>
+                        <li><a href="<?=$base_url?>nha-dat-cho-thue/<?=$row->name_none;?>"><?=$row->name;?></a></li>
+                        <?php endforeach; unset($row); ?>
                     </ul>
                 </li>
-                <li><h2><a href="<?php echo $base_url; ?>du-an">Dự án</a></h2></li>
-                <li><h2><a href="<?php echo $base_url; ?>tin-tuc">Tin tức</a></h2></li>
-                <li><h2><a href="<?php echo $base_url; ?>cam-nang">Cẩm nâng</a></h2></li>
+                <li><h2><a href="<?php echo $base_url; ?>du-an">Dự án</a></h2>
+                    <ul>
+                        <?php foreach($this->projectsCate as $row): ?>
+                        <li><a href="<?=$base_url?>tin-tuc/<?=$row->name_none;?>"><?=$row->name_vietnamese;?></a></li>
+                        <?php endforeach; unset($row); ?>
+                    </ul>
+                </li>
+                <li><h2><a href="<?php echo $base_url; ?>tin-tuc">Tin tức</a></h2>
+                    <ul>
+                        <?php foreach($this->newsCate as $row): ?>
+                        <li><a href="<?=$base_url?>tin-tuc/<?=$row->name_none;?>"><?=$row->name_vietnamese;?></a></li>
+                        <?php endforeach; unset($row); ?>
+                    </ul>
+                </li>
+                <li><h2><a href="<?php echo $base_url; ?>cam-nang">Cẩm nâng</a></h2>
+                    <ul>
+                        <?php foreach($this->guideCate as $row):?>
+                        <li><a href="<?=$base_url?>cam-nang/<?=$row->name_none;?>"><?=$row->name_vietnamese;?></a></li>
+                        <?php endforeach; unset($row); ?>
+                    </ul>
+                </li>
                 <li><h2><a href="<?php echo $base_url; ?>lien-he.html">Liên hệ</a></h2></li>
             </ul>
         </div>
@@ -63,6 +82,20 @@
                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                 <a href="">Chi tiết</a>
             </div>
+        </div>
+    </div>
+    <div class="home-search">
+        <div class="search-simple">
+            <form id="search-simple">
+                <input type="text" placeholder="Nhập theo từ khóa ... " />
+                <button type="submit">Tìm kiếm</button>
+            </form>
+        </div>
+        <div class="search-advanced">
+            <form id="search-advanced">
+                <input type="text" placeholder="Nhập theo từ khóa ... " />
+                <button type="submit">Tìm kiếm</button>
+            </form>
         </div>
     </div>
 </div>

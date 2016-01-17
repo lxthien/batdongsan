@@ -48,7 +48,7 @@ body.home-page{
 	background: #bb7700;
 }
 .home-nav li ul{
-	position: absolute; background: #0e8b01; display: none; width: 200%;
+	position: absolute; background: #0e8b01; display: none; width: 290px; z-index: 9999;
 }
 .home-nav ul li:hover ul{
 	display: block;
@@ -60,10 +60,10 @@ body.home-page{
 	width: 100%;
 }
 .home-nav ul li a {
-	text-transform: uppercase; color: #ffffff; line-height: 40px; padding: 0 20px;
+	text-transform: uppercase; color: #ffffff; line-height: 40px; padding: 0 30px;
 }
 .home-nav ul li a.icon-home {
-	display: block; line-height: 40px; padding: 0 5px;
+	display: block; line-height: 40px; padding: 0 8px;
 }
 .home-nav ul li a.icon-home img {
 	width: 30px; vertical-align: middle; margin-top: -5px;
@@ -89,7 +89,7 @@ h3.home-title-services{
 	text-transform: uppercase; font-size: 15px; color: #0e8b01; text-align: center;
 }
 .home-service-item h1 a {
-	color: #0e8b01; padding: 25px 10px; display: block;
+	color: #0e8b01; padding: 20px 10px; display: block;
 }
 .home-service-item h1 a:hover {
 	background: #bb7700; color: #ffffff;
@@ -109,6 +109,44 @@ h3.home-title-services{
 }
 
 
+.home-search {
+	margin-bottom: 100px;
+	width: 1030px; float: left; height: 35px; background: url("../assets/opacity.png") repeat-x;
+}
+form#search-simple input[type="text"] {
+	background: transparent; border: none; color: white; width: 690px; height: 30px; line-height: 30px; padding: 2px 0 3px 40px;
+	font-size: 14px; background-image: url("../assets/icon-search.png"); background-repeat: no-repeat; background-size: 28px;
+	background-position: 5px 4px; 
+}
+form#search-simple input[type="text"]::-webkit-input-placeholder { /* Safari, Chrome and Opera */
+  color: white;
+}
+
+form#search-simple input[type="text"]:-moz-placeholder { /* Firefox 18- */
+  color: white;
+}
+
+form#search-simple input[type="text"]::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+}
+
+form#search-simple input[type="text"]:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+}
+
+form#search-simple input[type="text"]::-ms-input-placeholder { /* Edge */
+  color: white;
+}
+
+form#search-simple input[type="text"]:placeholder-shown { /* Standard one last! */
+  color: white;
+}
+form#search-simple button {
+	background: #bb7700; text-transform: uppercase; color: #ffffff; border: none; width: 300px; float: right; height: 35px;
+	font-size: 18px; cursor: pointer;
+}
+
+
 /**
  *
  * Nhà đất cấp 1
@@ -121,7 +159,7 @@ h3.home-title-services{
 }
 .title-top-vip h1{
 	text-transform: uppercase; font-size: 18px; background: #bb7700; display: inline-block;
-    padding: 3px 15px; line-height: 23px; border-top-left-radius: 3px; border-top-right-radius: 3px; color: #ffffff;
+    padding: 3px 15px; line-height: 23px; border-top-left-radius: 3px; border-top-right-radius: 3px; color: #ffffff; font-weight: 500;
 }
 .left .list-top-vip {
 	width: 723px; border: 1px solid #cccccc; padding: 10px;
@@ -273,7 +311,7 @@ h3.home-title-services{
 	padding: 5px; width: 495px; border: 1px solid #cccccc;
 }
 .list-news-cat-item .list-news-cats .list-news-cats-item {
-	float: left; width: 240px; position: relative;
+	float: left; width: 240px; position: relative; height: 155px;
 }
 .list-news-cat-item .list-news-cats .list-news-cats-item img {
 	width: 240px; height: 155px;
@@ -294,6 +332,54 @@ h3.home-title-services{
 }
 
 /*Tin tức col right*/
+
+.news-detail {
+	border: 1px solid #cccccc; padding: 10px;
+}
+.news-detail h1#ctl27_ctl01_divSummary {
+	padding: 5px 0; font-size: 25px; color: #bb7700;
+}
+.news-detail p.date-time {
+	color: #cccccc; font-style: italic;
+}
+.news-detail .nutmangxahoi {
+	width: 723px; height:25px; margin-bottom:10px; margin-top:10px;
+}
+.news-detail #divContents {
+	width: 723px; font-size:14px
+}
+.news-detail #divContents p {
+	line-height: 18px; margin-bottom: 18px;
+}
+.news-detail .sreentag {
+	width: 723px; height:18px; margin-bottom:10px;
+}
+.news-detail .sreentag p a {
+	display: inline-block;
+}
+.news-detail .news-related {
+	width: 723px;
+}
+.news-detail .news-related h3.title-news-related {
+	text-transform: uppercase; color: #0e8b01; margin-bottom: 10px; border-bottom: 1px solid #555555; font-size: 17px; line-height: 18px;
+}
+.news-detail .news-related .sreenspkhac {
+	float: left; width: 231px; margin-right: 15px; margin-bottom: 15px;
+}
+.news-detail .news-related .sreenspkhac.sreenspkhac-three {
+	margin-right: 0px;
+}
+.news-detail .news-related .sreenspkhac .titleduankhac {
+    height: 50px; float: left; width: 231px; text-align: justify;
+}
+.news-detail .news-related .sreenspkhac .titleduankhac a {
+    width: 231px; font-weight: 500;
+}
+.news-detail .news-related .line{
+	border-bottom: 1px solid #afafaf; width: 743px; margin: 10px -10px;
+}
+
+
 .news-right-item {
 	border: 1px solid #cccccc; width: 268px; margin-bottom: 15px; float: left;
 }
@@ -308,6 +394,28 @@ h3.home-title-services{
 }
 .news-right-item .news-right-content .sreennoibat {
 	width: 258px; float: left padding: 5px;
+}
+
+.right .boxnoibat-main {
+	float: left; padding: 10px 5px;
+}
+.right .boxnoibat-main .sreennoibat {
+	float: left; margin-bottom: 10px; width: 257px;
+}
+.right .boxnoibat-main .sreennoibat .boxhinhxemnhieu {
+	float: left; width: 100px;
+}
+.right .boxnoibat-main .sreennoibat .boxhinhxemnhieu img {
+	width: 100px;
+}
+.right .boxnoibat-main .sreennoibat .tieudetinxemnhieu {
+	float: right; width: 155px;
+}
+.right .boxnoibat-main .sreennoibat .tieudetinxemnhieu a {
+	font-weight: 500; text-align: justify; color: #000000; font-size: 14px;
+}
+.right .boxnoibat-main .sreennoibat .tieudetinxemnhieu a:hover {
+	color: #0e8b01;
 }
 
 
@@ -403,7 +511,35 @@ h3.home-title-services{
 
 
 
+/**
+ * Css for sitemap
+ *
+ */
+.sitemap-main {
+	border: none;
+}
+.sitemap-main .noidunggioithieu {
+	width: 723px; padding-bottom: 10px; float: left;
+}
+.sitemap-main .noidunggioithieu .linksite2 {
+	margin-bottom:10px; font-size:15px;
+}
+.sitemap-main .noidunggioithieu .linksite2 a:hover {
+	color: #0e8b01;
+}
+.sitemap-main .noidunggioithieu .linksite2 p {
+	width: 100%; height:15px;
+}
 
+.sitemap-main .noidunggioithieu .linksite {
+	margin-left: 25px; margin-bottom: 5px; font-size:14px;
+}
+.sitemap-main .noidunggioithieu .linksite p {
+	width: 100%; height:15px;
+}
+.sitemap-main .noidunggioithieu .linksite a:hover  {
+	color: #0e8b01;
+}
 
 
 
@@ -419,7 +555,7 @@ h3.home-title-services{
 	width: 25%; float: left;
 }
 .footer-items .footer-item h5{
-	font-size: 18px; border-bottom: 1px solid #cccccc; text-transform: uppercase; width: 95%; color: #555555; padding-top: 8px; font-weight: 500;
+	font-size: 18px; border-bottom: 1px solid #cccccc; text-transform: uppercase; width: 95%; color: #725a53; padding-top: 8px; font-weight: 500;
 }
 .footer-items .footer-item.address img{
 	width: 95%;
@@ -428,15 +564,24 @@ h3.home-title-services{
 	padding: 2px 0; font-size: 13px;
 }
 .footer-items .footer-item.email-signup p{
-	padding: 5px 0; font-size: 11px; color: #696868; font-family: "Tahoma"; text-align: justify; width: 95%;
+	padding: 5px 0; font-size: 11px; color: #847f76; font-family: "Tahoma"; text-align: justify; width: 95%;
+}
+.footer-items .footer-item.social .social-main {
+	width: 95%; text-align: center;
+}
+.footer-items .footer-item.social .social-main a {
+	display: inline-block; padding: 5px;
 }
 .footer-items .footer-item.static p{
-	padding: 5px 0 0px; font-size: 15px; color: #696868; font-family: "Tahoma";
+	padding: 5px 0 0px; font-size: 15px; color: #726d6d; font-family: "Tahoma";
 }
 
 .sreenadd {
-	width:1030px; background-color:#ebebeb; float:left; text-align: center;
+	width:1030px; background-color:#d1d1d1; float:left; text-align: center; position: relative;
 }
 .sreenadd p {
 	padding: 10px 0; font-size: 15px; font-family: "Tahoma"; color: #000000;
+}
+.sreenadd a.back-to-top {
+	position: absolute; top: -20px; right: 0px;
 }

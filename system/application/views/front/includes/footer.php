@@ -40,11 +40,11 @@
     <div class="footer-item social">
         <h5>Liên kết với chúng tôi</h5>
         <div class="social-main">
-            <a href=""><img src=""></a>
-            <a href=""><img src=""></a>
-            <a href=""><img src=""></a>
-            <a href=""><img src=""></a>
-            <a href=""><img src=""></a>
+            <a href=""><img src="<?php echo $base_url ?>images/assets/icon-facebook.png"></a>
+            <a href=""><img src="<?php echo $base_url ?>images/assets/icon-googleplus.png"></a>
+            <a href=""><img src="<?php echo $base_url ?>images/assets/icon-youtube.png"></a>
+            <a href=""><img src="<?php echo $base_url ?>images/assets/icon-twiter.png"></a>
+            <a href=""><img src="<?php echo $base_url ?>images/assets/icon-vnexpress.png"></a>
         </div>
     </div>
     <div class="footer-item static">
@@ -56,6 +56,7 @@
 <!-- link foter-->
 <div class="sreenadd">
     <p>Copyright (c) 2015 GiaThinhLand. Ghi rõ nguồn gốc khi phát hành thông tin tại website này</p>
+    <a href="javascript:void(0)" class="back-to-top"><img src="<?php echo $base_url ?>images/assets/icon-back-to-top.png"></a>
 </div>
 <!-- end link foter-->
 <!-- foter-->

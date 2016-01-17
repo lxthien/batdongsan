@@ -201,7 +201,7 @@ class Home extends MY_Controller
 
         $this->page_title = $news->title_vietnamese." - ".$this->page_title;
 
-        $this->menu_active = 'home';
+        $this->menu_active = 'about-us';
         $dis['base_url']=base_url();
         $dis['view']='front/single-page';
 		$this->viewfront($dis);
@@ -240,7 +240,7 @@ class Home extends MY_Controller
     }
 
     function sitemap(){
-        $this->menu_active = 'home';
+        $this->menu_active = 'about-us';
         $dis['base_url']=base_url();
         $dis['view']='front/sitemap';
         $this->viewfront($dis);

@@ -1,26 +1,36 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
-
-<div class="linktop" style="width: 926px;height:20px; float:left; margin-top: 8px; margin-left: 5px;">
-    <div class="linkdautrang" style="width:auto; float:left;">
+<div class="linktop">
+    <div class="linkdautrang">
         <h3 style="font-weight: normal"><a href="<?=$base_url?>" title="Sàn nhà đất">Trang chủ</a></h3>
     </div>
-    <div class="linkdautrang" style="width:auto; float:left;">
+    <div class="linkdautrang">
         <h3 style="font-weight: normal"><a href="<?=$base_url?>du-an" title="Dự án">Dự án</a></h3>
     </div>
-    <div class="linkdautrang" style="width:auto; float:left;">
+    <div class="linkdautrang">
         <h3 style="font-weight: normal"><a href="<?=$base_url?>du-an/<?=$category->name_none?>" title="<?=$category->name_vietnamese?>"><?=$category->name_vietnamese?></a></h3>
     </div>
-    <div class="linkdautrang" style=" width:auto; float:left;">
+    <div class="linkdautrang">
         <h3 style="font-weight: normal"><a class="linkdautrang-active" href="<?=$base_url?>du-an/<?=$category->name_none.'/'.$news->title_none?>.html" title="<?=$news->title_vietnamese;?>"><?=$news->title_vietnamese;?></a></h3>
     </div>
 </div>
 
 <div class="main">
     <div class="left">
-        <div class="chi-tiet-du-an sreenspduan">
-            <div class="sreennoidungchitiet">
-                <div class="sreentieudethitruong">
-                    <h1><?=$news->title_vietnamese;?></h1>
+        <div class="chi-tiet-du-an sreenspduan news-detail">
+            <h1 id="ctl27_ctl01_divSummary"><?=$news->title_vietnamese;?></h1>
+            <p class="date-time">Cập nhật <?=get_date_from_sql($news->created);?></p>
+            <div class="nutmangxahoi">
+                <div style="float: left;">
+                    <!-- Button like facebook -->
+                    <div class="fb-like" data-href="<?php echo $this->url; ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                    <!-- Button like facebook -->
+                    <!-- Place this tag where you want the +1 button to render. -->
+                    <div class="g-plusone" data-size="medium" data-href="<?php echo $this->url; ?>"></div>
+                    <!-- Place this tag where you want the +1 button to render. -->
+                    <!-- Button share facebook -->
+                    <div class="fb-share-button" data-href="<?php echo $this->url; ?>" data-layout="button"></div>
+                    <!-- Button share facebook -->
+                    <!-- Place this tag where you want the share button to render. -->
+                    <div class="g-plus" data-action="share" data-annotation="bubble" data-href="<?php echo $this->url; ?>"></div>
                 </div>
             </div>
             <div id="divContents">
