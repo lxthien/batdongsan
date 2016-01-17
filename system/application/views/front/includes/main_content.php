@@ -86,15 +86,59 @@
     </div>
     <div class="home-search">
         <div class="search-simple">
-            <form id="search-simple">
-                <input type="text" placeholder="Nhập theo từ khóa ... " />
+            <form id="search-simple" method="post" action="<?php echo $base_url.'tim-kiem'; ?>">
+                <input type="text" placeholder="Nhập theo từ khóa ... " name="value" />
                 <button type="submit">Tìm kiếm</button>
             </form>
         </div>
         <div class="search-advanced">
-            <form id="search-advanced">
-                <input type="text" placeholder="Nhập theo từ khóa ... " />
-                <button type="submit">Tìm kiếm</button>
+            <h4 class="title-advanced">Tìm kiếm nâng cao</h4>
+            <form id="search-advanced" action="<?=$base_url?>tim-kiem-bat-dong-san" method="post">
+                <div class="boxseach">
+                    <label><input type="radio" name="estatecatalogue_id" value="1"> Mua bán</label>
+                    <label><input type="radio" name="estatecatalogue_id" value="2"> Mua bán</label>
+                </div>
+                <div class="formtimkiem">
+                    <select name="estatetype_id" id="estatetype_id">
+                        <option value="" style="margin-top:2px;">Chọn Loại nhà đất</option>
+                    </select>
+                </div>
+                <div class="formtimkiem">
+                    <select name="estatecity_id" id="estatecity_id" class="estatecity_id">
+                        <option value="" selected="selected" style="margin-top:2px;">Chọn Tỉnh/TP</option>
+                        <?php foreach($estateProvince as $row): ?>
+                            <option value="<?=$row->id?>"><?=$row->name?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="formtimkiem">
+                    <select name="estatedistrict_id" id="estatedistrict_id">
+                        <option value="">Chọn Quận/Huyện</option>
+                    </select>
+                </div>
+                <div class="formtimkiem">
+                    <select name="estatearea_id" id="estatearea_id">
+                        <option value="" selected="selected">Chọn Diện tích</option>
+                        <option value="-1">Không xác định</option>
+                        <?php foreach($this->estateareas as $row): ?>
+                            <option <?php if($object->estatecity_id == $row->id) echo 'selected="selected"'; ?> value="<?=$row->id?>"><?=$row->label;?></option>
+                        <?php endforeach; unset($row); ?>
+                    </select>
+                </div>
+                <div class="formtimkiem">
+                    <select name="estateprice_id" id="estateprice_id">
+                        <option value="" selected="selected">Chọn Mức giá</option>
+                    </select>
+                </div>
+                <div class="formtimkiem">
+                    <select name="estatedirection_id" id="estatedirection_id">
+                        <option value="" selected="selected">Chọn Hướng nhà</option>
+                        <?php foreach($this->estateDirection as $row): ?>
+                            <option value="<?=$row->id?>"><?=$row->name;?></option>
+                        <?php endforeach; unset($row); ?>
+                    </select>
+                </div>
+                <input class="submit-top-main" type="submit" value="Tìm ngay"/>
             </form>
         </div>
     </div>

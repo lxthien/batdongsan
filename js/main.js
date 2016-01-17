@@ -1,8 +1,9 @@
 $(document).ready(function(){
     /*with localhost*/
-    //var base_url = 'http://localhost/sotaynhadat';
+    var base_url = 'http://localhost/batdongsan/';
     /*with host*/
-    var base_url = getBase_url();
+    //var base_url = getBase_url();
+    
     $("a#inlogging").fancybox({
         'transitionIn'	: 'none',
         'transitionOut'	: 'none'

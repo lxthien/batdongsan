@@ -1,17 +1,9 @@
-<div class="linktop" style=" width:600px;height:20px; float:left; margin-top:8px; margin-left:25px; margin-bottom:10px; ">
-    <div class="link" style="margin-left:10px; width:auto; float:left;">
+<div class="linktop">
+    <div class="linkdautrang">
         <a href="<?=$base_url;?>" title="Sàn nhà đất">Trang chủ</a>
     </div>
 </div>
-<!--main-->
-<style type="text/css">
-    .hotnew{
-        border-right: none;
-        border-left: none;
-        border-bottom: none;
-    }
-</style>
-<div class="main" style="width:960px;float:left;margin-top:5px; margin-left:12px; ">
+<div class="main">
     <!--left-->
     <div class="left">
         <!--tin tuc-->
@@ -101,5 +93,4 @@
         </div>
         <?=$this->load->view('front/news/col-right')?>
     </div>
-    <?=$this->load->view('front/includes/footer')?>
 </div>

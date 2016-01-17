@@ -171,6 +171,7 @@ class Home extends MY_Controller
         $keyword = explode(' ', $this->page_title);
         $this->page_keyword = implode(',', $keyword);
 
+        $this->menu_active = 'search';
         $dis['base_url']=base_url();
         $dis['view']='front/includes/search_new';
         $this->viewfront($dis);
