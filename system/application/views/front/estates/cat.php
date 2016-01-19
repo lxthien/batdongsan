@@ -7,7 +7,7 @@
 </div>
 <div class="cl"></div>
 <!--main-->
-<div class="main" style="width:960px;float:left;margin-top:5px; margin-left:12px; ">
+<div class="main">
     <!--left-->
     <div class="left estates">
         <div class="hotnew">

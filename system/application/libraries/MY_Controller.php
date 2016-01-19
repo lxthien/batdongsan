@@ -45,9 +45,9 @@ class MY_Controller extends Controller{
         $this->redirectList();
         
         
-         $cauhinh= new cauhinh();
-         $cauhinh->get();
-         $this->cauhinh=$cauhinh;
+        $cauhinh= new cauhinh();
+        $cauhinh->get();
+        $this->cauhinh=$cauhinh;
 		if($this->uri->segment(1,"")=="admin")
 		{
             $this->logged_in_user=$this->_get_user();  

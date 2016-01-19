@@ -49,8 +49,8 @@
     </div>
     <div class="footer-item static">
         <h5>Thống kê truy cập</h5>
-        <p>Đang online: 5</p>
-        <p>Đã online: 66735</p>
+        <p>Đang online: <?php echo $this->hit_counter->getUsersOnlineCount();?></p>
+        <p>Đã online: <?php echo $this->hit_counter->getTotalVisitCount();?></p>
     </div>
 </div>
 <!-- link foter-->

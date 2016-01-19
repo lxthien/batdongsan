@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
-
 <div class="linktop">
     <div class="linkdautrang"><a href="<?php echo $base_url; ?>">Trang chủ</a></div>
     <div class="linkdautrang"><a href="<?=$base_url?>du-an">Dự án</a></div>
@@ -27,11 +25,10 @@
 
         <div class="top-vip">
             <div class="title-top-vip fl">
-                <h1>Tin bán nổi bật</h1>
+                <h1>Dự án Vũng Tàu</h1>
             </div>
-
             <div class="sreenspduan">
-                <?php $i=0; foreach($projectHot as $row): $i++;
+                <?php $i=0; foreach($projectVT as $row): $i++;
                     $cat = new Newscatalogue($row->newscatalogue_id);
                     ?>
                     <div class="sreensp1 <?php echo $i%3==0 ? 'last' : ''; ?>">
@@ -51,11 +48,11 @@
             </div>
 
             <div class="title-top-vip fl">
-                <h1>Tin bán nổi bật</h1>
+                <h1>Dự án được xem nhiều</h1>
             </div>
 
             <div class="sreenspduan">
-                <?php $i=0; foreach($projectHot as $row): $i++;
+                <?php $i=0; foreach($projectViewMost as $row): $i++;
                     $cat = new Newscatalogue($row->newscatalogue_id);
                     ?>
                     <div class="sreensp1 <?php echo $i%3==0 ? 'last' : ''; ?>">

@@ -96,8 +96,7 @@
 .sreenthongtinnhadat>div:nth-child(odd){background-color:#f6f6f6;}
 .danhmucduan{width:343px;  float:left; margin-left:3px;border: 1px #CCCCCC  solid; margin-bottom:3px; background-color:#FFFFFF; border-bottom-color:#028287; border-bottom-width:5px; padding-bottom:5px;}
 
-.spduan{width:202px; height:106px; float:left; margin-bottom:5px;}
-.spduan img { float:left; width:202px; height:106px;}
+.spduan{width:202px; height:106px; float:left; margin-bottom:0px;}
 
 .titleduan a{ font-size:14px; font-weight:bold; color:#061c93; float:left; width:202px; margin-top:5px;}
 .titleduan a:hover{ font-size:14px; font-weight:bold; color:#061c93; float:left;width:202px;  margin-top:5px;text-decoration:underline;}

@@ -13,20 +13,20 @@
             <div  class="boxseach" style="width:100px; float:left; margin-left: 8px;">
                 <label>
                     <input type="radio" style="float:left; margin-top:10px;" name="estatecatalogue_id" value="1"/>
-                    <p style="font-weight:bold; font-size:14px; color:#CC0000; float:left; margin-top:8px; margin-left:5px;">Mua - Bán</p>
+                    <p style="font-weight:500; font-size:14px; color:#000000; float:left; margin-top:8px; margin-left:5px;">Mua - Bán</p>
                 </label>
             </div>
-            <div class="boxseach" style=" width:100px; margin-left:5px; float:left;">
+            <div class="boxseach" style="width:100px; margin-left:5px; float:left;">
                 <label>
                     <input type="radio" style="float:left; margin-top:10px;" name="estatecatalogue_id" value="2"/>
-                    <p style="font-weight:bold; font-size:14px; color:#CC0000; float:left; margin-top:8px; margin-left:5px;">Cho Thuê</p>
+                    <p style="font-weight:500; font-size:14px; color:#000000; float:left; margin-top:8px; margin-left:5px;">Cho Thuê</p>
                 </label>
             </div>
             <div class="sreenseachtimkiembds1">
-                <select name="estatetype_id" id="estatetype_id" size="1">
+                <select name="estatetype_id" id="estatetype_id">
                     <option value="" selected="selected">Chọn Loại nhà đất</option>
                 </select>
-                <select name="estatecity_id" id="estatecity_id" size="1">
+                <select name="estatecity_id" id="estatecity_id">
                     <option value="">Chọn Tỉnh/TP</option>
                     <?php foreach($this->estateProvince as $row): ?>
                         <option <?php if($object->estatecity_id == $row->id) echo 'selected="selected"'; ?> value="<?=$row->id?>"><?=$row->name;?></option>

@@ -22,20 +22,29 @@ class fprojects extends MY_Controller{
         $dis['projectHot'] = $projectHot;
 
         // project hot
-        $project = new Article();
-        $project->where('recycle',0);
-        $project->where('hot !=',1);
-        $project->where_in('newscatalogue_id',$arrayCateNewsId);
-        $project->get(16);
-        $dis['project'] = $project;
+        $projectVT = new Article();
+        $projectVT->where('recycle',0);
+        $projectVT->where('hot !=',1);
+        $projectVT->where_in('newscatalogue_id',$arrayCateNewsId);
+        $projectVT->get(9);
+        $dis['projectVT'] = $projectVT;
 
-        //seo
+         // project viewmost
+        $projectViewMost = new Article();
+        $projectViewMost->where('recycle',0);
+        $projectViewMost->where('hot !=',1);
+        $projectViewMost->where_in('newscatalogue_id', $arrayCateNewsId);
+        $projectViewMost->order_by('view_count', 'desc');
+        $projectViewMost->get(9);
+        $dis['projectViewMost'] = $projectViewMost;
+
+        // Seo
         $category = new Newscatalogue(83);
         $this->page_title = $category->title_bar;
         $this->page_description = $category->slogan;
         $this->page_keyword = $category->keyword;
         
-		
+		// To View
 		$this->isRobotFollow = 1;
         $dis['base_url']=base_url();
         $dis['view']='front/project/news';
@@ -128,6 +137,7 @@ class fprojects extends MY_Controller{
         $this->page_description = $news->short_vietnamese;
         $this->page_keyword = $news->tag;
 
+        $this->uri = base_url().substr($this->uri->uri_string, 1, strlen($this->uri->uri_string));
 		$this->isRobotFollow = 1;
         $dis['base_url']=base_url();
         $dis['view']='front/project/news_de';

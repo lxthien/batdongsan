@@ -21,16 +21,13 @@ class festates extends MY_Controller{
             $estatesCategoryId = 1;
             $estatesCategoryName = "Nhà đất bán";
             $estatesCategoryUrl = $this->uri->segment(1,"");
+            $dis['catLists'] = $this->typeHouseSale;
         }
         if($this->uri->segment(1,"") == 'nha-dat-cho-thue'){
             $estatesCategoryId = 2;
             $estatesCategoryName = "Nhà đất cho thuê";
             $estatesCategoryUrl = $this->uri->segment(1,"");
-        }
-        if($this->uri->segment(1,"") == 'nhu-cau-nha-dat'){
-            $estatesCategoryId = 3;
-            $estatesCategoryName = "Nhu cầu nhà đất";
-            $estatesCategoryUrl = $this->uri->segment(1,"");
+            $dis['catLists'] = $this->typeHouseLease;
         }
 
         $level = 1;
@@ -49,26 +46,26 @@ class festates extends MY_Controller{
         $dis['estatesVip'] = $estatesVip;
 
         /*get estates by category*/
-        $estates = new Estate();
+        /*$estates = new Estate();
         $estates->order_by('isVip', 'desc');
         $estates->order_by('created', 'desc');
         $estates->where('active', 0);
         $estates->where_related_estatecatalogue('id', $estatesCategoryId);
         $estates->get_paged($offset,$limit,TRUE);
-        $dis['estates'] = $estates;
+        $dis['estates'] = $estates;*/
 
 
         // get all estates
-        $estatesAll = new Estate();
+        /*$estatesAll = new Estate();
         $estatesAll->order_by('isVip', 'desc');
         $estates->where('active', 0);
         $estatesAll->where_related_estatecatalogue('id', $estatesCategoryId);
         $estatesAll->get();
 
-        $total = $estatesAll->result_count();
+        $total = $estatesAll->result_count();*/
 
         /*Begin pagination for product*/
-        $url = $this->uri->segment(1).'/';
+        /*$url = $this->uri->segment(1).'/';
         $config['base_url'] = site_url($url);
         $config['total_rows'] = $total;
         $config['per_page'] = $limit;
@@ -93,7 +90,7 @@ class festates extends MY_Controller{
         $config['num_tag_close'] 		= '';
         $config['cur_tag_open'] 		= '<span class="active">';
         $config['cur_tag_close']		= '</span>';
-        $this->pagination->initialize($config);
+        $this->pagination->initialize($config);*/
         /*End pagination for product*/
 
         $cat = new Estatecatalogue($estatesCategoryId);
@@ -102,8 +99,7 @@ class festates extends MY_Controller{
         $this->page_keyword = $cat->keyword;
 
         
-
-		$this->isRobotFollow = 1;
+    	$this->isRobotFollow = 1;
         $dis['estatesCategoryName']=$estatesCategoryName;
         $dis['estatesCategoryUrl']=$estatesCategoryUrl;
         $dis['atAddress'] = "tại Việt Nam";
@@ -123,11 +119,6 @@ class festates extends MY_Controller{
         if($this->uri->segment(1,"") == 'nha-dat-cho-thue'){
             $estatesCategoryId = 2;
             $estatesCategoryName = "Nhà đât cho thuê";
-            $estatesCategoryUrl = $this->uri->segment(1,"");
-        }
-        if($this->uri->segment(1,"") == 'nhu-cau-nha-dat'){
-            $estatesCategoryId = 3;
-            $estatesCategoryName = "Nhu cầu nhà đất";
             $estatesCategoryUrl = $this->uri->segment(1,"");
         }
 

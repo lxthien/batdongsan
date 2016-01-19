@@ -12,6 +12,20 @@ function getNewsByCategory($categoryID) {
     return $cat_news;
 }
 
+function getEstatesByCategory($categoryID) {
+    $CI =& get_instance();
+
+    $estates = new Estate();
+    $estates->order_by('isVip', 'desc');
+    $estates->order_by('created', 'desc');
+    //$estates->where_related_estatecatalogue('id', $estatesCategoryId);
+    $estates->where_related_estatetype('id', $categoryID);
+    $estates->get(4);
+    
+    return $estates;
+}
+
+
 function count_static_by_area($url_type, $url_district, $url_areas){
     $CI =& get_instance();
 

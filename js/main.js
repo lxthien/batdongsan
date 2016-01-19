@@ -4,9 +4,9 @@ $(document).ready(function(){
     /*with host*/
     //var base_url = getBase_url();
     
-    $("a#inlogging").fancybox({
-        'transitionIn'	: 'none',
-        'transitionOut'	: 'none'
+    $(".back-to-top").click(function(){
+        $('html, body').animate({scrollTop : 0}, 800);
+        return false;
     });
 
     $('.provinces').change(function(){

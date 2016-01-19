@@ -15,7 +15,7 @@
                     <div class="sreensp1 <?php echo $i%3==0 ? 'last' : ''; ?>">
                         <div class="spduan">
                             <a href="<?=$base_url?>du-an/<?=$category->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese;?>">
-                                <img src="<?php echo image('img/news/'.$row->image, 'news_160_150') ?>" alt="<?=$row->title_vietnamese;?>" />
+                                <img src="<?php echo image('img/news/'.$row->image, 'news_230_155') ?>" alt="<?=$row->title_vietnamese;?>" />
                             </a>
                         </div>
                         <a class="tool-tip-title" href="<?=$base_url?>du-an/<?=$category->name_none.'/'.$row->title_none?>.html">

@@ -28,31 +28,20 @@
 <script type="text/javascript" src="<?=$base_url?>images/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="<?=$base_url?>images/js/jquery-ui-1.8.18.min.js"></script>
 <!-- End add jquery and jquery ui to website -->
-<!-- Begin facy box-->
-<script type="text/javascript" src="<?= $base_url?>images/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-<script type="text/javascript" src="<?= $base_url?>images/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-<link rel="stylesheet" type="text/css" href="<?= $base_url?>images/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
-<!-- End facy box-->
-<!--Begin carouFredSel-->
-<!--<script type="text/javascript" src="<?/*=base_url()*/?>images/js/jquery.carouFredSel-5.6.4-packed.js"></script>-->
-<!--End carouFredSel-->
 
-<!--Begin jquey simplyscroll-->
-<!--<script type="text/javascript" src="<?/*=$base_url;*/?>images/js/simplyscroll/jquery.simplyscroll.js"></script>
-<link rel="stylesheet" href="<?/*=$base_url;*/?>images/js/simplyscroll/jquery.simplyscroll.css" media="all" type="text/css" />-->
-<!--End jquey simplyscroll-->
-
-<!--facy box-->
-<script type="text/javascript" src="<?= $base_url?>images/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-<link rel="stylesheet" type="text/css" href="<?= $base_url?>images/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
-<!--facy box-->
-
-<!--facy box-->
 <script type="text/javascript" src="<?= $base_url?>js/main.js"></script>
 <!--facy box-->
 
 </head>
 <body <?php echo $this->menu_active == "home" ? 'class="home-page"' : 'page'; ?>>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1&appId=397129657010987";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
   <?php if($this->menu_active == "home"): ?>
     <?php $this->load->view($view);?>
   <?php else: ?>

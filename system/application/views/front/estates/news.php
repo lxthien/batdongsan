@@ -10,6 +10,7 @@
     <!--left-->
     <div class="left estates">
         <div class="border-left-right-none">
+            <?php if($estatesVip->result_count() > 0): ?>
             <div class="top-vip fl">
                 <div class="title-top-vip fl">
                     <h1>Tin bán nổi bật</h1>
@@ -25,15 +26,18 @@
                     <?php endforeach; ?>
                 </div>
             </div>
+            <?php endif; ?>
             <div class="lists-top-1 fl">
                 <div class="lists-top-1-item fl">
-                    <?php $i=0; foreach($this->typeHouseSale as $row): $i++; ?>
+                    <?php $i=0; foreach($catLists as $rowCat): $i++; ?>
+                    <?php $estates = getEstatesByCategory($rowCat->id); ?>
+                    <?php if($estates->result_count() > 0): ?>
                     <div class="list-top-1 fl">
                         <div class="title-list-top-1 fl">
-                            <h1><?php echo $row->name;?></h1>
+                            <h1><?php echo $rowCat->name;?></h1>
                         </div>
                         <div class="list-top-1s fl">
-                            <?php foreach ($estatesVip as $row): ?>
+                            <?php foreach ($estates as $row): ?>
                             <div class="top-1-item fl">
                                 <a href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
                                     <img src="<?php echo image($row->photo, 'estate_165_130') ?>" alt="<?php echo $row->title; ?>">
@@ -45,6 +49,7 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
+                    <?php endif; ?>
                     <?php endforeach; unset($row); ?>
                 </div>
             </div>
