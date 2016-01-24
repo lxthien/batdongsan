@@ -1,9 +1,7 @@
 <div class="linktop">
-    <?php $i = 0; foreach ($this->guideCate as $row): $i++; ?>
-        <div class="linkdautrang">
-            <a class="<?php echo $row->name_none == $this->uri->segment(2, '') ? 'linkdautrang-active' : ''; ?>" href="<?=$base_url?>cam-nang/<?=$row->name_none?>"><?=$row->name_vietnamese;?></a>
-        </div>
-    <?php endforeach; unset($row); ?>
+    <div class="linkdautrang"><a href="<?php echo $base_url; ?>">Trang chủ</a></div>
+    <div class="linkdautrang"><a href="<?php echo $base_url; ?>cam-nang" title="Cẩm nang">Cẩm nang</a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active"><?php echo $category->name_vietnamese; ?></span></div>
 </div>
 
 <div class="main" style="width:980px;">
@@ -13,7 +11,7 @@
                 <h1 id="ctl27_ctl01_divSummary"><?=$news->title_vietnamese;?></h1>
                 <p class="date-time">Cập nhật <?=get_date_from_sql($news->created);?></p>
                 <div class="nutmangxahoi">
-                    <div style="float: left;">
+                    <div>
                         <!-- Button like facebook -->
                         <div class="fb-like" data-href="<?php echo $this->url; ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
                         <!-- Button like facebook -->
@@ -31,7 +29,7 @@
                     <?=$news->full_vietnamese;?>
                 </div>
                 <div class="nutmangxahoi">
-                    <div style="float: left;">
+                    <div>
                         <!-- Button like facebook -->
                         <div class="fb-like" data-href="<?php echo $this->url; ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
                         <!-- Button like facebook -->

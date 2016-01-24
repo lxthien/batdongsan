@@ -1,6 +1,6 @@
 <div class="linktop">
     <div class="linkdautrang"><a href="<?=$base_url;?>" title="Trang chủ">Trang chủ</a></div>
-    <div class="linkdautrang"><a href="<?=$base_url.$category->name_none;?>" title="<?php echo $category->name_vietnamese; ?>"><?php echo $category->name_vietnamese; ?></a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active"><?php echo $category->name_vietnamese; ?></span></div>
 </div>
 
 <div class="main main-tin-tuc">

@@ -1,8 +1,17 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
-
 <script src="<?php echo $base_url; ?>images/js/sliderengine/amazingslider.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo $base_url; ?>images/css/sliderengine/amazingslider-1.css">
 <script src="<?php echo $base_url; ?>images/js/sliderengine/initslider-1.js"></script>
+
+<link type="text/css" href="<?=$base_url?>images/js/pikachu/bottom.css" rel="stylesheet" />
+<script type="text/javascript" src="<?=$base_url?>images/js/pikachu/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="<?=$base_url?>images/js/pikachu/jquery.pikachoose.min.js"></script>
+<script language="javascript">
+    $(document).ready(
+        function (){
+            $("#pikame").PikaChoose({carousel:true});
+            $('.pika-stage a[href*="img"]').fancybox();
+        });
+</script>
 
 <div class="linktop">
     <div class="linkdautrang"><a href="<?=$base_url;?>">Trang chủ</a></div>
@@ -12,37 +21,27 @@
 
 <div class="main">
 <div class="left left-top-3">
-    <h1 style="font-size:18px; font-weight:bold; color:#051c94;"><?=ucfirst($o->title);?></h1>
+    <h1 style="font-size:25px; color: #bb7700; padding: 5px 0;"><?=ucfirst($o->title);?></h1>
     <div class="location-estate" style="padding: 3px 0; float: left; width: 100%; margin-bottom: 10px;">
         <div style="margin-right: 30px; float: left;">
-            <p style="float:left; margin-top:7px;">
-                <span class="bold" style="color: #a50000;">Quận/Huyện: </span>
-                <a style="color: #051c94;" href="<?php echo $base_url.$o->estatetype->name_none.'/'.$o->estatedistrict->name_none.'/'.$o->estatecity->name_none; ?>"><?=$o->estatedistrict->name;?></a>
+            <p class="fl">
+                <span class="bold fl" style="color: #a50000;">Quận/Huyện: </span>
+                <a class="fl" style="color: #051c94;" href="<?php echo $base_url.$o->estatetype->name_none.'/'.$o->estatedistrict->name_none.'/'.$o->estatecity->name_none; ?>"><?=$o->estatedistrict->name;?></a>
             </p>
         </div>
         <div style="margin-left: 15px; float: left;">
-            <p style="float:left; margin-top:7px;">
-                <span class="bold" style="color: #a50000;">Tỉnh/TP: </span>
-                <a style="color: #051c94;" href="<?php echo $base_url.$o->estatecatalogue->name_none.'-'.$o->estatecity->name_none; ?>"><?=$o->estatecity->name;?></a>
+            <p class="fl">
+                <span class="bold fl" style="color: #a50000;">Tỉnh/TP: </span>
+                <a class="fl" style="color: #051c94;" href="<?php echo $base_url.$o->estatecatalogue->name_none.'-'.$o->estatecity->name_none; ?>"><?=$o->estatecity->name;?></a>
             </p>
         </div>
     </div>
 
     <div class="hotnew">
-        <div class="sreennoidungchitiet" style="width:640px;float:left; margin-bottom:5px;">
-            <div class="developper-detail" style="color:#000000;width:100%;float:left;line-height: 20px;text-align: justify;font-size:14px;margin-top: 7px;">
+        <div class="sreennoidungchitiet">
+            <div class="developper-detail">
                 <?=$o->description;?>
             </div>
-            <link type="text/css" href="<?=$base_url?>images/js/pikachu/bottom.css" rel="stylesheet" />
-            <script type="text/javascript" src="<?=$base_url?>images/js/pikachu/jquery.jcarousel.min.js"></script>
-            <script type="text/javascript" src="<?=$base_url?>images/js/pikachu/jquery.pikachoose.min.js"></script>
-            <script language="javascript">
-                $(document).ready(
-                    function (){
-                        $("#pikame").PikaChoose({carousel:true});
-                        $('.pika-stage a[href*="img"]').fancybox();
-                    });
-            </script>
             <?php if($o->photo != null): ?>
             <div class="slide-nha-dat">
                 <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:640px;margin:0px auto 86px;">
@@ -79,10 +78,10 @@
             </div>
             <?php endif; ?>
         </div>
-        <div class="sreennoidungchitiet" style="width:640px;float:left; margin-bottom:7px;">
+        <div class="sreennoidungchitiet" style="width:723px; float:left; margin-bottom:7px;">
             <h3 class="info-basic">Thông tin cơ bản</h3>
             <div class="line21"></div>
-            <div class="sreenttin add-left-right" style="width:640px;float:left;">
+            <div class="sreenttin add-left-right">
                 <div class="add-left">
                     <div class="social-detail">
                         <span><a href="javascript:void(0)"><img src="<?php echo $base_url.'images/icon-save.png' ?>" alt="save icon"/> &nbsp;Lưu tin</a></span>
@@ -95,18 +94,20 @@
                         </span>
                     </div>
                     <div class="tinh add-left-item">
-                        <p style="float:left; margin-top:7px; font-size: 14px;">
+                        <p>
                             <span style="width: 100px; display: inline-block;">Loại nhà đất: </span>
-                            <span class="style4"><?=$o->estatetype->name?></span></p>
+                            <span class="style4"><?=$o->estatetype->name?></span>
+                        </p>
                     </div>
                     <div class="ms add-left-item">
-                        <p style="float:left; margin-top:7px; font-size: 14px;">
+                        <p>
                             <span style="width: 100px; display: inline-block;">Mã số tin: </span>
-                            <span class="style4" style="color: #ee0e0e; font-weight: 600;"><?=$o->code;?></span></p>
+                            <span class="style4" style="color: #ee0e0e; font-weight: 600;"><?=$o->code;?></span>
+                        </p>
                     </div>
                     <?php if($o->estatearea_id !=0): ?>
                         <div class="ms add-left-item">
-                            <p style="float:left; margin-top:7px; font-size: 14px;">
+                            <p>
                                 <span style="width: 100px; display: inline-block;">Diện tích: </span>
                                 <?php if($o->area_text != 0):?>
                                     <span style="line-height: 10px;" class="style4"><?=$o->area_text;?> m<sup>2</sup></span>
@@ -117,7 +118,7 @@
                         </div>
                     <?php endif; ?>
                     <div class="ms add-left-item">
-                        <p style="float:left; margin-top:7px; font-size: 14px;">
+                        <p>
                             <span style="width: 100px; display: inline-block;">Giá: </span>
                             <?php if($o->price_text != 0):?>
                                 <span class="style4"><?=$o->price_text.' '.getpricetype($o->price_type);?></span>
@@ -129,7 +130,7 @@
                     <?php if($o->estatedirection_id != 0): ?>
                         <div class="tinh add-left-item">
                             <?php if($o->estatedirection_id != 0): ?>
-                            <p style="float:left; margin-top:7px; font-size: 14px;">
+                            <p>
                                 <span style="width: 100px; display: inline-block;">Hướng: </span>
                                 <span class="style4"><?=$o->estatedirection->name;?></span>
                             </p>
@@ -140,7 +141,7 @@
                         $project = new Article($o->article_id);
                         ?>
                         <div class="ms add-left-item">
-                            <p style="float:left; margin-top:7px; font-size: 14px;">
+                            <p>
                                 <span style="width: 100px; display: inline-block;">Thuộc dự án: </span>
                                 <span class="style4">
                                     <a target="_blank" class="of-project" href="<?=base_url().'du-an/'.$project->newscatalogue->name_none.'/'.$o->article->title_none;?>.html" title="<?=$o->article->title_vietnamese;?>">
@@ -153,7 +154,7 @@
                     <?php if($o->legally != ''): ?>
                         <div class="tinh add-left-item">
                             <?php if($o->legally != ''): ?>
-                                <p style="float:left; margin-top:7px; font-size: 14px;">
+                                <p>
                                     <span style="width: 100px; display: inline-block;">Pháp lý: </span>
                                     <span class="style4"><?=$o->legally;?></span>
                                 </p>
@@ -162,14 +163,14 @@
                     <?php endif; ?>
                     <?php if($o->address != ''): ?>
                         <div class="tinh add-left-item">
-                            <p style="float:left; margin-top:7px; font-size: 14px;">
+                            <p>
                                 <span style="width: 100px; display: inline-block;">Địa chỉ: </span>
                                 <span class="style4"><?=$o->address;?></span>
                             </p>
                         </div>
                     <?php endif; ?>
                     <div class="ms add-left-item">
-                        <p style="float:left; margin-top:5px; font-size: 14px;">
+                        <p>
                             <span style="width: 100px; display: inline-block;">Ngày đăng tin: </span>
                             <?=date('d-m-Y', strtotime($o->created));?>
                         </p>
@@ -250,7 +251,7 @@
                             <span class="first">Diện tích</span>
                             <span class="last">:
                                 <?php if($row->isArea == 0): ?>
-                                    <?=$row->area_text;?> m
+                                    <?=$row->area_text;?> m2
                                 <?php else: ?>
                                     <?='KXĐ'?>
                                 <?php endif; ?>
@@ -259,21 +260,13 @@
                         <p class="row">
                             <span class="first">Hướng</span>
                             <span class="last">:
-                                <?php if($row->isArea == 0): ?>
-                                    <?=$row->area_text;?> m
-                                <?php else: ?>
-                                    <?='KXĐ'?>
-                                <?php endif; ?>
+                                <?=$row->Estatedirection->name;?>
                             </span>
                         </p>
                         <p class="row">
                             <span class="first">Vị trí</span>
                             <span class="last">:
-                                <?php if($row->isArea == 0): ?>
-                                    <?=$row->area_text;?> m
-                                <?php else: ?>
-                                    <?='KXĐ'?>
-                                <?php endif; ?>
+                                <?=$row->Estatecity->name;?> - <?=$row->Estatedistrict->name;?>
                             </span>
                         </p>
                     </div>
@@ -318,7 +311,7 @@
                         <span class="first">Diện tích</span>
                         <span class="last">:
                             <?php if($row->isArea == 0): ?>
-                                <?=$row->area_text;?> m
+                                <?=$row->area_text;?> m2
                             <?php else: ?>
                                 <?='KXĐ'?>
                             <?php endif; ?>
@@ -327,21 +320,13 @@
                     <p class="row">
                         <span class="first">Hướng</span>
                         <span class="last">:
-                            <?php if($row->isArea == 0): ?>
-                                <?=$row->area_text;?> m
-                            <?php else: ?>
-                                <?='KXĐ'?>
-                            <?php endif; ?>
+                            <?=$row->Estatedirection->name;?>
                         </span>
                     </p>
                     <p class="row">
                         <span class="first">Vị trí</span>
                         <span class="last">:
-                            <?php if($row->isArea == 0): ?>
-                                <?=$row->area_text;?> m
-                            <?php else: ?>
-                                <?='KXĐ'?>
-                            <?php endif; ?>
+                            <?=$row->Estatecity->name;?> - <?=$row->Estatedistrict->name;?>
                         </span>
                     </p>
                 </div>
@@ -403,7 +388,7 @@
                         <span class="first">Diện tích</span>
                         <span class="last">:
                             <?php if($row->isArea == 0): ?>
-                                <?=$row->area_text;?> m
+                                <?=$row->area_text;?> m2
                             <?php else: ?>
                                 <?='KXĐ'?>
                             <?php endif; ?>
@@ -412,21 +397,13 @@
                     <p class="row">
                         <span class="first">Hướng</span>
                         <span class="last">:
-                            <?php if($row->isArea == 0): ?>
-                                <?=$row->area_text;?> m
-                            <?php else: ?>
-                                <?='KXĐ'?>
-                            <?php endif; ?>
+                            <?=$row->Estatedirection->name;?>
                         </span>
                     </p>
                     <p class="row">
                         <span class="first">Vị trí</span>
                         <span class="last">:
-                            <?php if($row->isArea == 0): ?>
-                                <?=$row->area_text;?> m
-                            <?php else: ?>
-                                <?='KXĐ'?>
-                            <?php endif; ?>
+                            <?=$row->Estatecity->name;?> - <?=$row->Estatedistrict->name;?>
                         </span>
                     </p>
                 </div>
@@ -437,64 +414,9 @@
     </div>
 </div>
 <div class="right">
+    <?php echo $this->load->view('front/widget/search-estates'); ?>
     <?php echo $this->load->view('front/includes/adv_right'); ?>
 
-    <div class="boxtimkiembds boxnoibat">
-        <span class="title-top-box">Tìm kiếm bất động sản</span>
-        <div class="sreenboxseach2" style=" width:300px;  margin-bottom:20px; float:left;">
-            <form action="<?=$base_url?>tim-kiem-bat-dong-san" method="post">
-                <div class="boxseach" style=" width:100px; float:left; margin-left:55px;">
-                    <label>
-                        <input type="radio" style="float:left; margin-top:10px;" name="estatecatalogue_id" value="1"/>
-                        <p style="font-weight:bold; font-size:14px; color:#CC0000; float:left; margin-top:8px; margin-left:5px;">Mua - Bán</p>
-                    </label>
-                </div>
-                <div class="boxseach" style=" width:100px; margin-left:5px;  float:left;">
-                    <label>
-                        <input type="radio" style="float:left; margin-top:10px;" name="estatecatalogue_id" value="2"/>
-                        <p style="font-weight:bold; font-size:14px; color:#CC0000; float:left; margin-top:8px; margin-left:5px;">Cho Thuê</p>
-                    </label>
-                </div>
-                <div class="sreenseachtimkiembds1 formtimkiem" style="width:300px; height:25px; float:left; margin-bottom:3px; background: none; margin-left: 0;">
-                    <select name="estatetype_id" id="estatetype_id" size="1" style="float:left; margin-right:5px; margin-left:8px; width:140px;  height:23px; margin-top:10px; margin-bottom:5px;  border:1px  #CCCCCC solid;">
-                        <option value="" selected="selected">Chọn Loại nhà đất</option>
-                    </select>
-                    <select name="estatecity_id" id="estatecity_id" size="1" style="float:left; width:140px; margin-right:5px;  height:23px; margin-bottom:5px; margin-top:10px;  border:1px  #CCCCCC solid;">
-                        <option value="">Chọn Tỉnh/TP</option>
-                        <?php foreach($this->estateProvince as $row): ?>
-                            <option <?php if($object->estatecity_id == $row->id) echo 'selected="selected"'; ?> value="<?=$row->id?>"><?=$row->name;?></option>
-                        <?php endforeach; unset($row); ?>
-                    </select>
-                </div>
-                <div class="sreenseachtimkiembds1" style="width:300px; height:25px; float:left; margin-bottom:3px;">
-                    <select name="estatedistrict_id" id="estatedistrict_id" size="1" style="float:left; width:140px; margin-right:5px; margin-left:8px;  height:23px; margin-top:10px; margin-bottom:5px;  border:1px  #CCCCCC solid;" >
-                        <option value="">Chọn Quận/Huyện</option>
-                    </select>
-                    <select name="estatearea_id" id="estatearea_id" size="1" style="float:left; width:140px; margin-right:5px;  height:23px; margin-bottom:5px; margin-top:10px;  border:1px  #CCCCCC solid;" >
-                        <option value="" selected="selected">Chọn Diện tích</option>
-                        <option value="-1">Không xác định</option>
-                        <?php foreach($this->estateareas as $row): ?>
-                            <option <?php if($object->estatecity_id == $row->id) echo 'selected="selected"'; ?> value="<?=$row->id?>"><?=$row->label;?></option>
-                        <?php endforeach; unset($row); ?>
-                    </select>
-                </div>
-                <div class="sreenseachtimkiembds1" style="width:300px; height:25px; float:left; margin-bottom:13px;">
-                    <select name="estateprice_id" id="estateprice_id" size="1" style="float:left; width:140px; margin-right:5px; margin-left:8px;  height:23px; margin-top:10px; margin-bottom:5px;  border:1px  #CCCCCC solid;" >
-                        <option value="" selected="selected">Chọn Mức giá</option>
-                    </select>
-                    <select name="estatedirection_id" id="estatedirection_id" size="1" style="float:left; width:140px; margin-right:5px;  height:23px; margin-bottom:5px; margin-top:10px;  border:1px  #CCCCCC solid;" >
-                        <option value="" selected="selected">Chọn Hướng nhà</option>
-                        <?php foreach($this->estateDirection as $row): ?>
-                            <option value="<?=$row->id?>"><?=$row->name;?></option>
-                        <?php endforeach; unset($row); ?>
-                    </select>
-                </div>
-                <div class="timkiembds2">
-                    <input type="submit" value=""/>
-                </div>
-            </form>
-        </div>
-    </div>
     <?php if( display_static_by_area($this->estateareas, $o) > 0 ): ?>
     <div class="boxnoibat">
         <span class="title-top-box">Thống kê theo diện tích</span>

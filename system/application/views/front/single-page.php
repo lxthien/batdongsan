@@ -1,6 +1,6 @@
 <div class="linktop">
     <div class="linkdautrang"><a href="<?=$base_url?>">Trang chủ</a></div>
-    <div class="linkdautrang"><a class="linkdautrang-active" href="<?=$base_url.$news->title_none?>.html" title="<?=$news->title_vietnamese?>"><?=$news->title_vietnamese?></a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active"><?=$news->title_vietnamese?></span></div>
 </div>
 
 <!--main-->

@@ -3,7 +3,7 @@
 <div class="linktop">
     <div class="linkdautrang"><a href="<?=$base_url;?>">Trang chủ</a></div>
     <div class="linkdautrang"><a href="<?=$base_url.$estatesCategoryUrl?>" title="<?=$estatesCategoryName;?>"><?=$estatesCategoryName;?></a></div>
-    <div class="linkdautrang"><a class="linkdautrang-active" href="<?=$base_url.$estatesCategoryUrl.'/'.$type->name_none;?>" title="<?=$type->name;?>"><?=$type->name;?></a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active"><?=$type->name;?></span></div>
 </div>
 <div class="cl"></div>
 <!--main-->
@@ -53,7 +53,7 @@
                                     <span class="first">Diện tích</span>
                                     <span class="last">:
                                         <?php if($row->isArea == 0): ?>
-                                            <?=$row->area_text;?> m
+                                            <?=$row->area_text;?> m2
                                         <?php else: ?>
                                             <?='KXĐ'?>
                                         <?php endif; ?>
@@ -62,21 +62,13 @@
                                 <p class="row">
                                     <span class="first">Hướng</span>
                                     <span class="last">:
-                                        <?php if($row->isArea == 0): ?>
-                                            <?=$row->area_text;?> m
-                                        <?php else: ?>
-                                            <?='KXĐ'?>
-                                        <?php endif; ?>
+                                        <?=$row->Estatedirection->name;?>
                                     </span>
                                 </p>
                                 <p class="row">
                                     <span class="first">Vị trí</span>
                                     <span class="last">:
-                                        <?php if($row->isArea == 0): ?>
-                                            <?=$row->area_text;?> m
-                                        <?php else: ?>
-                                            <?='KXĐ'?>
-                                        <?php endif; ?>
+                                        <?=$row->Estatecity->name;?> - <?=$row->Estatedistrict->name;?>
                                     </span>
                                 </p>
                             </div>

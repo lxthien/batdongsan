@@ -95,7 +95,7 @@ h3.home-title-services{
 	background: #bb7700; color: #ffffff;
 }
 .home-service-item .home-descripton-service {
-	background-color: #ffffff; opacity: 0.7; filter: alpha(opacity=70); position: absolute; top: 0px; left: -350px; width: 330px; height: 68px; padding: 5px 10px;
+	background-color: #ffffff; opacity: 0.7; filter: alpha(opacity=70); position: absolute; top: 0px; left: -350px; width: 330px; padding: 5px 10px;
 	display: none; text-align: justify;
 }
 .home-service-item .home-descripton-service p {
@@ -188,7 +188,7 @@ form#search-advanced .submit-top-main {
 }
 .title-top-vip h1{
 	text-transform: uppercase; font-size: 17px; background: #bb7700; display: inline-block;
-    padding: 3px 15px; line-height: 23px; border-top-left-radius: 3px; border-top-right-radius: 3px; color: #ffffff; font-weight: 500;
+    padding: 5px 15px 3px; line-height: 23px; border-top-left-radius: 3px; border-top-right-radius: 3px; color: #ffffff; font-weight: 500;
 }
 .left .list-top-vip {
 	width: 723px; border: 1px solid #cccccc; padding: 10px;
@@ -386,6 +386,45 @@ form#search-advanced .submit-top-main {
 .news-detail .sreentag p a {
 	display: inline-block;
 }
+
+.news-related-project .news-related {
+	width: 723px;
+}
+.news-related-project .news-related h3.title-news-related {
+	text-transform: uppercase; color: #0e8b01; margin-bottom: 10px; border-bottom: 1px solid #555555; font-size: 17px; line-height: 18px;
+}
+.news-related-project .news-related .sreenspkhac {
+	float: left; width: 231px; margin-right: 15px;
+}
+.news-related-project .news-related .sreenspkhac.sreenspkhac-three {
+	margin-right: 0px;
+}
+.news-related-project .news-related .sreenspkhac .titleduankhac {
+    height: 50px; float: left; width: 232px; text-align: justify; padding-top: 5px;
+}
+.news-related-project .news-related .sreenspkhac .titleduankhac a {
+    width: 232px; font-weight: 500;
+}
+.news-related-project .news-related .line{
+	border-bottom: 1px solid #afafaf; width: 743px; margin: 10px -10px;
+}
+.news-related-project .spkhac {
+	float: left; width: 145px; height: 120px;
+}
+.news-related-project .titleduankhac {
+	float: right; width: 200px;
+}
+.news-related-project .titleduankhac a {
+	width: 200px;
+}
+.news-related-project .titleduankhac a:hover {
+	
+}
+.news-related-project .titleduankhac p {
+	width: 200px;
+}
+
+
 .news-detail .news-related {
 	width: 723px;
 }
@@ -393,16 +432,16 @@ form#search-advanced .submit-top-main {
 	text-transform: uppercase; color: #0e8b01; margin-bottom: 10px; border-bottom: 1px solid #555555; font-size: 17px; line-height: 18px;
 }
 .news-detail .news-related .sreenspkhac {
-	float: left; width: 231px; margin-right: 15px; margin-bottom: 15px;
+	float: left; width: 231px; margin-right: 15px;
 }
 .news-detail .news-related .sreenspkhac.sreenspkhac-three {
 	margin-right: 0px;
 }
 .news-detail .news-related .sreenspkhac .titleduankhac {
-    height: 50px; float: left; width: 231px; text-align: justify;
+    height: 50px; float: left; width: 232px; text-align: justify; padding-top: 5px;
 }
 .news-detail .news-related .sreenspkhac .titleduankhac a {
-    width: 231px; font-weight: 500;
+    width: 232px; font-weight: 500;
 }
 .news-detail .news-related .line{
 	border-bottom: 1px solid #afafaf; width: 743px; margin: 10px -10px;
@@ -465,7 +504,7 @@ form#search-advanced .submit-top-main {
 	width: 100%; border-bottom: 1px solid #000000; margin-bottom: 8px;
 }
 .list-top-1 .title-list-top-1 h1{
-	text-transform: uppercase; font-size: 17px; background: #bb7700; display: inline-block; padding: 3px 15px;
+	text-transform: uppercase; font-size: 17px; background: #bb7700; display: inline-block; padding: 5px 15px 3px;
 	line-height: 23px; border-top-left-radius: 3px; border-top-right-radius: 3px; color: #ffffff; font-weight: 500;
 }
 .list-top-1 .list-top-1s {
@@ -534,6 +573,9 @@ form#search-advanced .submit-top-main {
 .main-du-an .top-du-an-open ul li a.tool-tip-title span {
 	overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; text-overflow: -o-ellipsis-lastline;
 	text-transform: uppercase; font-size: 10px; color: #ffffff; font-size: 12px;
+}
+.main-du-an .sreenspduan {
+	margin-bottom: 15px;
 }
 
 
@@ -614,3 +656,43 @@ form#search-advanced .submit-top-main {
 .sreenadd a.back-to-top {
 	position: absolute; top: -20px; right: 0px;
 }
+
+
+
+.estates .hotnew {
+	width: 745px;
+}
+.nutmangxahoi {
+    width: 165px;
+    float: right;
+    overflow: hidden;
+}
+#___plusone_0{
+    display: inline-block !important;
+    line-height: 20px !important;
+    width: 65px !important;
+    margin-right: 5px !important;
+}
+.fb_iframe_widget{
+    line-height: 8px !important;
+    float: left;
+    margin-right: 8px;
+}
+
+
+
+.sreennoidungchitiet{
+	width:723px; float:left; margin-bottom:5px;
+}
+.developper-detail {
+	color:#000000;width:100%;float:left;line-height: 20px;text-align: justify;font-size:14px;margin-top: 7px;
+}
+.sreenttin.add-left-right {
+	width: 723px; float:left;
+}
+.add-left {width: 360px;}
+.add-left .social-detail span {float: left;}
+.add-left .add-left-item p{float:left; margin-top:7px; font-size: 14px; width: 100%;}
+
+.add-right {width: 345px; float: right;}
+.add-right .right-contact-customer {width: 330px;}

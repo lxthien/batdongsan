@@ -9,6 +9,11 @@ $(document).ready(function(){
         return false;
     });
 
+    $(".home-service-item").each(function(){
+        var heightItem = $(this).find('h1').height();
+        $(this).find('.home-descripton-service').css('height', (heightItem - 10));
+    });
+
     $('.provinces').change(function(){
         var provincesId = $(this).val();
         $.ajax({

@@ -213,6 +213,13 @@ class MY_Controller extends Controller{
             $legalAdvices->get(11);
             $this->legalAdvices = $legalAdvices;
 
+            // get all legal advice
+            $services = new Article();
+            $services->order_by('id', 'desc');
+            $services->where(array('recycle'=>0, 'newscatalogue_id'=>90));
+            $services->get();
+            $this->services = $services;
+
             // get all new STND
             $newsPrivate = new Article();
             $newsPrivate->order_by('id', 'desc');

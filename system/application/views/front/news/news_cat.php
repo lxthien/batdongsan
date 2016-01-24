@@ -1,9 +1,7 @@
 <div class="linktop">
-    <?php $i = 0; foreach($this->newsCate as $row): $i++; ?>
-    <div class="linkdautrang">
-        <a class="<?php echo $row->name_none == $this->uri->segment(2, '') ? 'linkdautrang-active' : ''; ?>" href="<?=$base_url?>tin-tuc/<?=$row->name_none?>"><?=$row->name_vietnamese;?></a>
-    </div>
-    <?php endforeach; unset($row); ?>
+    <div class="linkdautrang"><a href="<?php echo $base_url; ?>">Trang chủ</a></div>
+    <div class="linkdautrang"><a href="<?php echo $base_url; ?>tin-tuc" title="Tin tức">Tin tức</a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active"><?php echo $category->name_vietnamese; ?></span></div>
 </div>
 
 <div class="main main-tin-tuc">

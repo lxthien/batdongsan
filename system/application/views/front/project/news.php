@@ -1,6 +1,6 @@
 <div class="linktop">
     <div class="linkdautrang"><a href="<?php echo $base_url; ?>">Trang chủ</a></div>
-    <div class="linkdautrang"><a href="<?=$base_url?>du-an">Dự án</a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active">Dự án</span></div>
 </div>
 <!--main-->
 <div class="main main-du-an">

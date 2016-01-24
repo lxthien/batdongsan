@@ -66,9 +66,6 @@ $route['huong-dan-dang-tin.html']           = "home/postGuide";
 $route['bang-gia-quang-cao-tin-vip.html']   = "home/pagesigle/$1";
 $route['site-map.html']                     = "home/sitemap";
 
-$route['tim-kiem/(:num)']                   = "home/searchNews/$1";
-$route['tim-kiem']                          = "home/searchNews";
-
 $route['lien-he.html']                      = "fcontact";
 $route['dang-tin-vip.html']                 = "fcontact/contact";
 
@@ -299,10 +296,14 @@ $route['nhu-cau-nha-dat']                   = "festates";
 $route['nhu-cau-nha-dat/(:num)']            = "festates";
 $route['nhu-cau-nha-dat/(:any)']            = "festates/cat/$1";
 
-
+/*Tìm kiếm nâng cao*/
 $route['tim-kiem-bat-dong-san(:any)']               = "festates/searchView/$1";
 $route['tim-kiem-bat-dong-san(:any)/(:num)']        = "festates/searchView/$1";
 $route['tim-kiem-bat-dong-san']                     = "festates/search";
+
+/*Tìm kiếm*/
+$route['tim-kiem(:any)']                   	= "home/searchNews/$1";
+$route['tim-kiem']                          = "home/searchSetValue";
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

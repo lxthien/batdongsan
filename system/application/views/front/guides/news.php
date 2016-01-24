@@ -1,10 +1,7 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
-
 <div class="linktop">
     <div class="linkdautrang"><a href="<?php echo $base_url; ?>">Trang chủ</a></div>
-    <div class="linkdautrang"><a class="linkdautrang-active" href="<?php echo $base_url.'cam-nang'; ?>">Cẩm nang</a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active">Cẩm nang</span></div>
 </div>
-
 
 <div class="main main-tin-tuc">
     <div class="cotleft">

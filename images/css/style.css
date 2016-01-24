@@ -208,7 +208,7 @@ a:active {
     min-width: 155px;
     display: none;
     position: absolute;
-    width: 290px;
+    width: 230px;
     background: #0e8b01;
 }
 .dropdown-navigative-menu ul li   /* menu drop hien mau xanh trang*/
@@ -470,7 +470,7 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 .icon5{ background:url(../icon1.png); margin-left:5px; margin-right:5px; float:left; width:6px; height:10px; margin-top:9px; }
 .icon6{ background:url(../icon4.png); margin-right:5px; width:27px; height:25px; float:left;}
 .icon7{ background:url(../icon3.png); margin-right:5px; width:27px; height:22px; float:left;}
-.line{ float:left; width:638px; margin-bottom:8px; border-bottom: 1px dotted #afafaf;}
+.line{ float:left; width:723px; margin-bottom:8px; border-bottom: 1px solid #cccccc;}
 .line.line-vip{border-bottom: 1px dotted #ffffff;}
 .line1{ float:left; width:560px; height:1px; background-color:#CCCCCC; margin-left:20px; margin-bottom:5px; margin-top:5px;}
 .line2{ float:left; width:610px; height:1px; background-color:#666666; margin-bottom:12px;}
@@ -1278,9 +1278,10 @@ label.error {
 	color: #fff;
 	display: inline-block;
 	text-align: center;
-	padding: 8px 7px;
+	padding: 8px 15px;
 	line-height: 12px;
     background-color: #0f9502; text-transform: uppercase;
+    margin: -1px 0 0 -1px;
 }
 .box-news-mod span{
     display: block;
@@ -1591,7 +1592,7 @@ p.notice-msg{
 #page-navigative-menu .dropdown-navigative-menu>li{float: left; height: 40px; padding: 0; margin: 0px;}
 #page-navigative-menu .dropdown-navigative-menu>li .sreen1{height: 40px;}
 #page-navigative-menu .dropdown-navigative-menu>li .sreen1 h2{font-size: 15px; font-weight: 500;}
-#page-navigative-menu .dropdown-navigative-menu li .sreen1 a{padding: 0 22px;}
+#page-navigative-menu .dropdown-navigative-menu li .sreen1 a{padding: 0 30px;}
 
 .dropdown-navigative-menu ul li{padding-left: 20px;}
 
@@ -1610,7 +1611,7 @@ p.notice-msg{
  * 04/07/2015
  */
 
-.sreennoidungchitiet h3.info-basic{color: #292929; font-size: 18px; font-family: Helvetica,Arial,sans-serif;}
+.sreennoidungchitiet h3.info-basic{text-transform: uppercase; color: #0e8b01; font-size: 17px; line-height: 18px;}
 .sreennoidungchitiet .line21{margin-top: 5px; background-color: #292929; width: 100%; margin-left: 0px;}
 
 .social-detail{height: 30px;}
@@ -1626,7 +1627,7 @@ p.notice-msg{
 .add-right h3{height: 40px; color: #292929; font-size: 18px; font-family: Helvetica,Arial,sans-serif; line-height: 40px; font-weight: 400;}
 .right-contact-customer{border-radius: 5px; background-color: #f7f7f7; border: 1px solid #9a9696; float: left; padding: 10px 5px; width: 288px;}
 
-.news-related h3{color: #292929; font-size: 18px; font-family: Helvetica,Arial,sans-serif; font-weight: 600; border-bottom: 1px solid #000000; padding-bottom: 5px; margin-bottom: 10px; margin-top: 30px;}
+.news-related h3{color: #292929; font-size: 18px; font-family: Helvetica,Arial,sans-serif; font-weight: 600; border-bottom: 1px solid #000000; padding-bottom: 5px; margin-bottom: 10px; margin-top: 20px;}
 
 .left .hotnew .boxnew .sreentindb{
     width: 723px; padding: 10px; float:left; height: 145px; position: relative;

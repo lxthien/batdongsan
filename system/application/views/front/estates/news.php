@@ -2,7 +2,7 @@
 
 <div class="linktop">
     <div class="linkdautrang"><a href="<?=$base_url;?>">Trang chủ</a></div>
-    <div class="linkdautrang"><a class="linkdautrang-active" href="<?=$base_url.$estatesCategoryUrl?>" title="<?=$estatesCategoryName?>"><?=$estatesCategoryName?></a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active"><?=$estatesCategoryName?></span></div>
 </div>
 <div class="cl"></div>
 <!--main-->

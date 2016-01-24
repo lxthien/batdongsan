@@ -84,94 +84,76 @@ class Home extends MY_Controller
 		$this->viewfront($dis);
     }
 
+    function searchSetValue() {
+        $value = $this->input->post('value');
+        redirect(base_url().'tim-kiem/?q='.urldecode($value));
+    }
+
     public function searchNews(){
-        $level = 1;
-        $page = $this->uri->segment($level + 1,"") == "" ? 1 : $this->uri->segment($level + 1);
-        $dis['page'] = $page;
-        $limit = 15;
+        $page = $_GET['per_page'];
+        $limit = 10;
         $offset = ($page - 1)*$limit;
 
-        if( $_SERVER['REQUEST_METHOD'] == 'POST'){
-            $this->session->unset_userdata('value');
+        parse_str(array_pop(explode('?', $_SERVER['REQUEST_URI'], 2)), $_GET);
+        $value = $_GET['q'];
 
-            $value = $this->input->post('value');
-            $this->session->set_userdata('value', $value);
+        $news = new Article();
+        $news->like('title_vietnamese', '%'.$value.'%');
+        $news->like('tag_search', '%'.$value.'%');
+        $news->where_in('newscatalogue_id', array(71, 72, 73, 74, 75, 77, 78, 79, 80, 81, 82, 84, 85, 86, 87, 88, 89));
+        $news->where('recycle', 0);
+        $news->order_by('created', 'desc');
+        $news->get_paged($offset,$limit,TRUE);
+        $dis['news'] = $news;
 
-            $news = new Article();
-            $news->like('title_vietnamese', '%'.$value.'%');
-            $news->like('tag_search', '%'.$value.'%');
-            $news->where_in('newscatalogue_id', array(71, 72, 73, 74, 75, 77, 78, 79, 80, 81, 82, 84, 85, 86, 87, 88, 89));
-            $news->where('recycle', 0);
-            $news->order_by('created', 'desc');
-            $news->get_paged($offset,$limit,TRUE);
-            $dis['news'] = $news;
-
-            $newsAll = new Article();
-            $newsAll->like('title_vietnamese', '%'.$value.'%');
-            $newsAll->like('tag_search', '%'.$value.'%');
-            $news->where_in('newscatalogue_id', array(71, 72, 73, 74, 75, 77, 78, 79, 80, 81, 82, 84, 85, 86, 87, 88, 89));
-            $newsAll->where('recycle', 0);
-            $newsAll->order_by('created', 'desc');
-            $newsAll->get();
-            $total = $newsAll->result_count();
-        }
-        else{
-            $news = new Article();
-            $news->like('title_vietnamese', '%'.$this->session->userdata('value').'%');
-            $news->like('tag_search', '%'.$this->session->userdata('value').'%');
-            $news->where_in('newscatalogue_id', array(71, 72, 73, 74, 75, 77, 78, 79, 80, 81, 82, 84, 85, 86, 87, 88, 89));
-            $news->where('recycle', 0);
-            $news->order_by('created', 'desc');
-            $news->get_paged($offset,$limit,TRUE);
-            $dis['news'] = $news;
-
-            $newsAll = new Article();
-            $newsAll->like('title_vietnamese', '%'.$this->session->userdata('value').'%');
-            $newsAll->like('tag_search', '%'.$this->session->userdata('value').'%');
-            $news->where_in('newscatalogue_id', array(71, 72, 73, 74, 75, 77, 78, 79, 80, 81, 82, 84, 85, 86, 87, 88, 89));
-            $newsAll->where('recycle', 0);
-            $newsAll->order_by('created', 'desc');
-            $newsAll->get();
-            $total = $newsAll->result_count();
-        }
+        $newsAll = new Article();
+        $newsAll->like('title_vietnamese', '%'.$value.'%');
+        $newsAll->like('tag_search', '%'.$value.'%');
+        $news->where_in('newscatalogue_id', array(71, 72, 73, 74, 75, 77, 78, 79, 80, 81, 82, 84, 85, 86, 87, 88, 89));
+        $newsAll->where('recycle', 0);
+        $newsAll->order_by('created', 'desc');
+        $newsAll->get();
+        $total = $newsAll->result_count();
 
         /*Begin pagination*/
-        $url = $this->uri->segment(1).'/';
+        $url = $this->uri->segment(1).'/?q='.$_GET['q'];
         $config['base_url'] = site_url($url);
-        $config['total_rows'] = $total;
+        $config['total_rows'] = $newsAll->result_count();
         $config['per_page'] = $limit;
         $config['use_page_numbers'] = TRUE;
-        $config['uri_segment'] = 2;
-        $config['num_links'] = 2;
-        $config['full_tag_open']		= '<span class="pagin">';
-        $config['full_tag_close']		= "</span>";
-        $config['first_link'] 			= FALSE;
-        $config['first_tag_open']		= '';
-        $config['first_tag_close']		= '';
-        $config['last_link'] 			= FALSE;
-        $config['last_tag_open'] 		= '';
-        $config['last_tag_close'] 		= '';
-        $config['next_link']			= '>';
-        $config['next_tag_open'] 		= '';
-        $config['next_tag_close'] 		= '';
-        $config['prev_link'] 			= '<';
-        $config['prev_tag_open'] 		= '';
-        $config['prev_tag_close'] 		= '';
-        $config['num_tag_open'] 		= '';
-        $config['num_tag_close'] 		= '';
-        $config['cur_tag_open'] 		= '<span class="active">';
-        $config['cur_tag_close']		= '</span>';
+        $config['page_query_string'] = TRUE;
+        $config['uri_segment'] = 1;
+        $config['num_links'] = 1;
+        $config['full_tag_open']        = '<div class="news-pagination">';
+        $config['full_tag_close']       = "</div>";
+        $config['first_link']           = FALSE;
+        $config['first_tag_open']       = '';
+        $config['first_tag_close']      = '';
+        $config['last_link']            = FALSE;
+        $config['last_tag_open']        = '';
+        $config['last_tag_close']       = '';
+        $config['next_link']            = '>';
+        $config['next_tag_open']        = '';
+        $config['next_tag_close']       = '';
+        $config['prev_link']            = '<';
+        $config['prev_tag_open']        = '';
+        $config['prev_tag_close']       = '';
+        $config['num_tag_open']         = '';
+        $config['num_tag_close']        = '';
+        $config['cur_tag_open']         = '<span class="active">';
+        $config['cur_tag_close']        = '</span>';
         $this->pagination->initialize($config);
         /*End pagination*/
 
 
         /*Seo for website*/
-        $this->page_title = 'Thông tin '.$this->session->userdata('value').' đầy đủ, cập nhật nhất';
-        $this->page_description = $this->session->userdata('value').' với đầy đủ thông tin, cập nhật liên tục...';
+        $this->page_title = 'Thông tin '.$value.' đầy đủ, cập nhật nhất';
+        $this->page_description = $value.' với đầy đủ thông tin, cập nhật liên tục...';
         $keyword = explode(' ', $this->page_title);
         $this->page_keyword = implode(',', $keyword);
 
         $this->menu_active = 'search';
+        $dis['value'] = $value;
         $dis['base_url']=base_url();
         $dis['view']='front/includes/search_new';
         $this->viewfront($dis);

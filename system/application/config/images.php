@@ -73,6 +73,7 @@ $config["image_sizes"]["news_425_165"] = array(425, 165);
 $config["image_sizes"]["news_200_145"] = array(200, 145);
 $config["image_sizes"]["news_231_145"] = array(231, 145);
 $config["image_sizes"]["news_100_70"] = array(100, 70);
+$config["image_sizes"]["news_145_120"] = array(145, 120);
 
 $config["image_sizes"]["slide_580_380"] = array(580, 380);
 $config["image_sizes"]["slide_640_450"] = array(640, 450);

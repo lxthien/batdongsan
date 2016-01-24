@@ -1,11 +1,12 @@
 <div class="linktop">
     <div class="linkdautrang"><a href="<?=$base_url;?>" title="Sàn nhà đất">Trang chủ</a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active"><?php echo $value; ?></span></div>
 </div>
 <div class="main">
     <!--left-->
     <div class="left">
         <div class="titlenew-add">
-            <h1>Tìm kiếm</h1>
+            <h1><?php echo $value; ?></h1>
         </div>
         <!--tin tuc-->
         <div class="sreenspduan">
@@ -45,23 +46,6 @@
         </div>
     </div>
     <div class="right">
-        <div class="news-right-item boxnoibat">
-            <span class="title-top-box">Dự án nổi bật</span>
-            <?php foreach($this->projectHot as $row):
-                $cat = new Newscatalogue($row->newscatalogue_id);
-                ?>
-                <div class="sreennoibat">
-                    <div class="boxhinhxemnhieu">
-                        <a href="<?=$base_url?>du-an/<?=$cat->name_none.'/'.$row->title_none?>.html">
-                            <img src="<?=image('img/news/'.$row->image, 'news_100_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
-                        </a>
-                    </div>
-                    <div class="tieudetinxemnhieu">
-                        <a href="<?=$base_url?>du-an/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
-                    </div>
-                </div>
-            <?php endforeach; unset($row); unset($cat); ?>
-        </div>
-        <?=$this->load->view('front/news/col-right')?>
+        <?=$this->load->view('front/estates/col-right-default');?>
     </div>
 </div>

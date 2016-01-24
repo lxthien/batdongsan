@@ -6,7 +6,7 @@
 
 .linkdautrang a {color:#000000; float:left; margin-right: 10px; font-size: 14px;}
 .linkdautrang a:hover {color:#000000; float:left;}
-.linkdautrang a.linkdautrang-active{color: #0e8b01;}
+.linkdautrang span.linkdautrang-active{color: #0e8b01; font-size: 14px;}
 
 .textthanhvien a {font-size:14px; color:#FFFFFF; font-weight:lighter;}
 .textthanhvien a:hover { font-size:14px; color:#FFFFFF; text-decoration:underline; font-weight:lighter;}

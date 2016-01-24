@@ -21,7 +21,7 @@
                 <li><h2><a href="<?php echo $base_url; ?>du-an">Dự án</a></h2>
                     <ul>
                         <?php foreach($this->projectsCate as $row): ?>
-                        <li><a href="<?=$base_url?>tin-tuc/<?=$row->name_none;?>"><?=$row->name_vietnamese;?></a></li>
+                        <li><a href="<?=$base_url?>du-an/<?=$row->name_none;?>"><?=$row->name_vietnamese;?></a></li>
                         <?php endforeach; unset($row); ?>
                     </ul>
                 </li>
@@ -47,42 +47,15 @@
 <div class="wrapper">
     <div class="home-right-bar">
         <h3 class="home-title-services">Dịch vụ chính</h3>
-        <div class="home-service-item"><h1><a href="">Môi giới bất động sản</a></h1>
+        <?php foreach ($this->services as $row): ?>
+        <div class="home-service-item">
+            <h1><a href="<?=$base_url.'dich-vu-bds/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a></h1>
             <div class="home-descripton-service">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                <a href="">Chi tiết</a>
+                <p><?=strlen($row->short_vietnamese) < 300 ? $row->short_vietnamese: cut_string($row->short_vietnamese, 300).'...';?></p>
+                <a href="<?=$base_url.'dich-vu-bds/'.$row->title_none?>.html">Chi tiết</a>
             </div>
         </div>
-        <div class="home-service-item"><h1><a href="">Phát triển bất động sản</a></h1>
-            <div class="home-descripton-service">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                <a href="">Chi tiết</a>
-            </div>
-        </div>
-        <div class="home-service-item"><h1><a href="">Phân phối dự án bất động sản</a></h1>
-            <div class="home-descripton-service">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                <a href="">Chi tiết</a>
-            </div>
-        </div>
-        <div class="home-service-item"><h1><a href="">Thiết kế xây dựng nhà ở</a></h1>
-            <div class="home-descripton-service">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                <a href="">Chi tiết</a>
-            </div>
-        </div>
-        <div class="home-service-item"><h1><a href="">Thẩm định giá các loại tài sản</a></h1>
-            <div class="home-descripton-service">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                <a href="">Chi tiết</a>
-            </div>
-        </div>
-        <div class="home-service-item"><h1><a href="">Cải tạo sửa chữa công trình dân dụng</a></h1>
-            <div class="home-descripton-service">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                <a href="">Chi tiết</a>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
     <div class="home-search">
         <div class="search-simple">

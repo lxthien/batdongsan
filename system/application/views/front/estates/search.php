@@ -1,6 +1,6 @@
 <div class="linktop">
     <div class="linkdautrang"><a href="<?=$base_url;?>">Trang chủ</a></div>
-    <div class="linkdautrang"><a class="linkdautrang-active" href="javascript:void(0)" title="Tìm kiếm nhà đất">Tìm kiếm nhà đất</a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active">Tìm kiếm nhà đất</span></div>
 </div>
 
 <div class="main estates">

@@ -1,10 +1,10 @@
 <div class="linktop">
     <div class="linkdautrang"><a href="<?=$base_url;?>" title="Sàn nhà đất">Trang chủ</a></div>
     <div class="linkdautrang"><a href="<?=$base_url;?>du-an" title="Dự án">Dự án</a></div>
-    <div class="linkdautrang"><a href="<?=$base_url;?>du-an/<?=$category->name_none;?>" title="<?=$category->name_vietnamese;?>"><?=$category->name_vietnamese;?></a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active"><?=$category->name_vietnamese;?></span></div>
 </div>
 
-<div class="main" style="width:960px;float:left;margin-top:5px;  margin-left:12px; ">
+<div class="main">
     <div class="left">
         <div class="top-vip">
             <div class="title-top-vip fl">

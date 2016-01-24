@@ -1,10 +1,7 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
-<div class="linktop" style=" width:960px;height:20px; float:left; margin-top:12px; margin-bottom: 2px;">
-    <?php $i = 0; foreach ($this->guideCate as $row): $i++; ?>
-        <div class="linkdautrang" style="<?php echo $i==1?'margin-left:10px;':''; ?> width:auto; float:left;">
-            <a class="<?php echo $row->name_none == $this->uri->segment(2, '') ? 'linkdautrang-active' : ''; ?>" href="<?=$base_url?>cam-nang/<?=$row->name_none?>"><?=$row->name_vietnamese;?></a>
-        </div>
-    <?php endforeach; unset($row); ?>
+<div class="linktop">
+    <div class="linkdautrang"><a href="<?php echo $base_url; ?>">Trang chủ</a></div>
+    <div class="linkdautrang"><a href="<?php echo $base_url; ?>cam-nang" title="Cẩm nang">Cẩm nang</a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active"><?php echo $category->name_vietnamese; ?></span></div>
 </div>
 
 <div class="main main-tin-tuc">
@@ -33,7 +30,7 @@
                     </div>
                     <div class="sreenndtinthitruong">
                         <p>
-                            <?=strlen($row->short_vietnamese) < 300 ? $row->short_vietnamese: cut_string($row->short_vietnamese, 300).'...';?>
+                            <?=strlen($row->short_vietnamese) < 500 ? $row->short_vietnamese: cut_string($row->short_vietnamese, 500).'...';?>
                         </p>
                     </div>
                 </div>
@@ -51,10 +48,8 @@
 
     <div class="cotright right">
         <div class="news-right-item">
-            <div class="news-right-title">
-                <p>Tin dự án</p>
-            </div>
-            <div class="news-right-content">
+            <span class="title-top-box">Tin dự án</span>
+            <div class="news-right-content boxnoibat-main">
                 <?php
                 foreach ($newNews as $row):
                 $cat = new Newscatalogue($row->newscatalogue_id);
@@ -62,23 +57,19 @@
                     <div class="sreennoibat">
                         <div class="boxhinhxemnhieu">
                             <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html">
-                                <img src="<?=image('img/news/'.$row->image, 'news_115_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
+                                <img src="<?=image('img/news/'.$row->image, 'news_100_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
                             </a>
                         </div>
-                        <div style="width:140px; float:right;">
-                            <p class="tieudetinxemnhieu">
-                                <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
-                            </p>
+                        <div class="tieudetinxemnhieu">
+                            <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
                         </div>
                     </div>
                 <?php endforeach; unset($row); ?>
             </div>
         </div>
         <div class="news-right-item">
-            <div class="news-right-title">
-                <p>Tin thị trường</p>
-            </div>
-            <div class="news-right-content">
+            <span class="title-top-box">Tin thị trường</span>
+            <div class="news-right-content boxnoibat-main">
                 <?php
                 foreach ($newViewMost as $row):
                     $cat = new Newscatalogue($row->newscatalogue_id);
@@ -86,13 +77,11 @@
                     <div class="sreennoibat">
                         <div class="boxhinhxemnhieu">
                             <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html">
-                                <img src="<?=image('img/news/'.$row->image, 'news_115_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
+                                <img src="<?=image('img/news/'.$row->image, 'news_100_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
                             </a>
                         </div>
-                        <div style="width:180px; float:right;">
-                            <p class="tieudetinxemnhieu">
-                                <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
-                            </p>
+                        <div class="tieudetinxemnhieu">
+                            <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
                         </div>
                     </div>
                 <?php endforeach; unset($row); ?>
