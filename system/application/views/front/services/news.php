@@ -42,53 +42,7 @@
     </div>
 
     <div class="cotright right">
-        <div class="news-right-item">
-            <div class="news-right-title">
-                <p>Tin dự án</p>
-            </div>
-            <div class="news-right-content">
-                <?php
-                foreach ($newNews as $row):
-                $cat = new Newscatalogue($row->newscatalogue_id);
-                ?>
-                    <div class="sreennoibat">
-                        <div class="boxhinhxemnhieu">
-                            <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html">
-                                <img src="<?=image('img/news/'.$row->image, 'news_200_145');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
-                            </a>
-                        </div>
-                        <div style="width:140px; float:right;">
-                            <p class="tieudetinxemnhieu">
-                                <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
-                            </p>
-                        </div>
-                    </div>
-                <?php endforeach; unset($row); ?>
-            </div>
-        </div>
-        <div class="news-right-item">
-            <div class="news-right-title">
-                <p>Tin thị trường</p>
-            </div>
-            <div class="news-right-content">
-                <?php
-                foreach ($newViewMost as $row):
-                    $cat = new Newscatalogue($row->newscatalogue_id);
-                ?>
-                    <div class="sreennoibat">
-                        <div class="boxhinhxemnhieu">
-                            <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html">
-                                <img src="<?=image('img/news/'.$row->image, 'news_115_70');?>" alt="<?=$row->title_vietnamese;?>" width="115" height="70" >
-                            </a>
-                        </div>
-                        <div style="width:180px; float:right;">
-                            <p class="tieudetinxemnhieu">
-                                <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html"><?=$row->title_vietnamese;?></a>
-                            </p>
-                        </div>
-                    </div>
-                <?php endforeach; unset($row); ?>
-            </div>
-        </div>
+        <?php echo $this->load->view('front/widget/search-estates'); ?>
+		<?php echo $this->load->view('front/includes/adv_right'); ?>
     </div>
 </div>

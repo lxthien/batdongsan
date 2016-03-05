@@ -12,8 +12,10 @@
                 if ($i==5){break;}
             ?>
             <li>
-                <a href=""><img src="<?php echo image('img/news/'.$row->image, 'news_228_200') ?>"></a>
-                <a class="tool-tip-title" href="<?=$base_url.$row->estatecatalogue->name_none.'/'.$row->estatecity->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
+                <a href="<?php echo $base_url.'du-an/'.$row->newscatalogue->name_none.'/'.$row->title_none?>.html">
+                    <img src="<?php echo image('img/news/'.$row->image, 'news_233_203') ?>">
+                </a>
+                <a class="tool-tip-title" href="<?php echo $base_url.'du-an/'.$row->newscatalogue->name_none.'/'.$row->title_none?>.html" title="<?php echo $row->title; ?>">
                     <span><?=$row->title_vietnamese?></span>
                 </a>
             </li>

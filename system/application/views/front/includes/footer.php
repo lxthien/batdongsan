@@ -26,15 +26,19 @@
 <div class="footer-items">
     <div class="footer-item address">
         <a href="<?php echo $base_url ?>"><img src="<?php echo $base_url ?>images/assets/logo.jpg"></a>
-        <p>ĐC: 448 Trương Công Định, P.8, TP.VT</p>
-        <p>Email: info@sotaynhadat.vn</p>
-        <p>Website: http://sotaynhadat.vn</p>
+        <p><b>ĐC</b>: 34/1/4 Hoàng Hoa Thám, P.2 <br> Thành Phố Vũng Tàu, Bà Rịa Vũng Tàu</p>
+        <p><b>Email</b>: batdongsanvungtau@gmail.com</p>
+        <p><b>Website</b>: http://batdongsanvungtau.com.vn</p>
     </div>
     <div class="footer-item email-signup">
         <h5>Đăng ký nhận tin</h5>
         <p>Đăng ký thư thông báo của chúng tôi để cập nhật thông tin về các dự án của tập đoàn Vingroup</p>
-        <form id="email-signup">
-            
+        <form id="email-signup" action="#" method="post">
+            <div class="main-form-email-signup">
+                <input type="text" name="email" placeholder="Email của bạn"/>
+                <input class="submit-email-signup" type="button" value="Đồng ý"/>
+                <p class="notice-msg">&nbsp;</p>
+            </div>
         </form>
     </div>
     <div class="footer-item social">

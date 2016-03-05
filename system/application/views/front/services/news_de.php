@@ -60,12 +60,12 @@
                     ?>
                     <div class="sreenspkhac <?php echo $i%3==0 ? 'sreenspkhac-three' : ''; ?>">
                         <div class="spkhac">
-                            <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese?>">
+                            <a href="<?=$base_url.$row->newscatalogue->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese?>">
                                 <img src="<?php echo image('img/news/'.$row->image, 'news_231_145') ?>" alt="<?=$row->title_vietnamese?>" />
                             </a>
                         </div>
                         <div class="titleduankhac">
-                            <h4><a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese?>"><?=$row->title_vietnamese?></a></h4>
+                            <h4><a href="<?=$base_url.$row->newscatalogue->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese?>"><?=$row->title_vietnamese?></a></h4>
                         </div>
                     </div>
                     <?php if ($i%3==0): ?><div class="line"></div><?php endif; ?>

@@ -4,7 +4,7 @@
 
 .cl{clear: both;}
 
-.linkdautrang a {color:#000000; float:left; margin-right: 10px; font-size: 14px;}
+.linkdautrang a {color:#000000; float:left; margin-right: 10px; font-size: 15px; font-family: 'Roboto', sans-serif;}
 .linkdautrang a:hover {color:#000000; float:left;}
 .linkdautrang span.linkdautrang-active{color: #0e8b01; font-size: 14px;}
 

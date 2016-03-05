@@ -25,7 +25,8 @@ class fprojects extends MY_Controller{
         $projectVT = new Article();
         $projectVT->where('recycle',0);
         $projectVT->where('hot !=',1);
-        $projectVT->where_in('newscatalogue_id',$arrayCateNewsId);
+        $projectVT->where('newscatalogue_id', 84);
+        $projectVT->order_by('view_count', 'desc');
         $projectVT->get(9);
         $dis['projectVT'] = $projectVT;
 

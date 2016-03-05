@@ -1,6 +1,5 @@
 <script language="javascript" type="text/javascript" src="<?php echo $base_url;?>ckeditor/ckeditor.js"></script>
 <script language="javascript" type="text/javascript" src="<?=$base_url; ?>images/js/jquery.validate.js"></script>
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
 <script language="javascript" type="text/javascript">
 	$(document).ready(function(){
 		$('#myForm').validate({
@@ -89,9 +88,9 @@
     }
 </style>
 
-<div class="linktop" style="width:600px;height:20px; float:left; margin-top:8px; margin-left:5px; margin-bottom:10px;">
+<div class="linktop">
     <div class="linkdautrang"><a href="<?=$base_url?>" title="Sàn nhà đất">Trang chủ</a></div>
-    <div class="linkdautrang"><a class="linkdautrang-active" href="<?=$base_url?>lien-he.html" title="Liên hệ">Liên hệ với SotayNhadat.vn</a></div>
+    <div class="linkdautrang"><span class="linkdautrang-active">Liên hệ với Batdongsanvungtau.com.vn</span></div>
 </div>
 
 <!--main-->
@@ -110,20 +109,20 @@
                     <div class="contact-tbl">
                         <div class="contact-tbl-row"><img src="<?=$base_url?>images/contact_add.png" width="16" height="18" />
                             <span class="label" style="font-weight:bold;">Địa chỉ: </span>
-                            Tầng 3, Tòa nhà ACB, 12 Hoàng Hoa Thám, Phường 2, TP. Vũng Tàu, BRVT.
+                            34/1/4 Hoàng Hoa Thám, Phường 2, TP. Vũng Tàu, BRVT.
                         </div>
                         <div class="contact-tbl-row"><img src="<?=$base_url?>images/contact_phone.png" width="16" height="18" />
                             <span class="label" style="font-weight:bold;">Điện thoại: </span>
-                            0646 - 557 999 &nbsp;&nbsp;<img src="<?=$base_url?>images/contact_hotline.png" width="16" height="18" style=" margin-bottom:-3px;" />
+                            0643.540208 &nbsp;&nbsp;<img src="<?=$base_url?>images/contact_hotline.png" width="16" height="18" style=" margin-bottom:-3px;" />
                     <span class="label">
-                        <span id="ctl28_ctl01_lblTPhone" style="font-weight:bold;">Di động: </span>&nbsp;</span>
-                            <span class="content" style="border: 0;background-image: none;">0168 200 0080 </span>
+                        <span id="ctl28_ctl01_lblTPhone" style="font-weight:bold;">Di động: </span></span>
+                            <span class="content" style="border: 0;background-image: none;">0978.384438</span>
                         </div>
                         <div class="contact-tbl-row"><img src="<?=$base_url?>images/contact_web.png" width="16" height="18" />
-                            <span class="label" style="font-weight:bold;">Website:</span> www.sotaynhadat.vn&nbsp;&nbsp;<img src="<?=$base_url?>images/contact_email.png" width="16" height="18"  style=" margin-bottom:-4px;"/>
+                            <span class="label" style="font-weight:bold;">Website:</span> www.batdongsanvungtau.com.vn&nbsp;&nbsp;<img src="<?=$base_url?>images/contact_email.png" width="16" height="18"  style=" margin-bottom:-4px;"/>
                     <span class="label">
-                        <span id="ctl28_ctl01_lblTPhone" style="font-weight:bold;">Email:</span>&nbsp;</span>
-                            <span class="content">info@sotaynhadat.vn </span>
+                        <span id="ctl28_ctl01_lblTPhone" style="font-weight:bold;">Email: </span></span>
+                            <span class="content">batdongsanvungtau@gmail.com</span>
                         </div>
                         <div class="clear"></div>
                         <span style="display: block; text-align: center; padding: 5px 0px; font-weight: 600; color: #0000ff; margin-top: 10px;">
@@ -202,66 +201,9 @@
     <!--end left-->
     <!-- right-->
     <div class="right">
-        <!-- tim kiem bds-->
-        <div class="boxtimkiembds">
-            <span class="title-top-box">Tìm kiếm bất động sản</span>
-            <div class="sreenboxseach2" style=" width:310px;  margin-bottom:20px; float:left;">
-                <form action="<?=$base_url?>tim-kiem-bat-dong-san" method="post">
-                    <div  class="boxseach"  style=" width:100px; float:left; margin-left:60px;">
-                        <label>
-                            <input type="radio" style="float:left; margin-top:10px;" name="estatecatalogue_id" value="1"/>
-                            <p style="font-weight:bold; font-size:14px; color:#CC0000; float:left; margin-top:8px; margin-left:5px;">Mua - Bán</p>
-                        </label>
-                    </div>
-                    <div class="boxseach"  style=" width:100px; margin-left:5px;  float:left;">
-                        <label>
-                            <input type="radio" style="float:left; margin-top:10px;" name="estatecatalogue_id" value="2"/>
-                            <p style="font-weight:bold; font-size:14px; color:#CC0000; float:left; margin-top:8px; margin-left:5px;">Cho Thuê</p>
-                        </label>
-                    </div>
-                    <div class="sreenseachtimkiembds1" style="width:310px; height:25px; float:left; margin-bottom:3px;">
-                        <select name="estatetype_id" id="estatetype_id" size="1" style="float:left; margin-right:5px; margin-left:8px; width:140px;  height:23px; margin-top:10px; margin-bottom:5px;  border:1px  #CCCCCC solid;">
-                            <option value="" selected="selected">Chọn Loại nhà đất</option>
-                        </select>
-                        <select name="estatecity_id" id="estatecity_id" size="1" style="float:left; width:140px; margin-right:5px;  height:23px; margin-bottom:5px; margin-top:10px;  border:1px  #CCCCCC solid;">
-                            <option value="">Chọn Tỉnh/TP</option>
-                            <?php foreach($this->estateProvince as $row): ?>
-                                <option <?php if($object->estatecity_id == $row->id) echo 'selected="selected"'; ?> value="<?=$row->id?>"><?=$row->name;?></option>
-                            <?php endforeach; unset($row); ?>
-                        </select>
-                    </div>
-                    <div class="sreenseachtimkiembds1" style="width:310px; height:25px; float:left; margin-bottom:3px;">
-                        <select name="estatedistrict_id" id="estatedistrict_id" size="1" style="float:left; width:140px; margin-right:5px; margin-left:8px;  height:23px; margin-top:10px; margin-bottom:5px;  border:1px  #CCCCCC solid;" >
-                            <option value="">Chọn Quận/Huyện</option>
-                        </select>
-                        <select name="estatearea_id" id="estatearea_id" size="1" style="float:left; width:140px; margin-right:5px;  height:23px; margin-bottom:5px; margin-top:10px;  border:1px  #CCCCCC solid;" >
-                            <option value="" selected="selected">Chọn Diện tích</option>
-                            <option value="-1">Không xác định</option>
-                            <?php foreach($this->estateareas as $row): ?>
-                                <option <?php if($object->estatecity_id == $row->id) echo 'selected="selected"'; ?> value="<?=$row->id?>"><?=$row->label;?></option>
-                            <?php endforeach; unset($row); ?>
-                        </select>
-                    </div>
-                    <div class="sreenseachtimkiembds1" style="width:310px; height:25px; float:left; margin-bottom:13px;">
-                        <select name="estateprice_id" id="estateprice_id" size="1" style="float:left; width:140px; margin-right:5px; margin-left:8px; height:23px; margin-top:10px; margin-bottom:5px;  border:1px  #CCCCCC solid;" >
-                            <option value="" selected="selected">Chọn Mức giá</option>
-                        </select>
-                        <select name="estatedirection_id" id="estatedirection_id" size="1" style="float:left; width:140px; margin-right:5px;  height:23px; margin-bottom:5px; margin-top:10px;  border:1px  #CCCCCC solid;" >
-                            <option value="" selected="selected">Chọn Hướng nhà</option>
-                            <?php foreach($this->estateDirection as $row): ?>
-                                <option value="<?=$row->id?>"><?=$row->name;?></option>
-                            <?php endforeach; unset($row); ?>
-                        </select>
-                    </div>
-                    <div class="timkiembds2">
-                        <input type="submit" value=""/>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!-- qc-->
+        <?php echo $this->load->view('front/widget/search-estates'); ?>
+		
         <?php echo $this->load->view('front/includes/adv_right'); ?>
-        <!-- end qc-->
     </div>
 </div>
 <!--end main-->

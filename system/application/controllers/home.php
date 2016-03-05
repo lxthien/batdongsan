@@ -418,7 +418,7 @@ class Home extends MY_Controller
         $districts->order_by('position', 'asc');
         $districts->get();
 
-        $option = '<option value="">Chọn Quận/Huyện</option>';
+        $option = '<option value="">TP/Huyện</option>';
         foreach($districts as $row){
             if($row->id == $this->input->post('districtSelected')){
                 $option .='<option selected="selected" value='.$row->id.'>'.$row->name.'</option>';
@@ -440,7 +440,7 @@ class Home extends MY_Controller
         $wards->order_by('position', 'asc');
         $wards->get();
 
-        $option = '<option value="" selected="">Chọn Xã/Phường</option>';
+        $option = '<option value="" selected="">Phường/Xã</option>';
         foreach($wards as $row){
             if($row->id == $this->input->post('wardSelected')){
                 $option .='<option selected="selected" value='.$row->id.'>'.$row->name.'</option>';
@@ -460,7 +460,7 @@ class Home extends MY_Controller
         $type->order_by('position', 'asc');
         $type->get();
 
-        $option = '<option value="">Chọn Phân mục</option>';
+        $option = '<option value="">Chọn phân mục</option>';
         foreach($type as $row){
             if($row->id == $this->input->post('typeSelected')){
                 $option .='<option selected="selected" value="'.$row->id.'">'.$row->name.'</option>';
@@ -480,7 +480,7 @@ class Home extends MY_Controller
         $prices->order_by('position', 'asc');
         $prices->get();
 
-        $option = '<option value="">Chọn Mức giá</option>';
+        $option = '<option value="">Chọn mức giá</option>';
         //$option.= '<option value="-1">Thỏa thuận</option>';
         foreach($prices as $row){
             if($row->id == $this->input->post('priceSelected')){
@@ -504,7 +504,7 @@ class Home extends MY_Controller
         $prices->order_by('position', 'asc');
         $prices->get();
 
-        $option = '<option value="">Chọn Mức giá</option>';
+        $option = '<option value="">Mức Giá</option>';
         $option.= '<option value="-1">Thỏa thuận</option>';
         foreach($prices as $row){
             if($row->id == $this->input->post('priceSelected')){
@@ -553,7 +553,7 @@ class Home extends MY_Controller
         $type->order_by('position', 'asc');
         $type->get();
 
-        $option = '<option value="">Chọn Loại nhà đất</option>';
+        $option = '<option value="">Loại Nhà Đất</option>';
         foreach($type as $row){
             if($row->id == $this->input->post('typeSelected')){
                 $option .='<option selected="selected" value='.$row->id.'>'.$row->name.'</option>';

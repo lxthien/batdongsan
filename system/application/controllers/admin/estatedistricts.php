@@ -6,10 +6,12 @@ class estatedistricts extends MY_Controller{
         $this->session->set_userdata(array(config_item('session_admin').'menu_current'=>253));
         $this->load->library('login_manager');
     }
+
     function index()
     {
         $this->list_all();
     }
+
     function list_all($offset=0,$limit=10)
     {
         $districts = new Estatedistrict();
@@ -19,11 +21,12 @@ class estatedistricts extends MY_Controller{
         $dis['districts'] = $districts;
         $dis['base_url'] = base_url();
         $dis['view']='estatedistrict/list_all';
-        $dis['menu_active']='Thành phố/Tỉnh';
+        $dis['menu_active']='Thành phố/Phường';
         $dis['title']="Danh sách các Quận/Huyện";
         $dis['title_table'] = "Trang hiện tại:".$districts->paged->current_page.'/'.$districts->paged->total_pages;
         $this->viewadmin($dis);
     }
+
     function list_by_parent($id,$offset=0,$limit=10)
     {
         if($_SERVER['REQUEST_METHOD']=="POST"){
@@ -57,7 +60,7 @@ class estatedistricts extends MY_Controller{
         $dis['city'] = $city;
         $dis['base_url'] = base_url();
         $dis['view']='estatedistrict/list_by_parent';
-        $dis['menu_active']='Thành phố/Tỉnh';
+        $dis['menu_active']='Thành phố/Phường';
         $dis['title']="Danh sách các Quận/Huyện thuộc <span style='color:#F00;'>".$city->name.'</span>';
         $dis['title_table'] = "Trang hiện tại:".$districts->paged->current_page.'/'.$districts->paged->total_pages;
         $dis['nav_menu']=array(
@@ -76,6 +79,7 @@ class estatedistricts extends MY_Controller{
          );
         $this->viewadmin($dis);
     }
+
     function edit_by_parent($city_id,$id=0)
     {
         $city = new Estatecity($city_id);
@@ -101,7 +105,7 @@ class estatedistricts extends MY_Controller{
         $dis['city_id'] = $city_id;
         $dis['base_url'] = base_url();
         $dis['view']='estatedistrict/edit';
-        $dis['menu_active']='Thành phố/Tỉnh';
+        $dis['menu_active']='Thành phố/Phường';
         $dis['title']="Thêm/Sửa Quận/Huyện thuộc <span style='color:#F00;'>".$city->name."</span>";
         $dis['nav_menu']=array(
     			array(
@@ -113,6 +117,7 @@ class estatedistricts extends MY_Controller{
          );
         $this->viewadmin($dis);
     }
+
     function delete_by_parent()
     {
         $id=$this->uri->segment(5);
@@ -124,6 +129,7 @@ class estatedistricts extends MY_Controller{
         //redirect to city
         redirect($this->admin.'estatedistricts/list_by_parent/'.$city_id);
     }
+    
     function delete()
     {
         $id=$this->uri->segment(4);

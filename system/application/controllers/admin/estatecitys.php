@@ -6,10 +6,12 @@ class estatecitys extends MY_Controller{
         $this->session->set_userdata(array(config_item('session_admin').'menu_current'=>253));
         $this->load->library('login_manager');
     }
+
     function index()
     {
         $this->list_all();
     }
+
     function list_all($offset=0,$limit=100)
     {
         if($_SERVER['REQUEST_METHOD']=="POST"){
@@ -38,8 +40,8 @@ class estatecitys extends MY_Controller{
         $dis['citys'] = $citys;
         $dis['base_url'] = base_url();
         $dis['view']='estatecity/list_all';
-        $dis['menu_active']='Thành phố/Tỉnh';
-        $dis['title']="Danh sách các Thành phố/Tỉnh";
+        $dis['menu_active']='Thành phố/Phường';
+        $dis['title']="Danh sách các Thành phố/Phường";
         $dis['title_table'] = "Trang hiện tại:".$citys->paged->current_page.'/'.$citys->paged->total_pages;
         $dis['nav_menu']=array(
     			array(
@@ -51,6 +53,7 @@ class estatecitys extends MY_Controller{
          );
         $this->viewadmin($dis);
     }
+
     function edit($id=0)
     {
         $city = new Estatecity($id);
@@ -81,8 +84,8 @@ class estatecitys extends MY_Controller{
         $dis['object'] = $city;
         $dis['base_url'] = base_url();
         $dis['view']='estatecity/edit';
-        $dis['menu_active']='Thành phố/Tỉnh';
-        $dis['title']="Thêm/Sửa Thành phố/Tỉnh";
+        $dis['menu_active']='Thành phố/Phường';
+        $dis['title']="Thêm/Sửa Thành phố/Phường";
         $dis['nav_menu']=array(
     			array(
     				"type"=>"back",
@@ -93,6 +96,7 @@ class estatecitys extends MY_Controller{
          );
         $this->viewadmin($dis);
     }
+    
     function delete()
     {
         $id=$this->uri->segment(4);
@@ -100,7 +104,7 @@ class estatecitys extends MY_Controller{
         //delete city
         if(count($city->estatedistrict->all)>0)
         {
-            flash_message('error','Không thể xóa Thành phố/Tỉnh, vui lòng xóa Quận/Huyện trước');
+            flash_message('error','Không thể xóa Thành phố/Phường, vui lòng xóa Quận/Huyện trước');
         }
         else
         {

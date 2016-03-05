@@ -24,10 +24,10 @@
             </div>
             <div class="sreenseachtimkiembds1">
                 <select name="estatetype_id" id="estatetype_id">
-                    <option value="" selected="selected">Chọn Loại nhà đất</option>
+                    <option value="" selected="selected">Chọn loại nhà đất</option>
                 </select>
                 <select name="estatecity_id" id="estatecity_id">
-                    <option value="">Chọn Tỉnh/TP</option>
+                    <option value="">Chọn tỉnh/TP</option>
                     <?php foreach($this->estateProvince as $row): ?>
                         <option <?php if($object->estatecity_id == $row->id) echo 'selected="selected"'; ?> value="<?=$row->id?>"><?=$row->name;?></option>
                     <?php endforeach; unset($row); ?>
@@ -35,10 +35,10 @@
             </div>
             <div class="sreenseachtimkiembds1">
                 <select name="estatedistrict_id" id="estatedistrict_id" size="1">
-                    <option value="">Chọn Quận/Huyện</option>
+                    <option value="">Chọn quận/huyện</option>
                 </select>
                 <select name="estatearea_id" id="estatearea_id" size="1" >
-                    <option value="" selected="selected">Chọn Diện tích</option>
+                    <option value="" selected="selected">Chọn diện tích</option>
                     <option value="-1">Không xác định</option>
                     <?php foreach($this->estateareas as $row): ?>
                         <option <?php if($object->estatecity_id == $row->id) echo 'selected="selected"'; ?> value="<?=$row->id?>"><?=$row->label;?></option>
@@ -47,10 +47,10 @@
             </div>
             <div class="sreenseachtimkiembds1">
                 <select name="estateprice_id" id="estateprice_id" size="1">
-                    <option value="" selected="selected">Chọn Mức giá</option>
+                    <option value="" selected="selected">Chọn mức giá</option>
                 </select>
                 <select name="estatedirection_id" id="estatedirection_id" size="1">
-                    <option value="" selected="selected">Chọn Hướng nhà</option>
+                    <option value="" selected="selected">Chọn hướng nhà</option>
                     <?php foreach($this->estateDirection as $row): ?>
                         <option value="<?=$row->id?>"><?=$row->name;?></option>
                     <?php endforeach; unset($row); ?>
