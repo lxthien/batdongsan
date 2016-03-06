@@ -10,15 +10,16 @@
                     <select name="estatetype_id" id="estatetype_id">
                         <option value="0" selected="selected">Chọn danh mục dự án</option>
                         <?php foreach($this->projectsCate as $row): ?>
-                            <option <?php /*if($object->estatetype_id == $row->id) echo 'selected="selected"'; */?> value="<?=$row->id;?>"><?=$row->name_vietnamese;?></option>
+                            <option value="<?=$row->id;?>"><?=$row->name_vietnamese;?></option>
                         <?php endforeach; unset($row); ?>
                     </select>
                 </div>
             </div>
             <div class="sreentimkiemduan">
                 <div class="tieudetimkiemduan">
-                    <p>Tìm kiếm theo Tỉnh/TP:</p>
+                    <p>Tìm kiếm theo TP/Huyện:</p>
                 </div>
+                <!--
                 <div class="sreenmenuseach">
                     <select name="estatecity_id" id="estatecity_id">
                         <option value="">Chọn Tỉnh/Thành phố</option>
@@ -27,14 +28,21 @@
                         <?php endforeach; unset($row); ?>
                     </select>
                 </div>
+                -->
+                <input id="estatecity_id" name="estatecity_id" type="hidden" value="14">
+                <div class="sreenmenuseach">
+                    <select name="estatedistrict_id" id="estatedistrict_id">
+                        <option value="">TP/Huyện</option>
+                    </select>
+                </div>
             </div>
             <div class="sreentimkiemduan">
                 <div class="tieudetimkiemduan">
-                    <p>Tìm kiếm theo Quận/Huyện:</p>
+                    <p>Tìm kiếm theo Phường/Xã:</p>
                 </div>
                 <div class="sreenmenuseach">
-                    <select name="estatedistrict_id">
-                        <option value="">Chọn Quận/Huyện</option>
+                    <select name="estateward_id" id="estateward_id" size="1">
+                        <option value="">Phường/Xã</option>
                     </select>
                 </div>
             </div>
@@ -46,7 +54,7 @@
         </form>
     </div>
 
-    <div class="boxnoibat">
+    <div class="boxnoibat" style="border-bottom: none;">
         <span class="title-top-box">Danh mục dự án</span>
         <?php foreach($this->projectsCate as $row): ?>
             <div class="sreentinnoibat">

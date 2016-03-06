@@ -53,14 +53,21 @@
                         <?php endforeach; unset($row); ?>
                     </ul>
                 </li>
-                <li class="dropdown-navigative-menu2 <?=$this->menu_active == 'services' ? 'active' : '';?>">
+                <li class="dropdown-navigative-menu2 dropdown-navigative-menu-dich-vu-bds <?=$this->menu_active == 'services' ? 'active' : '';?>">
                     <div class="sreen1">
                         <h2><a href="<?=$base_url?>dich-vu-bds" class="haslin">Dịch vụ BĐS</a></h2>
                     </div>
+                    <ul>
+                        <?php foreach ($this->services as $row): ?>
+                            <li class="lv1">
+                                <a href="<?=$base_url.'dich-vu-bds/'.$row->title_none?>.html" title="<?=$row->title_vietnamese;?>" class="haslink"><?=$row->title_vietnamese;?></a>
+                            </li>
+                        <?php endforeach; unset($row); ?>
+                    </ul>
                 </li>
-                <li class="dropdown-navigative-menu2 <?=$this->menu_active == 'guides' ? 'active' : '';?>">
+                <li class="dropdown-navigative-menu2 dropdown-navigative-menu-cam-nang <?=$this->menu_active == 'guides' ? 'active' : '';?>">
                     <div class="sreen1">
-                        <h2><a href="<?=$base_url?>cam-nang" class="haslin ">Cẩm nang</a></h2>
+                        <h2><a href="<?=$base_url?>cam-nang" class="haslin">Cẩm nang</a></h2>
                     </div>
                     <ul>
                         <?php foreach($this->guideCate as $row):?>

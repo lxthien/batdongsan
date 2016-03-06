@@ -210,12 +210,13 @@ a:active {
     position: absolute;
     width: 230px;
     background: #0e8b01;
+    opacity: 0.8;
 }
 .dropdown-navigative-menu ul li   /* menu drop hien mau xanh trang*/
 {
     border-top:none;
-    border-bottom: 1px #bb7700 solid;
-    height: 30px;
+    /*border-bottom: 1px #bb7700 solid;*/
+    height: 35px;
     float: none;
     padding-left: 10px;
     padding-right: 10px;
@@ -228,13 +229,13 @@ a:active {
 }
 .dropdown-navigative-menu ul li a/* font menu trang*/
 {
-    font-size:13px;
+    font-size: 13px;
     font-weight: 500;
     border-right: none;
-    display: inline-block;
+    display: block;
     color: #ffffff;
     text-align: left;
-    line-height: 30px;
+    line-height: 35px;
 }
 .dropdown-navigative-menu ul li.hover, ul.dropdown-navigative-menu ul li:hover, ul.dropdown-navigative-menu ul .li_selected, ul.dropdown-navigative-menu ul li.active
 {
@@ -290,7 +291,7 @@ a:active {
 .dropdown-navigative-menu2 a:hover, .dropdown-navigative-menu2 a.active, ul.dropdown-navigative-menu2 a:active
 {
     color: #ffffff;
-    font:Geneva, Arial, Helvetica, sans-serif;
+    font: Arial, Helvetica, sans-serif;
 }
 .dropdown-navigative-menu2 li a
 {
@@ -313,7 +314,7 @@ a:active {
 }
 .dropdown-navigative-menu2 ul li   /* menu drop hien mau xanh trang*/
 {
-    height:30px;
+    height:35px;
     float: none;
     padding-left: 10px;
     padding-right: 10px;
@@ -384,6 +385,17 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 {
 _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 	font-size: 14px !important;
 }
+
+.dropdown-navigative-menu ul li a:hover, .dropdown-navigative-menu2 ul li a:hover {
+    color: #ffffff;
+}
+.dropdown-navigative-menu-cam-nang ul {
+    width: 171px;
+}
+.dropdown-navigative-menu-dich-vu-bds ul li a {
+    overflow: hidden; display: -webkit-box;     -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+}
+
 
 /* end menu*/
 /* bg bottom*/
@@ -665,7 +677,7 @@ _:-ms-lang(x), _:-webkit-full-screen, .dropdown-navigative-menu li h2 a.haslin {
 .boxtimkiembds{width: 268px; float:left; background-color:#eeeeee; border: 1px solid #cccccc; margin-bottom: 10px;}
 .boxtimkiembds .sreenboxseach2 select{
     font-size: 12px; width: 122px; float:left; margin-right:0px; margin-left:8px; height:30px; margin-top:10px;
-    margin-bottom:5px; border:1px #CCCCCC solid;
+    margin-bottom:5px; border:1px #CCCCCC solid; padding-left: 5px;
 }
 .boxtimkiembds .sreenboxseach2 select option{
     background-color: #aeaeae; overflow: hidden; vertical-align: middle; width: 140px; padding: 0; height: 30px; line-height: 30px; padding: 10px 0; color: #ffffff;
@@ -1282,10 +1294,12 @@ label.error {
 	color: #fff;
 	display: inline-block;
 	text-align: center;
-	padding: 8px 15px;
+	padding: 10px 0px;
 	line-height: 12px;
-    background-color: #0f9502; text-transform: uppercase;
+    background-color: #0f9502;
+    text-transform: uppercase;
     margin: -1px 0 0 -1px;
+    width: 270px;
 }
 .box-news-mod span{
     display: block;
@@ -1599,8 +1613,8 @@ label.error {
 .sreenmenu .sreenhome a{width: 65px;background-position: 4px 2px; height: 40px;}
 #page-navigative-menu .dropdown-navigative-menu>li{float: left; height: 40px; padding: 0; margin: 0px;}
 #page-navigative-menu .dropdown-navigative-menu>li .sreen1{height: 40px;}
-#page-navigative-menu .dropdown-navigative-menu>li .sreen1 h2{font-size: 15px; font-weight: 500;}
-#page-navigative-menu .dropdown-navigative-menu li .sreen1 a{padding: 0 30px;}
+#page-navigative-menu .dropdown-navigative-menu>li .sreen1 h2{font-size: 13px; font-weight: 500;}
+#page-navigative-menu .dropdown-navigative-menu li .sreen1 a{padding: 0 40px; font-weight: 600;}
 
 .dropdown-navigative-menu ul li{padding-left: 20px;}
 

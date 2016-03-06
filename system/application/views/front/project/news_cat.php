@@ -4,7 +4,7 @@
     <div class="linkdautrang"><span class="linkdautrang-active"><?=$category->name_vietnamese;?></span></div>
 </div>
 
-<div class="main">
+<div class="main main-du-an-level-0">
     <div class="left">
         <div class="top-vip">
             <div class="title-top-vip fl">
@@ -26,13 +26,13 @@
                     <div class="line"></div>
                     <?php endif; ?>
                 <?php endforeach; unset($row); ?>
-
-                <div class="phantrang">
-                    <div class="back">
-                        <?=$this->pagination->create_links();?>
+                <?php if($this->pagination->total_rows >= $this->pagination->per_page): ?>
+                    <div class="phantrang">
+                        <div class="back">
+                            <?=$this->pagination->create_links();?>
+                        </div>
                     </div>
-                </div>
-
+                <?php endif; ?>
             </div>
         </div>
     </div>

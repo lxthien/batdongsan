@@ -1,10 +1,11 @@
 <div class="right">
+    <!--
     <?php if($this->uri->segment(1, '') == 'nha-dat-ban'): ?>
         <?php echo $this->load->view('front/includes/nha-dat-ban-tai'); ?>
     <?php else: ?>
         <?php echo $this->load->view('front/includes/nha-dat-cho-thue-tai'); ?>
     <?php endif; ?>
-    
+    -->
     <?php echo $this->load->view('front/widget/search-estates'); ?>
     
     <div class="boxnoibat">

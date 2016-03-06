@@ -1,7 +1,7 @@
 <div class="boxtimkiembds-simple">
-    <form action="" method="post">
+    <form action="<?php echo $base_url.'tim-kiem'; ?>" method="post">
         <div class="main-search-simple">
-            <input type="text" placeholder="Nhập theo từ khóa ...">
+            <input type="text" placeholder="Nhập theo từ khóa ..." name="value" >
             <button>Tìm kiếm</button>
         </div>
     </form>
@@ -24,21 +24,27 @@
             </div>
             <div class="sreenseachtimkiembds1">
                 <select name="estatetype_id" id="estatetype_id">
-                    <option value="" selected="selected">Chọn loại nhà đất</option>
+                    <option value="" selected="selected">Loại Nhà Đất</option>
                 </select>
+                <input id="estatecity_id" name="estatecity_id" type="hidden" value="14">
+                <!--
                 <select name="estatecity_id" id="estatecity_id">
-                    <option value="">Chọn tỉnh/TP</option>
+                    <option value="">Tỉnh/TP</option>
                     <?php foreach($this->estateProvince as $row): ?>
                         <option <?php if($object->estatecity_id == $row->id) echo 'selected="selected"'; ?> value="<?=$row->id?>"><?=$row->name;?></option>
                     <?php endforeach; unset($row); ?>
                 </select>
+                -->
+                <select name="estatedistrict_id" id="estatedistrict_id">
+                    <option value="">TP/Huyện</option>
+                </select>
             </div>
             <div class="sreenseachtimkiembds1">
-                <select name="estatedistrict_id" id="estatedistrict_id" size="1">
-                    <option value="">Chọn quận/huyện</option>
+                <select name="estateward_id" id="estateward_id" size="1">
+                    <option value="">Phường/Xã</option>
                 </select>
                 <select name="estatearea_id" id="estatearea_id" size="1" >
-                    <option value="" selected="selected">Chọn diện tích</option>
+                    <option value="" selected="selected">Diện Tích</option>
                     <option value="-1">Không xác định</option>
                     <?php foreach($this->estateareas as $row): ?>
                         <option <?php if($object->estatecity_id == $row->id) echo 'selected="selected"'; ?> value="<?=$row->id?>"><?=$row->label;?></option>
@@ -47,10 +53,10 @@
             </div>
             <div class="sreenseachtimkiembds1">
                 <select name="estateprice_id" id="estateprice_id" size="1">
-                    <option value="" selected="selected">Chọn mức giá</option>
+                    <option value="" selected="selected">Mức Giá</option>
                 </select>
                 <select name="estatedirection_id" id="estatedirection_id" size="1">
-                    <option value="" selected="selected">Chọn hướng nhà</option>
+                    <option value="" selected="selected">Hướng Nhà</option>
                     <?php foreach($this->estateDirection as $row): ?>
                         <option value="<?=$row->id?>"><?=$row->name;?></option>
                     <?php endforeach; unset($row); ?>

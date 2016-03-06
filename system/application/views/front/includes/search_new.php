@@ -2,11 +2,11 @@
     <div class="linkdautrang"><a href="<?=$base_url;?>" title="Sàn nhà đất">Trang chủ</a></div>
     <div class="linkdautrang"><span class="linkdautrang-active"><?php echo $value; ?></span></div>
 </div>
-<div class="main">
+<div class="main search-new">
     <!--left-->
     <div class="left">
         <div class="titlenew-add">
-            <h1><?php echo $value; ?></h1>
+            <h1>Từ khóa tìm kiếm "<?php echo $value; ?>"</h1>
         </div>
         <!--tin tuc-->
         <div class="sreenspduan">
@@ -38,11 +38,14 @@
                     </div>
                 </div>
             <?php endforeach; ?>
+            
+            <?php if($this->pagination->total_rows >= $this->pagination->per_page): ?>
             <div class="phantrang">
                 <div class="back">
                     <?=$this->pagination->create_links();?>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
     <div class="right">

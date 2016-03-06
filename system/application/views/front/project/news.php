@@ -3,7 +3,11 @@
     <div class="linkdautrang"><span class="linkdautrang-active">Dự án</span></div>
 </div>
 <!--main-->
-<div class="main main-du-an">
+<div class="main main-du-an main-du-an-level-0">
+    <div class="title-project-open">
+        <h1>Dự án đang mở bán</h1>
+        <div class="title1">&nbsp;</div>
+    </div>
     <div class="top-du-an-open fl">
         <ul class="fl">
             <?php

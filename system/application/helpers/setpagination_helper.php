@@ -6,6 +6,7 @@ function setPagination($site,$total_rows,$perpage,$urisegment=3)
 	$config['base_url'] 			= site_url($site); // What will CI use for the page links?
     $config['total_rows'] 			= $total_rows;
     $config['per_page'] 			= $perpage; // How many items per page?
+    $config['use_page_numbers'] 	= FALSE;
     $config['num_links'] = 2;
     $config['full_tag_open']		= '<div class="pagination">';
     $config['full_tag_close']		= "</div>";

@@ -1,9 +1,9 @@
 $(document).ready(function(){
     /*with localhost*/
     //var base_url = 'http://batdongsanvungtau.com.vn/';
-    var base_url = 'http://localhost/batdongsan/';
+    //var base_url = 'http://localhost/batdongsan/';
     /*with host*/
-    //var base_url = getBase_url();
+    var base_url = getBase_url();
 
     var heightScreen = $(document).height();
     var screenCenter = heightScreen - 270;
@@ -22,7 +22,7 @@ $(document).ready(function(){
                 required: true,
                 email: true,
                 remote:{
-                    url: base_url + 'kiem-tra-email-sign-up',
+                    url: base_url + '/kiem-tra-email-sign-up',
                     type:'post',
                     data:{email :function(){return $(':input[name="email"]').val();}}
                 }
@@ -42,7 +42,7 @@ $(document).ready(function(){
             if( $(':input[name="email"]').val() != '' ){
                 $.ajax({
                     type: "POST",
-                    url: base_url + 'email-sign-up',
+                    url: base_url + '/email-sign-up',
                     data: 'email='+$(':input[name="email"]').val(),
                     success: function(data){
                         $(':input[name="email"]').val('');

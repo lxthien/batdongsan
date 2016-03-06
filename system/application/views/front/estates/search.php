@@ -3,17 +3,16 @@
     <div class="linkdautrang"><span class="linkdautrang-active">Tìm kiếm nhà đất</span></div>
 </div>
 
-<div class="main estates">
-    <div class="left">
-        <div class="titlenew-add">
-            <h1>Tìm kiếm nhà đất</h1>
-        </div>
+<div class="main">
+    <div class="left estates">
         <div class="hotnew">
+            <div class="titlenew-add">
+                <h1>Tìm kiếm nhà đất</h1>
+            </div>
             <div class="boxnew">
                 <?php foreach($estates as $row):
                     ?>
-                    <div class="sreentindb <?php if($row->isVip == 1): ?>vip<?php endif; ?>">
-                        <?php if($row->isVip == 1): ?><img class="icon-vip" src="<?=$base_url?>images/icon-vip.png" alt="Tin Vip"/><?php endif; ?>
+                    <div class="sreentindb">
                         <div class="sreenboxnew">
                             <?php if($row->photo != null): ?>
                                 <div class="boxhinh">
@@ -48,7 +47,7 @@
                                     <span class="first">Diện tích</span>
                                     <span class="last">:
                                         <?php if($row->isArea == 0): ?>
-                                            <?=$row->area_text;?> m
+                                            <?=$row->area_text;?> m2
                                         <?php else: ?>
                                             <?='KXĐ'?>
                                         <?php endif; ?>
@@ -57,21 +56,13 @@
                                 <p class="row">
                                     <span class="first">Hướng</span>
                                     <span class="last">:
-                                        <?php if($row->isArea == 0): ?>
-                                            <?=$row->area_text;?> m
-                                        <?php else: ?>
-                                            <?='KXĐ'?>
-                                        <?php endif; ?>
+                                        <?=$row->Estatedirection->name;?>
                                     </span>
                                 </p>
                                 <p class="row">
                                     <span class="first">Vị trí</span>
                                     <span class="last">:
-                                        <?php if($row->isArea == 0): ?>
-                                            <?=$row->area_text;?> m
-                                        <?php else: ?>
-                                            <?='KXĐ'?>
-                                        <?php endif; ?>
+                                        <?=$row->Estatecity->name;?> - <?=$row->Estatedistrict->name;?>
                                     </span>
                                 </p>
                             </div>
@@ -79,11 +70,14 @@
                     </div>
                     <div class="line <?php if($row->isVip == 1): ?>line-vip<?php endif; ?>"></div>
                 <?php endforeach; unset($row); ?>
+                
+                <?php if($this->pagination->total_rows > $this->pagination->per_page): ?>
                 <div class="phantrang">
                     <div class="back">
                         <?=$this->pagination->create_links();?>
                     </div>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
