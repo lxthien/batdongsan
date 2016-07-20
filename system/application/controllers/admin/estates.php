@@ -39,6 +39,15 @@ class estates extends MY_Controller{
         $dis['menu_active']='Tin bất động sản';
         $dis['title']="Danh sách các Tin bất động sản";
         $dis['title_table'] = "Trang hiện tại:".$estates->paged->current_page.'/'.$estates->paged->total_pages;
+		
+		$dis['nav_menu']=array(
+			array(
+				"type"=>"add",
+				"text"=>"Thêm",
+				"link"=>"{$this->admin_url}estates/edit/0",
+				"onclick"=>""		
+			)
+        );
 
         $this->viewadmin($dis);
     }

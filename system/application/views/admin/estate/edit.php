@@ -1,4 +1,5 @@
 <script language="javascript" type="text/javascript" src="<?php echo $base_url;?>ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?= $base_url?>js/main.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         showPrice(<?=$object->isPrice;?>);
