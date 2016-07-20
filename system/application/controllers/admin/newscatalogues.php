@@ -6,12 +6,10 @@ class Newscatalogues extends MY_Controller{
         $this->session->set_userdata(array(config_item('session_admin').'menu_current'=>91));
         $this->load->library('login_manager');
     }
-
     function index()
     {
         $this->list_all();
     }
-
     function list_all()
     {
         $dis['base_url']=base_url();
@@ -19,7 +17,7 @@ class Newscatalogues extends MY_Controller{
         $newscatalogue->order_by('position','asc');
         $newscatalogue->get();
         $dis['view']='newscatalogue/list';
-        $dis['menu_active']='Danh mục tin tức';
+        $dis['menu_active']='Danh mục';
         $dis['title']="Danh mục tin tức";
         $dis['newscatalogue']=$newscatalogue;
         $dis['nav_menu']=array(
@@ -32,7 +30,6 @@ class Newscatalogues extends MY_Controller{
          );
         $this->viewadmin($dis);
     }
-
     function list_by_catparent($catparent_id)
     {
         
@@ -48,7 +45,6 @@ class Newscatalogues extends MY_Controller{
         $dis['newscatalogue']=$newscatalogue;
         $this->viewadmin($dis);
     }
-
     function edit($id=0)
     {
         $newscatalogue=new newscatalogue($id);
@@ -122,7 +118,6 @@ class Newscatalogues extends MY_Controller{
         }
       redirect($this->admin.'newscatalogues/list_all/');
     }
-
     function down_position($id,$step=1)
     {
         $o=new newscatalogue();
@@ -138,7 +133,6 @@ class Newscatalogues extends MY_Controller{
           //  flash_message('warning','Không th? thay d?i v? trí du?c n?a ');
        redirect($this->admin.'newscatalogues/list_all/');
     }
-    
     function delete()
     {
         $id=$this->uri->segment(4);

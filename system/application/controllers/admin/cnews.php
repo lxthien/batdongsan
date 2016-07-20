@@ -177,33 +177,29 @@ class Cnews extends MY_Controller{
      */
     function list_recycle_by_cat($catalogue_id=0,$offset=0,$limit)
     {
-        $newscatalogue = new newscatalogue($catalogue_id);
-        
-        $news = new article();
+        $newscatalogue=new newscatalogue($catalogue_id);
+        $news=new article();
         $news->where('newscatalogue_id',$catalogue_id);
         $news->where(array('recycle'=>1));
         $news->order_by('id','desc');
         $news->get_paged($offset,$limit,TRUE);
         $total=count($news);
         setPagination($this->admin.'cnews/list_recycle_by_cat/'.$catalogue_id,$news->paged->total_rows,$limit,5);
-        
         if(!$newscatalogue->exists())
             show_404();
-
         $dis['base_url']=base_url();
-        $dis['view'] = 'news/list_recycle';
-        $dis['news'] = $news;
-        $dis['menu_active'] = $newscatalogue->name_vietnamese;
-        $this->session->set_userdata(array(config_item('session_admin').'menu_current'=>$newscatalogue->navigation));
-        $dis['title_table'] = "Trang hiện tại:".$news->paged->current_page.'/'.$news->paged->total_rows;
-        $dis['title'] = "Tin rác danh mục \"{$newscatalogue->name_vietnamese}\"";
+        $dis['view']='news/list_recycle';
+        $dis['news']=$news;
+        $dis['menu_active']="Tin";
+        $dis['title_table']="Trang hiện tại:".$news->paged->current_page.'/'.$news->paged->total_rows;
+        $dis['title']="Tin rác danh mục \"{$newscatalogue->name_vietnamese}\"";
         $dis['nav_menu']=array(
                 array(
     				"type"=>"back",
     				"text"=>"Về Chính",
     				"link"=>"{$this->admin_url}cnews/isolate_list_by_cat/".$catalogue_id,
     				"onclick"=>""		
-    			)
+    			)           
          );
         $this->viewadmin($dis);
     }
@@ -760,31 +756,25 @@ class Cnews extends MY_Controller{
     function delete($id=0)
     {
         $this->checkRole(array(1));
-        if ($id!=0) {
-            $news = new article($id);
-            $newscatalogue =  new Newscatalogue($news->newscatalogue_id);
-            $this->session->set_userdata(array(config_item('session_admin').'menu_current'=>$newscatalogue->navigation));
-            if (!$news->exists())
+        if($id!=0)
+        {
+            $news=new article($id);
+            if(!$news->exists())
                 show_404();
             $news->delete();
-        } else {
+        }
+        else
+        {
             $arr=$this->input->post('checkinput');
-            foreach($arr as $row) {
-                $news=new article($row);
-                $newscatalogue =  new Newscatalogue($news->newscatalogue_id);
-                $this->session->set_userdata(array(config_item('session_admin').'menu_current'=>$newscatalogue->navigation));
-                $news->delete();
-                $news->clear();     
+            foreach($arr as $row)
+            {
+               $news=new article($row);
+               $news->delete();
+               $news->clear();     
             }
         }
-
         flash_message('success',"Xóa hoàn toàn thành công.");
-        if (empty($newscatalogue->menu_active)) {
-            $dis['menu_active'] = "Tin";
-        } else {
-            $dis['menu_active'] = $newscatalogue->menu_active;
-        }
-        redirect($this->admin."cnews/isolate_list_by_cat/".$newscatalogue->id);
+        redirect_admin(); 
     }
     /**
      * Cnews::resize_image()

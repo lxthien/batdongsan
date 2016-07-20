@@ -21,7 +21,7 @@ class Estatewards extends MY_Controller{
         $dis['districts'] = $districts;
         $dis['base_url'] = base_url();
         $dis['view']='estatedistrict/list_all';
-        $dis['menu_active']='Thành phố/Phường';
+        $dis['menu_active']='Thành phố/Tỉnh';
         $dis['title']="Danh sách các Quận/Huyện";
         $dis['title_table'] = "Trang hiện tại:".$districts->paged->current_page.'/'.$districts->paged->total_pages;
         $this->viewadmin($dis);
@@ -60,7 +60,7 @@ class Estatewards extends MY_Controller{
         $dis['districts'] = $districts;
         $dis['base_url'] = base_url();
         $dis['view']='estateward/list_by_parent';
-        $dis['menu_active']='Thành phố/Phường';
+        $dis['menu_active']='Thành phố/Tỉnh';
         $dis['title']="Danh sách các Xã/Phường thuộc <span style='color:#F00;'>".$districts->name.'</span>';
         $dis['title_table'] = "Trang hiện tại:".$wards->paged->current_page.'/'.$wards->paged->total_pages;
         $dis['nav_menu']=array(
@@ -105,7 +105,7 @@ class Estatewards extends MY_Controller{
         $dis['district_id'] = $district_id;
         $dis['base_url'] = base_url();
         $dis['view']='estateward/edit';
-        $dis['menu_active']='Thành phố/Phường';
+        $dis['menu_active']='Thành phố/Tỉnh';
         $dis['title']="Thêm/Sửa Xã/Phường thuộc <span style='color:#F00;'>".$district->name."</span>";
         $dis['nav_menu']=array(
     			array(

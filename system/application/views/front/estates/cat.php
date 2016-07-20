@@ -74,14 +74,11 @@
                     </div>
                     <div class="line <?php if($row->isVip == 1): ?>line-vip<?php endif; ?>"></div>
                 <?php endforeach; unset($row); ?>
-                
-                <?php if($this->pagination->total_rows >= $this->pagination->per_page): ?>
                 <div class="phantrang">
                     <div class="back">
                         <?=$this->pagination->create_links();?>
                     </div>
                 </div>
-                <?php endif; ?>
             </div>
         </div>
         <!--end hotnew-->
