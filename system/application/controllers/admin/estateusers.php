@@ -12,7 +12,7 @@ class estateusers extends MY_Controller{
         $this->list_all();
     }
 
-    function list_all($offset=0,$limit=250)
+    function list_all($offset=0, $limit=100)
     {
         if($_SERVER['REQUEST_METHOD']=="POST"){
             foreach($_POST as $key =>$value)
@@ -218,6 +218,21 @@ class estateusers extends MY_Controller{
         }
         flash_message('success',"Kích hoạt thành công.");
          redirect($this->admin.'estateusers/list_all');
+    }
+
+    function lock($id=0, $value)
+    {
+        if($id!=0) {
+            $estateuser = new Estateuser($id);
+            if(!$estateuser->exists())
+                show_404();
+
+            $estateuser->isLock = ($estateuser->isLock + 1)%2;
+            $estateuser->save();
+        }
+        
+        flash_message('success',"Thao tác thành công.");
+        redirect($_SERVER['HTTP_REFERER']);
     }
 
     function listEstates($user_id)

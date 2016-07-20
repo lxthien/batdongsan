@@ -4,23 +4,28 @@ $cache = array (
   'fields' => 
   array (
     0 => 'id',
-    1 => 'name',
-    2 => 'username',
-    3 => 'password',
-    4 => 'code',
-    5 => 'mobilePhone',
-    6 => 'address',
-    7 => 'email',
-    8 => 'birthday',
-    9 => 'emailActiveCode',
-    10 => 'active',
-    11 => 'position',
-    12 => 'created',
-    13 => 'updated',
-    14 => 'homePhone',
-    15 => 'sex',
-    16 => 'isReceiverEmail',
-    17 => 'isEmailActive',
+    1 => 'firstname',
+    2 => 'lastname',
+    3 => 'username',
+    4 => 'password',
+    5 => 'code',
+    6 => 'mobilePhone',
+    7 => 'address',
+    8 => 'email',
+    9 => 'birthday',
+    10 => 'emailActiveCode',
+    11 => 'active',
+    12 => 'position',
+    13 => 'created',
+    14 => 'updated',
+    15 => 'homePhone',
+    16 => 'sex',
+    17 => 'isReceiverEmail',
+    18 => 'isEmailActive',
+    19 => 'estatecity_id',
+    20 => 'estatedistrict_id',
+    21 => 'yahoo',
+    22 => 'skype',
   ),
   'validation' => 
   array (
@@ -32,9 +37,16 @@ $cache = array (
         0 => 'integer',
       ),
     ),
-    'name' => 
+    'firstname' => 
     array (
-      'field' => 'name',
+      'field' => 'firstname',
+      'rules' => 
+      array (
+      ),
+    ),
+    'lastname' => 
+    array (
+      'field' => 'lastname',
       'rules' => 
       array (
       ),
@@ -147,6 +159,34 @@ $cache = array (
     'isEmailActive' => 
     array (
       'field' => 'isEmailActive',
+      'rules' => 
+      array (
+      ),
+    ),
+    'estatecity_id' => 
+    array (
+      'field' => 'estatecity_id',
+      'rules' => 
+      array (
+      ),
+    ),
+    'estatedistrict_id' => 
+    array (
+      'field' => 'estatedistrict_id',
+      'rules' => 
+      array (
+      ),
+    ),
+    'yahoo' => 
+    array (
+      'field' => 'yahoo',
+      'rules' => 
+      array (
+      ),
+    ),
+    'skype' => 
+    array (
+      'field' => 'skype',
       'rules' => 
       array (
       ),

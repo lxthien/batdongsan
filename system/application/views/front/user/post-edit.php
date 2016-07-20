@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
+<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>?v=<?php echo time(); ?>"/>
 <script language="javascript" type="text/javascript" src="<?php echo $base_url;?>ckeditor/ckeditor.js"></script>
 <script language="javascript" type="text/javascript" src="<?=$base_url; ?>images/js/jquery.validate.js"></script>
 <script language="javascript" type="text/javascript">
@@ -16,7 +16,7 @@ $(document).ready(function(){
                 required: true
             },
             estateprice_id:{
-                required: true
+                required: '#hasPrice:checked'
             },
             estatecity_id:{
                 required: true
@@ -27,7 +27,12 @@ $(document).ready(function(){
             title:{
                 required: true,
                 minlength: 25,
-                maxlength: 100
+                maxlength: 100,
+                remote:{
+                    url:'<?=$base_url;?>kiem-tra-ki-tu-dac-biet',
+                    type:'post',
+                    data:{title :function(){return $(':input[name="title"]').val();}}
+                }
             },
             description:{
                 required: true
@@ -41,7 +46,7 @@ $(document).ready(function(){
                 required: true
             },
             price_text:{
-                required: true
+                required: '#hasPrice:checked'
             },
             description:{
                 required: function(){
@@ -71,7 +76,8 @@ $(document).ready(function(){
             title:{
                 required: 'Vui lòng nhập Tiêu đề',
                 minlength: 'Vui lòng nhập tối thiểu 30 kí tự',
-                maxlength: 'Vui lòng nhập tối đa 100 ký tự'
+                maxlength: 'Vui lòng nhập tối đa 100 ký tự',
+                remote: 'Không nhập các kí tự (“”, >, <, @, # ,$, ^)'
             },
             description:{
                 required: 'Vui lòng nhập Mô tả'
@@ -245,6 +251,12 @@ $(document).ready(function(){
         $(this).parent().remove();
         return false;
     });
+	
+	$('input#title').on('paste', function (e) {
+        e.preventDefault();
+        var cd =  e.originalEvent.clipboardData;
+        $("input#title").empty().val(cd.getData("text/plain"));
+    });
 });
 function load_type()
 {
@@ -397,6 +409,7 @@ function addCommas(nStr)
     .row-image{
         margin-bottom: 5px;
     }
+    .row-title label.error{width: 228px;}
 </style>
 
 <div class="linktop" style="width:960px;height:20px; float:left; margin-top:12px; margin-bottom:0px;">
@@ -495,8 +508,8 @@ function addCommas(nStr)
                         </div>
                         <div class="row-post">
                                     <span class="rowInput">
-                                        <label><input class="isprice" <?php if($o->isPrice == 0) echo 'checked="checked"'; ?> name="IsPrice" type="radio" value="0"/> Có giá</label>
-                                        <label><input class="isprice" <?php if($o->isPrice == 1) echo 'checked="checked"'; ?> name="IsPrice" type="radio" value="1"/> Thỏa thuận</label>
+                                        <label><input id="hasPrice" class="isprice" <?php if($o->isPrice == 0) echo 'checked="checked"'; ?> name="IsPrice" type="radio" value="0"/> Có giá</label>
+                                        <label><input id="hasNotPrice" class="isprice" <?php if($o->isPrice == 1) echo 'checked="checked"'; ?> name="IsPrice" type="radio" value="1"/> Thỏa thuận</label>
                                     </span>
                         </div>
                         <div class="row-post depend-isprice">
@@ -509,21 +522,21 @@ function addCommas(nStr)
                                 <select class="price-type price-type-01" name="price_type" style="width: 100px;">
                                     <option <?=$o->price_type==1?'selected="selected"':'';?> value="1">Triệu</option>
                                     <option <?=$o->price_type==2?'selected="selected"':'';?> value="2">Tỷ</option>
-                                    <option <?=$o->price_type==3?'selected="selected"':'';?> value="3">Cây vàng</option>
+                                    <option <?=$o->price_type==7?'selected="selected"':'';?> value="7">Triệu/m2</option>
                                     <option <?=$o->price_type==4?'selected="selected"':'';?> value="4">USD</option>
                                     <option <?=$o->price_type==5?'selected="selected"':'';?> value="5">USD/m2</option>
                                     <option <?=$o->price_type==6?'selected="selected"':'';?> value="6">Nghìn/m2</option>
-                                    <option <?=$o->price_type==7?'selected="selected"':'';?> value="7">Triệu/m2</option>
                                     <option <?=$o->price_type==8?'selected="selected"':'';?> value="8">Chỉ vàng/m2</option>
                                     <option <?=$o->price_type==9?'selected="selected"':'';?> value="9">Cây vàng/m2</option>
+                                    <option <?=$o->price_type==3?'selected="selected"':'';?> value="3">Cây vàng</option>
                                 </select>
                                 <select class="price-type price-type-02" name="price_type_2" style="width: 100px; display: none;">
                                     <option <?=$o->price_type==11?'selected="selected"':'';?> value="11">Triệu/tháng</option>
-                                    <option <?=$o->price_type==13?'selected="selected"':'';?> value="13">Triệu/năm</option>
                                     <option <?=$o->price_type==17?'selected="selected"':'';?> value="17">Triệu</option>
-                                    <option <?=$o->price_type==18?'selected="selected"':'';?> value="18">Tỷ</option>
                                     <option <?=$o->price_type==12?'selected="selected"':'';?> value="12">USD/tháng</option>
                                     <option <?=$o->price_type==10?'selected="selected"':'';?> value="10">Nghìn/tháng</option>
+                                    <option <?=$o->price_type==18?'selected="selected"':'';?> value="18">Tỷ</option>
+                                    <option <?=$o->price_type==13?'selected="selected"':'';?> value="13">Triệu/năm</option>
                                     <option <?=$o->price_type==14?'selected="selected"':'';?> value="14">Nghìn/m2/tháng</option>
                                     <option <?=$o->price_type==15?'selected="selected"':'';?> value="15">Triệu/m2/tháng</option>
                                     <option <?=$o->price_type==16?'selected="selected"':'';?> value="16">USD/m2/tháng</option>
@@ -597,7 +610,7 @@ function addCommas(nStr)
                             </div>
                         </span>
                         <span class="rowLabel">Tiêu đề: <span style="display: inline-block; color: red;">(*)</span></span>
-                        <span class="rowInput"><input maxlength="100" type="text" name="title" id="title" value="<?=$o->title;?>" /></span>
+                        <span class="rowInput row-title" style="width: 577px;"><input type="text" name="title" id="title" value="<?=$o->title;?>" /></span>
                         <span class="rowLabel">Thông tin mô tả: <span style="display: inline-block; color: red;">(*)</span></span>
                         <span class="rowInput">
                             <textarea name="description"><?=$o->description;?></textarea>

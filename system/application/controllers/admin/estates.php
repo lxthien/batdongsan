@@ -586,7 +586,7 @@ class estates extends MY_Controller{
             $estates->save();
         }
         flash_message('success',"Kích hoạt thành công.");
-        redirect($this->admin.'estates/list_all');
+        redirect($_SERVER['HTTP_REFERER']);
     }
 
     function reals($id=0, $value)
@@ -600,7 +600,7 @@ class estates extends MY_Controller{
             $estates->save();
         }
         flash_message('success',"Kích hoạt thành công.");
-        redirect($this->admin.'estates/list_all');
+        redirect($_SERVER['HTTP_REFERER']);
     }
 
     function active($id=0,$value)

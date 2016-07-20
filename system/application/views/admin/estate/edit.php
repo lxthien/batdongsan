@@ -115,15 +115,15 @@
                     <option <?=$object->price_type==7?'selected="selected"':'';?> value="7">Triệu/m2</option>
                     <option <?=$object->price_type==8?'selected="selected"':'';?> value="8">Chỉ vàng/m2</option>
                     <option <?=$object->price_type==9?'selected="selected"':'';?> value="9">Cây vàng/m2</option>
-                    <option <?=$o->price_type==11?'selected="selected"':'';?> value="11">Triệu/tháng</option>
-                    <option <?=$o->price_type==17?'selected="selected"':'';?> value="17">Triệu</option>
-                    <option <?=$o->price_type==18?'selected="selected"':'';?> value="18">Tỷ</option>
-                    <option <?=$o->price_type==12?'selected="selected"':'';?> value="12">USD/tháng</option>
-                    <option <?=$o->price_type==10?'selected="selected"':'';?> value="10">Nghìn/tháng</option>
-                    <option <?=$o->price_type==13?'selected="selected"':'';?> value="13">Triệu/năm</option>
-                    <option <?=$o->price_type==14?'selected="selected"':'';?> value="14">Nghìn/m2/tháng</option>
-                    <option <?=$o->price_type==15?'selected="selected"':'';?> value="15">Triệu/m2/tháng</option>
-                    <option <?=$o->price_type==16?'selected="selected"':'';?> value="16">USD/m2/tháng</option>
+                    <option <?=$object->price_type==11?'selected="selected"':'';?> value="11">Triệu/tháng</option>
+                    <option <?=$object->price_type==17?'selected="selected"':'';?> value="17">Triệu</option>
+                    <option <?=$object->price_type==18?'selected="selected"':'';?> value="18">Tỷ</option>
+                    <option <?=$object->price_type==12?'selected="selected"':'';?> value="12">USD/tháng</option>
+                    <option <?=$object->price_type==10?'selected="selected"':'';?> value="10">Nghìn/tháng</option>
+                    <option <?=$object->price_type==13?'selected="selected"':'';?> value="13">Triệu/năm</option>
+                    <option <?=$object->price_type==14?'selected="selected"':'';?> value="14">Nghìn/m2/tháng</option>
+                    <option <?=$object->price_type==15?'selected="selected"':'';?> value="15">Triệu/m2/tháng</option>
+                    <option <?=$object->price_type==16?'selected="selected"':'';?> value="16">USD/m2/tháng</option>
                 </select>
             </td>
         </tr>

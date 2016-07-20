@@ -79,6 +79,11 @@ class Fcontact extends MY_Controller{
 
     function contact()
     {
+        $customer = new Estateuser($this->session->userdata('userLoginId'));
+        if (!$customer->exists())
+            show_404();
+        $dis['customer'] = $customer;
+        
         $news = new Article(1273);
 
         $dis['base_url']=base_url();

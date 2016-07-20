@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
+<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>?v=<?php echo time(); ?>"/>
 <link type="text/css" href="<?=$base_url;?>images/js/jqueryui/css/smoothness/jquery-ui-1.8.24.custom.css" rel="stylesheet" />
 <script type="text/javascript" src="<?=$base_url;?>images/js/jqueryui/js/jquery-ui-1.8.24.custom.min.js"></script>
 <script type="text/javascript" src="<?=$base_url;?>images/js/jquery.validate.js?v1"></script>
@@ -58,6 +58,7 @@
                 mobile:{
                     required: true,
                     number: true,
+                    minlength: 10,
                     remote:{
                         url:'<?=$base_url;?>kiem-tra-phone',
                         type:'post',
@@ -97,6 +98,7 @@
                 mobile:{
                     required: 'Vui lòng nhập di động',
                     number: 'Vui lòng chỉ nhập số',
+                    minlength: 'Nhập tối thiểu 10 chữ số',
                     remote: "Phone đã sử dụng."
                 }
             }

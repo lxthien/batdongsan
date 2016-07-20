@@ -23,7 +23,12 @@ body.page {
 	background: #ffffff;
 }
 body.home-page{
-	background: url("../assets/home-page.jpg") repeat-x fixed center;
+	/*background: url("../assets/home-page.jpg") repeat-x fixed center;*/
+	background: url("../assets/home-page.jpg") no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 }
 @media (min-width: 1120px), (min-height: 630px) {
     body { background-size: auto; }
@@ -48,7 +53,7 @@ body.home-page{
 	background: #bb7700;
 }
 .home-nav li ul{
-	position: absolute; background: #0e8b01; display: none; width: 290px; z-index: 9999;
+	position: absolute; background: #0e8b01; display: none; width: 290px; z-index: 9999; opacity: 0.8;
 }
 .home-nav ul li:hover ul{
 	display: block;
@@ -89,10 +94,13 @@ h3.home-title-services{
 	text-transform: uppercase; font-size: 15px; color: #0e8b01; text-align: center;
 }
 .home-service-item h1 a {
-	color: #0e8b01; padding: 20px 10px; display: block;
+	color: #0e8b01; display: inline-block; vertical-align: middle; line-height: normal;
 }
-.home-service-item h1 a:hover {
-	background: #bb7700; color: #ffffff;
+.home-service-item h1:hover {
+	background: #bb7700;
+}
+.home-service-item h1:hover a {
+	color: #ffffff;
 }
 .home-service-item .home-descripton-service {
 	background-color: #ffffff; opacity: 0.7; filter: alpha(opacity=70); position: absolute; top: 0px; left: -350px; width: 330px; padding: 5px 10px;
@@ -149,29 +157,32 @@ form#search-simple button {
 
 .search-advanced {
 	width: 1030px;
-	position: fixed; bottom: 0; background: url("../assets/opacity.png") repeat-x; height: 70px;
+	position: fixed; bottom: 0; background: url("../assets/opacity.png") repeat-x; height: 120px;
 }
 .search-advanced h4.title-advanced {
 	text-transform: uppercase; color: #ffffff; font-size: 15px; background: #0e8b01; float: left; padding: 5px 10px;
 	margin-top: -28px; line-height: 18px;
 }
 form#search-advanced {
-	margin-top: 10px; width: 100%; position: relative;
+	margin-top: 15px; width: 100%; position: relative;
 }
 form#search-advanced .boxseach {
-	position: absolute; left: 180px; top: -30px;
+	position: absolute; left: 180px; top: -35px;
 }
 form#search-advanced .boxseach label {
-	background: url("../assets/opacity.png") repeat-x; padding: 4px 8px; color: #ffffff; border-top-left-radius: 6px; border-top-right-radius: 6px;
+	background: url("../assets/opacity.png") repeat-x; padding: 5px 8px; color: #ffffff; border-top-left-radius: 6px; border-top-right-radius: 6px;
+}
+form#search-advanced .boxseach label input[type="radio"] {
+	vertical-align: middle;
 }
 form#search-advanced .formtimkiem {
-	width: 113px; background: no-repeat; height: 30px;
+	width: 113px; height: 30px;
 }
 form#search-advanced .formtimkiem select {
-	width: 107px; float:left; margin-top: 3px; height:30px; border:1px solid #FFFFFF;
+	width: 107px; float:left; height:30px; border:1px solid #FFFFFF; padding: 5px 0; line-height: 30px; background: #ffffff;
 }
 form#search-advanced .submit-top-main {
-	background: #0e8b01; border: none; width: 300px; height: 32px; margin-top: 2px; font-weight: 500; font-size: 18px;
+	background: #0e8b01; border: none; width: 300px; height: 32px; margin-top: -1px; font-weight: 500; font-size: 18px;
     color: #FFFFFF; float: right; cursor: pointer; text-transform: uppercase;
 }
 
@@ -188,7 +199,8 @@ form#search-advanced .submit-top-main {
 }
 .title-top-vip h1{
 	text-transform: uppercase; font-size: 17px; background: #bb7700; display: inline-block;
-    padding: 5px 15px 3px; line-height: 23px; border-top-left-radius: 3px; border-top-right-radius: 3px; color: #ffffff; font-weight: 500;
+    padding: 5px 15px 3px; line-height: 25px; border-top-left-radius: 3px; border-top-right-radius: 3px; color: #ffffff; font-weight: 500;
+    font-family: 'Roboto', sans-serif;
 }
 .left .list-top-vip {
 	width: 723px; border: 1px solid #cccccc; padding: 10px;
@@ -238,6 +250,9 @@ form#search-advanced .submit-top-main {
 }
 .left .sreenspduan .line{
 	margin: 0 -10px; border: none; background-color: #cccccc; height: 1px; width: 743px;
+}
+.du-an-search .left .sreenspduan .line {
+	margin: 0 -10px 15px;
 }
 
 .left .chi-tiet-du-an .sreennoidungchitiet {
@@ -501,11 +516,12 @@ form#search-advanced .submit-top-main {
 	float: right;
 }
 .list-top-1 .title-list-top-1 {
-	width: 100%; border-bottom: 1px solid #000000; margin-bottom: 8px;
+	width: 100%; border-bottom: 1px solid #cccccc; margin-bottom: 8px;
 }
 .list-top-1 .title-list-top-1 h1{
 	text-transform: uppercase; font-size: 17px; background: #bb7700; display: inline-block; padding: 5px 15px 3px;
-	line-height: 23px; border-top-left-radius: 3px; border-top-right-radius: 3px; color: #ffffff; font-weight: 500;
+	line-height: 25px; border-top-left-radius: 3px; border-top-right-radius: 3px; color: #ffffff; font-weight: 500;
+	font-family: 'Roboto', sans-serif;
 }
 .list-top-1 .list-top-1s {
 	padding: 10px 10px 0 10px; width: 343px; border: 1px solid #cccccc; border-radius: 2px;
@@ -564,7 +580,7 @@ form#search-advanced .submit-top-main {
 	margin-right: 0px;
 }
 .main-du-an .top-du-an-open ul li img{
-	width: 228px; height: 200px;
+	width: 233px; height: 203px;
 }
 .main-du-an .top-du-an-open ul li a.tool-tip-title{
 	position: absolute; bottom: 0px; left: 0px; height: 38px; background: url("../assets/opacity.png") repeat-x;
@@ -620,19 +636,20 @@ form#search-advanced .submit-top-main {
  *
  */
 .footer-items{
-	width: 990px; float: left; padding: 10px 20px;
+	width: 1030px; float: left; padding: 10px 0px;
 }
 .footer-items .footer-item{
 	width: 25%; float: left;
 }
 .footer-items .footer-item h5{
-	font-size: 18px; border-bottom: 1px solid #cccccc; text-transform: uppercase; width: 95%; color: #725a53; padding-top: 8px; font-weight: 500;
+	font-size: 19px; border-bottom: 1px solid #cccccc; text-transform: uppercase; width: 95%; color: #725a53; padding-top: 8px; font-weight: 500;
+	font-family: 'Roboto', sans-serif;
 }
 .footer-items .footer-item.address img{
 	width: 95%;
 }
 .footer-items .footer-item.address p{
-	padding: 2px 0; font-size: 13px;
+	padding: 2px 0; font-size: 13px; font-family: 'Roboto', sans-serif;
 }
 .footer-items .footer-item.email-signup p{
 	padding: 5px 0; font-size: 11px; color: #847f76; font-family: "Tahoma"; text-align: justify; width: 95%;
@@ -644,14 +661,14 @@ form#search-advanced .submit-top-main {
 	display: inline-block; padding: 5px;
 }
 .footer-items .footer-item.static p{
-	padding: 5px 0 0px; font-size: 15px; color: #726d6d; font-family: "Tahoma";
+	padding: 5px 0 0px; font-size: 15px; color: #726d6d; font-family: 'Roboto', sans-serif;
 }
 
 .sreenadd {
 	width:1030px; background-color:#d1d1d1; float:left; text-align: center; position: relative;
 }
 .sreenadd p {
-	padding: 10px 0; font-size: 15px; color: #000000;
+	padding: 10px 0; font-size: 15px; color: #000000; font-family: 'Roboto', sans-serif;
 }
 .sreenadd a.back-to-top {
 	position: absolute; top: -20px; right: 0px;

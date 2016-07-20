@@ -45,9 +45,9 @@ class MY_Controller extends Controller{
         $this->redirectList();
         
         
-        $cauhinh= new cauhinh();
-        $cauhinh->get();
-        $this->cauhinh=$cauhinh;
+         $cauhinh= new cauhinh();
+         $cauhinh->get();
+         $this->cauhinh=$cauhinh;
 		if($this->uri->segment(1,"")=="admin")
 		{
             $this->logged_in_user=$this->_get_user();  
@@ -212,13 +212,6 @@ class MY_Controller extends Controller{
             $legalAdvices->where(array('recycle'=>0, 'newscatalogue_id'=>82));
             $legalAdvices->get(11);
             $this->legalAdvices = $legalAdvices;
-
-            // get all legal advice
-            $services = new Article();
-            $services->order_by('id', 'desc');
-            $services->where(array('recycle'=>0, 'newscatalogue_id'=>90));
-            $services->get();
-            $this->services = $services;
 
             // get all new STND
             $newsPrivate = new Article();

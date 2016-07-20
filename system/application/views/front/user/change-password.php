@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>"/>
+<link rel="stylesheet" href="<?php echo $base_url.'images/css/style-new-282015.css'; ?>?v=<?php echo time(); ?>"/>
 <div class="linktop" style=" width:960px;height:20px; float:left; margin-top:8px;">
     <div class="linkdautrang" style="margin-left:5px; width:auto; float:left;"><a href="<?=$base_url;?>">Trang chủ</a></div>
     <div class="linkdautrang" style=" width:auto; float:left;"><a class="linkdautrang-active" href="<?=$base_url;?>doi-mat-khau">Đổi mật khẩu</a></div>

@@ -43,7 +43,8 @@ class Media extends Controller {
         $original = $pathinfo["dirname"] . "/" . str_ireplace("-crop-" . $size, "", $pathinfo["basename"]);
         
         // original image not found, show 404
-        //var_dump($original); die;
+        //var_dump($original);
+        
         
         if (!file_exists($original)) {
             show_404($original);
@@ -99,7 +100,7 @@ class Media extends Controller {
                 $this->image_lib->fit();
             }
         
-            // check if the resulting image exists, else show the original
+        // check if the resulting image exists, else show the original
             if (file_exists($path)) {
                 $output = $path;
             }

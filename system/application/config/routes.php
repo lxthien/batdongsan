@@ -66,6 +66,9 @@ $route['huong-dan-dang-tin.html']           = "home/postGuide";
 $route['bang-gia-quang-cao-tin-vip.html']   = "home/pagesigle/$1";
 $route['site-map.html']                     = "home/sitemap";
 
+$route['tim-kiem/(:num)']                   = "home/searchNews/$1";
+$route['tim-kiem']                          = "home/searchNews";
+
 $route['lien-he.html']                      = "fcontact";
 $route['dang-tin-vip.html']                 = "fcontact/contact";
 
@@ -75,6 +78,7 @@ $route['kiem-tra-email-sign-up']            = "fuser/emailCheckSignup";
 $route['kiem-tra-phone']                    = "fuser/phoneCheck";
 $route['email-sign-up']                     = "fuser/emailSignup";
 $route['kiem-tra-account']                  = "fuser/usernameCheck";
+$route['kiem-tra-ki-tu-dac-biet']           = "fuser/titleCheck";
 
 // router for company
 $route['doanh-nghiep']                      = "fcompany";
@@ -82,11 +86,6 @@ $route['doanh-nghiep/(:any)/(:num)']        = "fcompany/cat/$3";
 $route['doanh-nghiep/(:any)/(:any)']        = "fcompany/detail/$4";
 $route['doanh-nghiep/(:num)']               = "fcompany/index/$2";
 $route['doanh-nghiep/(:any)']               = "fcompany/cat/$1";
-
-// router for service
-$route['dich-vu-bds']                      	= "fservices";
-$route['dich-vu-bds/(:num)']               	= "fservices/index/$2";
-$route['dich-vu-bds/(:any)']               	= "fservices/detail/$1";
 
 // router for news
 $route['tin-tuc']                           = "fnews";
@@ -296,14 +295,10 @@ $route['nhu-cau-nha-dat']                   = "festates";
 $route['nhu-cau-nha-dat/(:num)']            = "festates";
 $route['nhu-cau-nha-dat/(:any)']            = "festates/cat/$1";
 
-/*Tìm kiếm nâng cao*/
+
 $route['tim-kiem-bat-dong-san(:any)']               = "festates/searchView/$1";
 $route['tim-kiem-bat-dong-san(:any)/(:num)']        = "festates/searchView/$1";
 $route['tim-kiem-bat-dong-san']                     = "festates/search";
-
-/*Tìm kiếm*/
-$route['tim-kiem(:any)']                   	= "home/searchNews/$1";
-$route['tim-kiem']                          = "home/searchSetValue";
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

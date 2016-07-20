@@ -1,62 +1,57 @@
 <!-- foter-->
 <div class="menufoter">
-    <div class="sreenmenufoter" style="width:1030px; margin:0px auto; height:35px;">
-        <div class="gt">
+    <div class="sreenmenufoter"  style="width:935px; margin:0px auto; height:33px;">
+        <div class="home1">
             <a href="<?=$base_url?>" title="Sàn nhà đất">
-                <p>Trang chủ</p>
+                <p style=" margin-left:12px; margin-top:7px;">Trang chủ</p>
             </a>
         </div>
         <div class="gt">
             <a href="<?=$base_url?>gioi-thieu.html" title="Giới thiệu">
-                <p>Giới thiệu</p>
+                <p style=" margin-top:7px;">Giới thiệu</p>
+            </a>
+        </div>
+        <div class="gt">
+            <a href="<?=$base_url?>quy-dinh-su-dung.html" title="Quy định sử dụng">
+                <p style="margin-top:7px;">Quy định sử dụng</p>
+            </a>
+        </div>
+        <div class="gt">
+            <a href="<?=$base_url?>huong-dan-dang-tin.html" title="Hướng dẫn đăng tin">
+                <p style="margin-top:7px;">Hướng dẫn đăng tin</p>
+            </a>
+        </div>
+        <div class="gt">
+            <a href="<?=$base_url?>bang-gia-quang-cao-tin-vip.html" title="Bảng giá quảng cáo - Tin Vip">
+                <p style="margin-top:7px;">Bảng giá dịch vụ</p>
             </a>
         </div>
         <div class="gt">
             <a href="<?=$base_url?>site-map.html">
-                <p>Sơ đồ website</p>
+                <p style="margin-top:7px;">SiteMap</p>
             </a>
         </div>
         <div class="gt">
             <a href="<?=$base_url?>lien-he.html" title="Liên hệ - Góp ý">
-                <p>Liên hệ - Góp ý</p>
+                <p style="margin-top:7px;">Liên hệ - Góp ý</p>
             </a>
         </div>
     </div>
 </div>
-<div class="footer-items">
-    <div class="footer-item address">
-        <a href="<?php echo $base_url ?>"><img src="<?php echo $base_url ?>images/assets/logo.jpg"></a>
-        <p>ĐC: 448 Trương Công Định, P.8, TP.VT</p>
-        <p>Email: info@sotaynhadat.vn</p>
-        <p>Website: http://sotaynhadat.vn</p>
-    </div>
-    <div class="footer-item email-signup">
-        <h5>Đăng ký nhận tin</h5>
-        <p>Đăng ký thư thông báo của chúng tôi để cập nhật thông tin về các dự án của tập đoàn Vingroup</p>
-        <form id="email-signup">
-            
-        </form>
-    </div>
-    <div class="footer-item social">
-        <h5>Liên kết với chúng tôi</h5>
-        <div class="social-main">
-            <a href=""><img src="<?php echo $base_url ?>images/assets/icon-facebook.png"></a>
-            <a href=""><img src="<?php echo $base_url ?>images/assets/icon-googleplus.png"></a>
-            <a href=""><img src="<?php echo $base_url ?>images/assets/icon-youtube.png"></a>
-            <a href=""><img src="<?php echo $base_url ?>images/assets/icon-twiter.png"></a>
-            <a href=""><img src="<?php echo $base_url ?>images/assets/icon-vnexpress.png"></a>
-        </div>
-    </div>
-    <div class="footer-item static">
-        <h5>Thống kê truy cập</h5>
-        <p>Đang online: <?php echo $this->hit_counter->getUsersOnlineCount();?></p>
-        <p>Đã online: <?php echo $this->hit_counter->getTotalVisitCount();?></p>
-    </div>
-</div>
 <!-- link foter-->
-<div class="sreenadd">
-    <p>Copyright (c) 2015 GiaThinhLand. Ghi rõ nguồn gốc khi phát hành thông tin tại website này</p>
-    <a href="javascript:void(0)" class="back-to-top"><img src="<?php echo $base_url ?>images/assets/icon-back-to-top.png"></a>
+<div class="sreenadd" style="width:980px; background-color:#ebebeb; float:left;">
+    <div style="float:left; font-size:14px; width: 940px; margin: 10px 20px; text-align: center;">
+        <?=getconfigkey('addressCompany')?>
+    </div>
+	<!--
+    <div class="support">
+        <div class="s1"><a target="_blank" href="<?=getconfigkey('account_facebook')?>"></a></div>
+        <div class="s2"><a target="_blank" href="<?=getconfigkey('account_twitter')?>"></a></div>
+        <div class="s3"><a target="_blank" href="<?=getconfigkey('account_youtube')?>"></a></div>
+        <div class="s4"><a target="_blank" href="<?=getconfigkey('account_google_plus')?>"></a></div>
+        <div class="s5"><a target="_blank" href="<?=getconfigkey('account_google_plus')?>"></a></div>
+    </div>
+	-->
 </div>
 <!-- end link foter-->
 <!-- foter-->

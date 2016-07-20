@@ -1,8 +1,66 @@
 $(document).ready(function(){
     /*with localhost*/
-    var base_url = 'http://localhost/batdongsan/';
+    //var base_url = 'http://batdongsanvungtau.com.vn/demo/';
+    //var base_url = 'http://localhost/batdongsan/';
     /*with host*/
-    //var base_url = getBase_url();
+    var base_url = getBase_url();
+
+    var heightScreen = $(document).height();
+    var screenCenter = heightScreen - 270;
+    $('.home-service-item h1').css({
+        height: screenCenter/7,
+        lineHeight: screenCenter/7 + 'px'
+    });
+
+    /**
+     * Email sign up footẻ
+     * Input: email
+     */
+    $("#email-signup").validate({
+        rules:{
+            email:{
+                required: true,
+                email: true,
+                remote:{
+                    url: base_url + 'kiem-tra-email-sign-up',
+                    type:'post',
+                    data:{email :function(){return $(':input[name="email"]').val();}}
+                }
+            }
+        } ,
+        messages:{
+            email:{
+                required: 'Vui lòng nhập email',
+                email: "Nhập đúng địa chỉ email",
+                remote:"Email đã được sử dụng."
+            }
+        }
+    });
+
+    $('.submit-email-signup').click(function(){
+        if( !$('.main-form-email-signup label.error').is(':visible') ){
+            if( $(':input[name="email"]').val() != '' ){
+                $.ajax({
+                    type: "POST",
+                    url: base_url + 'email-sign-up',
+                    data: 'email='+$(':input[name="email"]').val(),
+                    success: function(data){
+                        $(':input[name="email"]').val('');
+                        $('p.notice-msg').html(data);
+                    }
+                });
+            }
+        }
+    });
+
+    $(':input[name="email"]').keypress(function(){
+        $('p.notice-msg').html('');
+    });
+
+
+    $('#search-simple').submit(function(){
+        if( $(this).find('input[name="value"]').val() == "" ){return false;}
+    });
     
     $(".back-to-top").click(function(){
         $('html, body').animate({scrollTop : 0}, 800);
@@ -257,8 +315,8 @@ $(document).ready(function(){
             url: base_url+"/home/getTypeByCatagory",
             data: 'cateId='+id,
             success: function(data){
-                $('.formtimkiem #estatetype_id').html('');
-                $('.formtimkiem #estatetype_id').append(data);
+                $('#estatetype_id').html('');
+                $('#estatetype_id').append(data);
             },
             error:function(){
                 alert("Có lỗi trong quá trình thực hiện. Vui lòng kiểm tra lại");

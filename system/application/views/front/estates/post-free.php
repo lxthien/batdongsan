@@ -27,7 +27,12 @@ $(document).ready(function(){
             title:{
                 required: true,
                 minlength: 25,
-                maxlength: 100
+                maxlength: 100,
+                remote:{
+                    url:'<?=$base_url;?>kiem-tra-ki-tu-dac-biet',
+                    type:'post',
+                    data:{title :function(){return $(':input[name="title"]').val();}}
+                }
             },
             description:{
                 required: true
@@ -78,7 +83,8 @@ $(document).ready(function(){
             title:{
                 required: 'Vui lòng nhập Tiêu đề',
                 minlength: 'Vui lòng nhập tối thiểu 30 kí tự',
-                maxlength: 'Vui lòng nhập tối đa 100 ký tự'
+                maxlength: 'Vui lòng nhập tối đa 100 ký tự',
+                remote: 'Không nhập các kí tự (“”, >, <, @, # ,$, ^)'
             },
             description:{
                 required: 'Vui lòng nhập Thông tin mô tả'
@@ -253,6 +259,12 @@ $(document).ready(function(){
         $(this).parent().remove();
         return false;
     });
+	
+	$('input#title').on('paste', function (e) {
+        e.preventDefault();
+        var cd =  e.originalEvent.clipboardData;
+        $("input#title").empty().val(cd.getData("text/plain"));
+    });
 });
 function load_type()
 {
@@ -367,6 +379,7 @@ function load_district()
     #title{
         /*text-transform: lowercase;*/
     }
+    .row-title label.error{width: 228px;}
 </style>
 
 <div class="linktop" style=" width:960px;height:20px; float:left; margin-top:8px;">
@@ -486,20 +499,20 @@ function load_district()
                                     <option <?=$o->price_type==1?'selected="selected"':'';?> value="1">Triệu</option>
                                     <option <?=$o->price_type==2?'selected="selected"':'';?> value="2">Tỷ</option>
                                     <option <?=$o->price_type==3?'selected="selected"':'';?> value="3">Triệu/m2</option>
-									<option <?=$o->price_type==4?'selected="selected"':'';?> value="4">Cây vàng</option>
                                     <option <?=$o->price_type==5?'selected="selected"':'';?> value="5">USD</option>
                                     <option <?=$o->price_type==6?'selected="selected"':'';?> value="6">USD/m2</option>
                                     <option <?=$o->price_type==7?'selected="selected"':'';?> value="7">Nghìn/m2</option>
                                     <option <?=$o->price_type==8?'selected="selected"':'';?> value="8">Chỉ vàng/m2</option>
                                     <option <?=$o->price_type==9?'selected="selected"':'';?> value="9">Cây vàng/m2</option>
+                                    <option <?=$o->price_type==4?'selected="selected"':'';?> value="4">Cây vàng</option>
                                 </select>
                                 <select class="price-type price-type-02" name="price_type_2" style="width: 100px; display: none;">
                                     <option <?=$o->price_type==11?'selected="selected"':'';?> value="11">Triệu/tháng</option>
-                                    <option <?=$o->price_type==13?'selected="selected"':'';?> value="13">Triệu/năm</option>
                                     <option <?=$o->price_type==17?'selected="selected"':'';?> value="17">Triệu</option>
-                                    <option <?=$o->price_type==18?'selected="selected"':'';?> value="18">Tỷ</option>
                                     <option <?=$o->price_type==12?'selected="selected"':'';?> value="12">USD/tháng</option>
                                     <option <?=$o->price_type==10?'selected="selected"':'';?> value="10">Nghìn/tháng</option>
+                                    <option <?=$o->price_type==18?'selected="selected"':'';?> value="18">Tỷ</option>
+                                    <option <?=$o->price_type==13?'selected="selected"':'';?> value="13">Triệu/năm</option>
                                     <option <?=$o->price_type==14?'selected="selected"':'';?> value="14">Nghìn/m2/tháng</option>
                                     <option <?=$o->price_type==15?'selected="selected"':'';?> value="15">Triệu/m2/tháng</option>
                                     <option <?=$o->price_type==16?'selected="selected"':'';?> value="16">USD/m2/tháng</option>
@@ -553,8 +566,8 @@ function load_district()
                             </div>
                         </div>
                         <span class="rowLabel">Tiêu đề: <span style="display: inline-block; color: red;">(*)</span></span>
-                        <span class="rowInput" style="width: 580px;"><input maxlength="100" type="text" name="title" id="title" value="<?=$o->title;?>" /></span>
-                        <span style="color: #5a5a5a; font-size: 12px;" class="rowLabel">(Vui lòng nhập tiêu đề tiếng Việt có dấu để tin đăng được kích hoạt nhanh hơn, tối thiểu 30 ký tự, tối đa 100 ký tự.)</span> <span> </span>
+                        <span class="rowInput row-title" style="width: 580px;"><input type="text" name="title" id="title" value="<?=$o->title;?>" /></span>
+                        <span style="color: #5a5a5a; font-size: 12px;" class="rowLabel">Vui lòng nhập tiêu đề tiếng Việt có dấu để tin đăng được kích hoạt nhanh hơn, tối thiểu 30 ký tự, tối đa 100 ký tự.  Không nhập các kí tự đặc biệt (“”, >, <, @, # ,$, ^)</span> <span> </span>
                         <span class="rowLabel">Hình ảnh: <span style="display: inline-block; color: red;">(*)</span></span>
                         <span class="rowInput muti-images">
                             <div class="row-image">

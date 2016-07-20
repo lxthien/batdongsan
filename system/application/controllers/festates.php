@@ -21,13 +21,16 @@ class festates extends MY_Controller{
             $estatesCategoryId = 1;
             $estatesCategoryName = "Nhà đất bán";
             $estatesCategoryUrl = $this->uri->segment(1,"");
-            $dis['catLists'] = $this->typeHouseSale;
         }
         if($this->uri->segment(1,"") == 'nha-dat-cho-thue'){
             $estatesCategoryId = 2;
             $estatesCategoryName = "Nhà đất cho thuê";
             $estatesCategoryUrl = $this->uri->segment(1,"");
-            $dis['catLists'] = $this->typeHouseLease;
+        }
+        if($this->uri->segment(1,"") == 'nhu-cau-nha-dat'){
+            $estatesCategoryId = 3;
+            $estatesCategoryName = "Nhu cầu nhà đất";
+            $estatesCategoryUrl = $this->uri->segment(1,"");
         }
 
         $level = 1;
@@ -42,30 +45,30 @@ class festates extends MY_Controller{
         $estatesVip->order_by('created', 'desc');
         $estatesVip->where_related_estatecatalogue('id', $estatesCategoryId);
         $estatesVip->where('isVip', 1);
-        $estatesVip->get(4);
+        $estatesVip->get_paged($offset,$limit,TRUE);
         $dis['estatesVip'] = $estatesVip;
 
         /*get estates by category*/
-        /*$estates = new Estate();
+        $estates = new Estate();
         $estates->order_by('isVip', 'desc');
         $estates->order_by('created', 'desc');
         $estates->where('active', 0);
         $estates->where_related_estatecatalogue('id', $estatesCategoryId);
         $estates->get_paged($offset,$limit,TRUE);
-        $dis['estates'] = $estates;*/
+        $dis['estates'] = $estates;
 
 
         // get all estates
-        /*$estatesAll = new Estate();
+        $estatesAll = new Estate();
         $estatesAll->order_by('isVip', 'desc');
         $estates->where('active', 0);
         $estatesAll->where_related_estatecatalogue('id', $estatesCategoryId);
         $estatesAll->get();
 
-        $total = $estatesAll->result_count();*/
+        $total = $estatesAll->result_count();
 
         /*Begin pagination for product*/
-        /*$url = $this->uri->segment(1).'/';
+        $url = $this->uri->segment(1).'/';
         $config['base_url'] = site_url($url);
         $config['total_rows'] = $total;
         $config['per_page'] = $limit;
@@ -90,7 +93,7 @@ class festates extends MY_Controller{
         $config['num_tag_close'] 		= '';
         $config['cur_tag_open'] 		= '<span class="active">';
         $config['cur_tag_close']		= '</span>';
-        $this->pagination->initialize($config);*/
+        $this->pagination->initialize($config);
         /*End pagination for product*/
 
         $cat = new Estatecatalogue($estatesCategoryId);
@@ -99,7 +102,8 @@ class festates extends MY_Controller{
         $this->page_keyword = $cat->keyword;
 
         
-    	$this->isRobotFollow = 1;
+
+		$this->isRobotFollow = 1;
         $dis['estatesCategoryName']=$estatesCategoryName;
         $dis['estatesCategoryUrl']=$estatesCategoryUrl;
         $dis['atAddress'] = "tại Việt Nam";
@@ -119,6 +123,11 @@ class festates extends MY_Controller{
         if($this->uri->segment(1,"") == 'nha-dat-cho-thue'){
             $estatesCategoryId = 2;
             $estatesCategoryName = "Nhà đât cho thuê";
+            $estatesCategoryUrl = $this->uri->segment(1,"");
+        }
+        if($this->uri->segment(1,"") == 'nhu-cau-nha-dat'){
+            $estatesCategoryId = 3;
+            $estatesCategoryName = "Nhu cầu nhà đất";
             $estatesCategoryUrl = $this->uri->segment(1,"");
         }
 
@@ -146,7 +155,7 @@ class festates extends MY_Controller{
         $estatesVip->order_by('created', 'desc');
         $estatesVip->where_related_estatecatalogue('id', $estatesCategoryId);
         $estatesVip->where('isVip', 1);
-        $estatesVip->get_paged(4);
+        $estatesVip->get_paged($offset,$limit,TRUE);
         $dis['estatesVip'] = $estatesVip;
 
         /*get estates by category and type*/
@@ -299,7 +308,7 @@ class festates extends MY_Controller{
 
 
         $this->page_title = $catName .' '.$district->name.' '.$city->name.' | '.$catName .' '.$district->name;
-        $this->page_description = $catName .' '.$district->name.' '.$city->name.' với nhiều mức giá, diện tích, hướng, vị trí khác nhau. '.$catName .' '.$district->name.' 2014, 2015 mới nhất, cập nhật liên tục...';
+        $this->page_description = $catName .' '.$district->name.' '.$city->name.' với nhiều mức giá, diện tích, hướng, vị trí khác nhau. '.$catName .' '.$district->name.' 2015, 2016 mới nhất, cập nhật liên tục...';
         $keyword = explode(" ", $this->page_title);
         $this->page_keyword = str_replace('|,', '', implode(',', $keyword));
 
@@ -391,7 +400,7 @@ class festates extends MY_Controller{
 
 
         $this->page_title = $catagory->name .' '.$city->name.' | '.$catagory->name .' tại '.$city->name;
-        $this->page_description = $catagory->name .' tại '.$city->name.' với nhiều mức giá, diện tích, hướng, vị trí khác nhau. '.$catagory->name .' '.$city->name.' 2014, 2015 mới nhất, cập nhật liên tục...';
+        $this->page_description = $catagory->name .' tại '.$city->name.' với nhiều mức giá, diện tích, hướng, vị trí khác nhau. '.$catagory->name .' '.$city->name.' 2015, 2016 mới nhất, cập nhật liên tục...';
         $keyword = explode(" ", $this->page_title);
         $this->page_keyword = str_replace('|,', '', implode(',', $keyword));
 
@@ -487,7 +496,7 @@ class festates extends MY_Controller{
         /*End pagination for product*/
 
         $this->page_title = $type->name .' '.$district->name.' | '.$type->name .' tại '.$district->name.', '.$city->name;
-        $this->page_description = $type->name .' tại '.$district->name.', '.$city->name.' với nhiều mức giá, diện tích, hướng, vị trí khác nhau. '.$type->name .' '.$district->name.' 2014, 2015 mới nhất, cập nhật liên tục...';
+        $this->page_description = $type->name .' tại '.$district->name.', '.$city->name.' với nhiều mức giá, diện tích, hướng, vị trí khác nhau. '.$type->name .' '.$district->name.' 2015, 2016 mới nhất, cập nhật liên tục...';
         $keyword = explode(" ", $this->page_title);
         $this->page_keyword = str_replace('|,', '', implode(',', $keyword));
 
@@ -576,7 +585,7 @@ class festates extends MY_Controller{
         /*End pagination for product*/
 
         $this->page_title = $type->name .' '.$city->name.' | '.$type->name .' tại '.$city->name;
-        $this->page_description = $type->name .' tại '.$city->name.' với nhiều mức giá, diện tích, hướng, vị trí khác nhau. '.$type->name .' '.$city->name.' 2014, 2015 mới nhất, cập nhật liên tục...';
+        $this->page_description = $type->name .' tại '.$city->name.' với nhiều mức giá, diện tích, hướng, vị trí khác nhau. '.$type->name .' '.$city->name.' 2015, 2016 mới nhất, cập nhật liên tục...';
         $keyword = explode(" ", $this->page_title);
         $this->page_keyword = str_replace('|,', '', implode(',', $keyword));
 
@@ -967,7 +976,7 @@ class festates extends MY_Controller{
                     $o->photo = $folder.$dataupload['file_name'];
                 }
                 if($o->save()){
-                    $msg = '<div class="frm-success">Cảm ơn Bạn! Tin của Bạn đã được gửi đến Chúng tôi thành công. Thông thường sau 15 phút, tin sẽ được kích hoạt<br /><br />Bạn chưa đăng ký thành viên nên Chúng tôi sẽ kiểm duyệt tin đăng của Bạn trước khi hiển thị. Bạn không thể sửa/xóa tin đăng này. Để thuận tiện hơn, Bạn có thể <a style="color: #018e07;font-weight: bolder;" href="'.base_url().'dang-ky'.'">đăng ký thành viên</a> - Tin đăng được hiển thị ngay và nhận nhiều hỗ trợ từ Chúng tôi! <br/><br/>  Hoặc, Bạn có thể tiếp tục <a style="color: #018e07;font-weight: bolder;" href="'.base_url().'dang-tin-rao-vat-nha-dat-mien-phi'.'">đăng tin rao vặt miễn phí</a>!</div>';
+                    $msg = '<div class="frm-success">Cảm ơn Bạn! Tin của Bạn đã được gửi đến Chúng tôi thành công. Thông thường sau 30 phút, tin sẽ được kích hoạt<br /><br />Bạn chưa đăng ký thành viên nên Chúng tôi sẽ kiểm duyệt tin đăng của Bạn trước khi hiển thị. Bạn không thể sửa/xóa tin đăng này. Để thuận tiện hơn, Bạn có thể <a style="color: #018e07;font-weight: bolder;" href="'.base_url().'dang-ky'.'">đăng ký thành viên</a> - Tin đăng được hiển thị ngay và nhận nhiều hỗ trợ từ Chúng tôi! <br/><br/>  Hoặc, Bạn có thể tiếp tục <a style="color: #018e07;font-weight: bolder;" href="'.base_url().'dang-tin-rao-vat-nha-dat-mien-phi'.'">đăng tin rao vặt miễn phí</a>!</div>';
                     $type = 1;
 
                     /*Upload list images for estates*/

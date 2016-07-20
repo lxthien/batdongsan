@@ -1,6 +1,6 @@
 <?php
 class fguides extends MY_Controller{
-    var $menu_active = "guides";
+    var $menu_active = "guide";
     
     function __construct()
     {
@@ -25,7 +25,7 @@ class fguides extends MY_Controller{
         $newHot->where('hot',1);
         $newHot->where_in('newscatalogue_id',$arrayCateNewsId);
         $newHot->order_by('created', 'desc');
-        $newHot->get(3);
+        $newHot->get(4);
         $dis['newHot'] = $newHot;
         $dis['newHotFirst'] = $newHot->limit(1);
 

@@ -10,11 +10,11 @@
 			<tr>
             	<th width="20">TT</th>
             	<th width="80"><?=$menu_active?></th>
-            	<th width="80"><div align="center">Điện thoại</div></th>
+            	<th width="80"><div align="center">Username</div></th>
                 <th width="80"><div align="center">Di động</div></th>
                 <th width="80"><div align="left">Email</div></th>
-                <!--<th width="50"><div align="center">Vip</div></th>-->
-                <th width="50"><div align="center">Tổng số tin</div></th>
+                <th width="80"><div align="center">Tình trạng</div></th>
+                <th width="50"><div align="center">Số tin</div></th>
                 <th width="50"><div align="center">Công cụ</div></th>
             </tr>
 		</thead>
@@ -25,7 +25,7 @@
                 <td><a href="<?php echo $this->admin_url.'estateusers/listEstates/'.$row->id; ?>" title="Xem danh sách tin đã đăng"><?=$row->firstname.' '.$row->name;?></a></td>
                 <td>
                     <div align="center">
-                        <?=$row->mobilePhone; ?>
+                        <?=$row->username; ?>
                     </div>   
                 </td>
                 <td>
@@ -38,19 +38,15 @@
                         <?=$row->email?>
                     </div>   
                 </td>
-                <!--
                 <td>
                     <div align="center">
-                        <select name="">
-                            <option value="0">Không</option>
-                            <option value="1">1 Tin</option>
-                            <option value="3">3 Tin</option>
-                            <option value="5">5 Tin</option>
-                            <option value="10">10 Tin</option>
-                        </select>
+                        <?php if($row->isLock == 0)
+                            echo create_link_table('approve_icon',$this->admin_url.'estateusers/lock/'.$row->id,'Khóa thành viên');
+                        else
+                            echo create_link_table('reject_icon',$this->admin_url.'estateusers/lock/'.$row->id,'Mở khóa thành viên');
+                        ?>
                     </div>
                 </td>
-                -->
                 <td>
                     <div align="center">
                         <?=$row->estate->where('estateuser_id', $row->id)->get()->result_count();?>

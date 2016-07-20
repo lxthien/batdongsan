@@ -22,9 +22,9 @@ $kfm_db_type = 'mysql';
 // the following options should only be filled if you are not using sqlite/sqlitepdo as the database
 $kfm_db_prefix   = 'kfm_';
 $kfm_db_host     = 'localhost';
-$kfm_db_name     = 'sotaynd_08092015';
-$kfm_db_username = 'sotaynd_08092015';
-$kfm_db_password = 'Sotay123@!@#';
+$kfm_db_name     = 'bdsvt_giathinh';
+$kfm_db_username = 'bdsvt_giathinh';
+$kfm_db_password = 'TRHgsx6g8N';
 $kfm_db_port     = '3306';
 
 /**

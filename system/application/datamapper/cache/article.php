@@ -31,17 +31,27 @@ $cache = array (
     25 => 'hot',
     26 => 'dir',
     27 => 'view_count',
-    28 => 'home_hot',
+    28 => 'hotHome',
     29 => 'home_hot_position',
     30 => 'tag',
-    31 => 'created',
-    32 => 'updated',
-    33 => 'file1',
-    34 => 'file2',
-    35 => 'file3',
-    36 => 'file4',
-    37 => 'file5',
-    38 => 'clicks',
+    31 => 'tag_search',
+    32 => 'created',
+    33 => 'updated',
+    34 => 'file1',
+    35 => 'file2',
+    36 => 'file3',
+    37 => 'file4',
+    38 => 'file5',
+    39 => 'clicks',
+    40 => 'source',
+    41 => 'estatecity_id',
+    42 => 'estatedistrict_id',
+    43 => 'estatetype_id',
+    44 => 'equity',
+    45 => 'timeStart',
+    46 => 'timeCompleted',
+    47 => 'investors',
+    48 => 'news_related_id',
   ),
   'validation' => 
   array (
@@ -263,9 +273,9 @@ $cache = array (
       array (
       ),
     ),
-    'home_hot' => 
+    'hotHome' => 
     array (
-      'field' => 'home_hot',
+      'field' => 'hotHome',
       'rules' => 
       array (
       ),
@@ -280,6 +290,13 @@ $cache = array (
     'tag' => 
     array (
       'field' => 'tag',
+      'rules' => 
+      array (
+      ),
+    ),
+    'tag_search' => 
+    array (
+      'field' => 'tag_search',
       'rules' => 
       array (
       ),
@@ -340,6 +357,69 @@ $cache = array (
       array (
       ),
     ),
+    'source' => 
+    array (
+      'field' => 'source',
+      'rules' => 
+      array (
+      ),
+    ),
+    'estatecity_id' => 
+    array (
+      'field' => 'estatecity_id',
+      'rules' => 
+      array (
+      ),
+    ),
+    'estatedistrict_id' => 
+    array (
+      'field' => 'estatedistrict_id',
+      'rules' => 
+      array (
+      ),
+    ),
+    'estatetype_id' => 
+    array (
+      'field' => 'estatetype_id',
+      'rules' => 
+      array (
+      ),
+    ),
+    'equity' => 
+    array (
+      'field' => 'equity',
+      'rules' => 
+      array (
+      ),
+    ),
+    'timeStart' => 
+    array (
+      'field' => 'timeStart',
+      'rules' => 
+      array (
+      ),
+    ),
+    'timeCompleted' => 
+    array (
+      'field' => 'timeCompleted',
+      'rules' => 
+      array (
+      ),
+    ),
+    'investors' => 
+    array (
+      'field' => 'investors',
+      'rules' => 
+      array (
+      ),
+    ),
+    'news_related_id' => 
+    array (
+      'field' => 'news_related_id',
+      'rules' => 
+      array (
+      ),
+    ),
     'newstopic' => 
     array (
       'field' => 'newstopic',
@@ -347,9 +427,44 @@ $cache = array (
       array (
       ),
     ),
+    'estatecity' => 
+    array (
+      'field' => 'estatecity',
+      'rules' => 
+      array (
+      ),
+    ),
+    'estatedistrict' => 
+    array (
+      'field' => 'estatedistrict',
+      'rules' => 
+      array (
+      ),
+    ),
+    'estatetype' => 
+    array (
+      'field' => 'estatetype',
+      'rules' => 
+      array (
+      ),
+    ),
     'newscomment' => 
     array (
       'field' => 'newscomment',
+      'rules' => 
+      array (
+      ),
+    ),
+    'newsphoto' => 
+    array (
+      'field' => 'newsphoto',
+      'rules' => 
+      array (
+      ),
+    ),
+    'estate' => 
+    array (
+      'field' => 'estate',
       'rules' => 
       array (
       ),
@@ -379,6 +494,39 @@ $cache = array (
       'auto_populate' => NULL,
       'cascade_delete' => true,
     ),
+    'estatecity' => 
+    array (
+      'class' => 'estatecity',
+      'other_field' => 'article',
+      'join_self_as' => 'article',
+      'join_other_as' => 'estatecity',
+      'join_table' => '',
+      'reciprocal' => false,
+      'auto_populate' => NULL,
+      'cascade_delete' => true,
+    ),
+    'estatedistrict' => 
+    array (
+      'class' => 'estatedistrict',
+      'other_field' => 'article',
+      'join_self_as' => 'article',
+      'join_other_as' => 'estatedistrict',
+      'join_table' => '',
+      'reciprocal' => false,
+      'auto_populate' => NULL,
+      'cascade_delete' => true,
+    ),
+    'estatetype' => 
+    array (
+      'class' => 'estatetype',
+      'other_field' => 'article',
+      'join_self_as' => 'article',
+      'join_other_as' => 'estatetype',
+      'join_table' => '',
+      'reciprocal' => false,
+      'auto_populate' => NULL,
+      'cascade_delete' => true,
+    ),
   ),
   'has_many' => 
   array (
@@ -388,6 +536,28 @@ $cache = array (
       'other_field' => 'article',
       'join_self_as' => 'article',
       'join_other_as' => 'newscomment',
+      'join_table' => '',
+      'reciprocal' => false,
+      'auto_populate' => NULL,
+      'cascade_delete' => true,
+    ),
+    'newsphoto' => 
+    array (
+      'class' => 'newsphoto',
+      'other_field' => 'article',
+      'join_self_as' => 'article',
+      'join_other_as' => 'newsphoto',
+      'join_table' => '',
+      'reciprocal' => false,
+      'auto_populate' => NULL,
+      'cascade_delete' => true,
+    ),
+    'estate' => 
+    array (
+      'class' => 'estate',
+      'other_field' => 'article',
+      'join_self_as' => 'article',
+      'join_other_as' => 'estate',
       'join_table' => '',
       'reciprocal' => false,
       'auto_populate' => NULL,

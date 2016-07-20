@@ -17,7 +17,7 @@
 </br>
 <div style="text-align:left; width: 600px; margin: 0 auto; font-size=12px">
     <div style="margin: 0 auto; width: 600px; text-align: center; margin-bottom: 30px;">
-        <a href="http://sotaynhadat.vn/"><img style="text-align: center" src="http://sotaynhadat.vn/images/logo.png" alt="logo sotaynhadat.vn"/></a>
+        <a href="http://sotaynhadat.vn/"><img style="text-align: center" src="http://sotaynhadat.vn/images/logo_tet.png" alt="logo sotaynhadat.vn"/></a>
     </div>
     <span style="color:#000; margin-bottom: 30px;">
         <strong>
@@ -43,7 +43,7 @@
 	<span style="font-size:14px;color:#000;">
     - Tầng 3, Tòa nhà ACB, 12 Hoàng Hoa Thám, P.2, TP. Vũng Tàu, BRVT </span>
 	<span style="font-size:14px;color:#000; display: block;">
-    - Điện thoại: 064.651.6388 - Hotline: 0168 200 0080 </span>
+    - Điện thoại: 064.651 6388 - Hotline: 0168 200 0080 </span>
 	<span style="font-size:14px;color:#000; display: block;">
     - Email: info@sotaynhadat.vn - hotro@sotaynhadat.vn </span>
 </div>

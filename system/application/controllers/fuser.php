@@ -243,6 +243,15 @@ class fuser extends MY_Controller{
         if($this->session->userdata('userLoginFlag') != 1){
             redirect(base_url().'dang-nhap');
         }
+
+        $customer = new Estateuser($this->session->userdata('userLoginId'));
+        if (!$customer->exists())
+            show_404();
+        if ($customer->isLock == 1) {
+            redirect(base_url().'chinh-sua-tin-da-dang');
+        }
+        $dis['customer'] = $customer;
+
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $o = new Estate();
             $o->estatecity_id = $this->input->post('estatecity_id');
@@ -285,6 +294,34 @@ class fuser extends MY_Controller{
                 }
                 else{
                     $o->photo = $folder.$dataupload['file_name'];
+
+                    $img = getimagesize( $folder.$dataupload['file_name'] );
+                    if ( !empty( $img[2] ) )
+                        $typeImage = image_type_to_mime_type( $img[2] );
+
+                    $fileWatermark = 'img/watermark/chen-hinh-tin-rao.png';
+                    $fileImage = $folder.$dataupload['file_name'];
+                    $stamp = imagecreatefrompng($fileWatermark);
+                    
+                    if($typeImage == 'image/jpeg') {
+                        $im = imagecreatefromjpeg($fileImage);
+                    } else if($typeImage == 'image/gif') {
+                        $im = imagecreatefromgif($fileImage);
+                    } else {
+                        $im = imagecreatefrompng($fileImage);
+                    }
+
+                    // Get dimensions
+                    $sx = imagesx($im);
+                    $sy = imagesy($im);
+                    $sx1 = imagesx($stamp);
+                    $sy1 = imagesy($stamp);
+
+                    // width to calculate positioning of the stamp. 
+                    imagecopy($im, $stamp, ($sx - $sx1)/2, ($sy - $sy1)/2, 0, 0, imagesx($stamp), imagesy($stamp));
+                    // Output and free memory
+                    header('Content-type: image/png');
+                    imagejpeg($im, $fileImage, 100);
                 }
                 if($o->save()){
                     $msg = '<div class="frm-success">Thành công. Tin của bạn đã được đăng thành công !</div>';
@@ -300,6 +337,35 @@ class fuser extends MY_Controller{
                             $estate_photos->name = $folder.$dataupload['file_name'];
                             $estate_photos->save();
                             $estate_photos->clear();
+
+                            $img = getimagesize( $folder.$dataupload['file_name'] );
+                            if ( !empty( $img[2] ) )
+                                $typeImage = image_type_to_mime_type( $img[2] );
+                            
+                            $fileWatermark = 'img/watermark/chen-hinh-tin-rao.png';
+                            $fileImage = $folder.$dataupload['file_name'];
+                            $stamp = imagecreatefrompng($fileWatermark);
+
+                            if($typeImage == 'image/jpeg') {
+                                $im = imagecreatefromjpeg($fileImage);
+                            } else if($typeImage == 'image/gif') {
+                                $im = imagecreatefromgif($fileImage);
+                            } else {
+                                $im = imagecreatefrompng($fileImage);
+                            }
+
+                            // Get dimensions
+                            $sx = imagesx($im);
+                            $sy = imagesy($im);
+                            $sx1 = imagesx($stamp);
+                            $sy1 = imagesy($stamp);
+
+                            // width to calculate positioning of the stamp. 
+                            imagecopy($im, $stamp, ($sx - $sx1)/2, ($sy - $sy1)/2, 0, 0, imagesx($stamp), imagesy($stamp));
+                            
+                            // Output and free memory
+                            header('Content-type: image/png');
+                            imagejpeg($im, $fileImage, 100);
                         }
                     }
 
@@ -330,72 +396,139 @@ class fuser extends MY_Controller{
         if(!$o->exists()){
             show_404();
         }
+
+        $customer = new Estateuser($this->session->userdata('userLoginId'));
+        if (!$customer->exists())
+            show_404();
+        $dis['customer'] = $customer;
+
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $o->estatecity_id = $this->input->post('estatecity_id');
-            $o->estatedistrict_id = $this->input->post('estatedistrict_id');
-            $o->estatecatalogue_id = $this->input->post('estatecatalogue_id');
-            $o->estatetype_id = $this->input->post('estatetype_id');
-            $o->estatedirection_id = $this->input->post('estatedirection_id');
-            $o->estatearea_id = $this->input->post('estatearea_id');
-            $o->estateprice_id = $this->input->post('estateprice_id');
-            $o->estateward_id = $this->input->post('estateward_id');
-            $o->address = $this->input->post('address');
-            $o->isArea = $this->input->post('IsArea');
-            $o->area = $this->input->post('area');
-            $o->legally = $this->input->post('legally');
-            $o->isPrice = $this->input->post('IsPrice');
-            $o->price_text = $this->input->post('price_text');
-            $o->area_text = $this->input->post('area_text');
-            $o->estatedirection_id = $this->input->post('estatedirection_id');
-            //$o->estateuser_id = $this->session->userdata('userLoginId');
-            $o->title = ucfirst( mb_strtolower( $this->input->post('title'), "utf-8" ) );
-            $o->description = $this->input->post('description');
-            if( $o->estatecatalogue_id == 1 )
-                $o->price_type = $this->input->post('price_type');
-            else
-                $o->price_type = $this->input->post('price_type_2');
-            /*$o->title_none = remove_vn($this->input->post('title')).$o->code;*/
+            try {
+                $o->estatecity_id = $this->input->post('estatecity_id');
+                $o->estatedistrict_id = $this->input->post('estatedistrict_id');
+                $o->estatecatalogue_id = $this->input->post('estatecatalogue_id');
+                $o->estatetype_id = $this->input->post('estatetype_id');
+                $o->estatedirection_id = $this->input->post('estatedirection_id');
+                $o->estatearea_id = $this->input->post('estatearea_id');
+                $o->estateprice_id = $this->input->post('estateprice_id');
+                $o->estateward_id = $this->input->post('estateward_id');
+                $o->address = $this->input->post('address');
+                $o->isArea = $this->input->post('IsArea');
+                $o->area = $this->input->post('area');
+                $o->legally = $this->input->post('legally');
+                $o->isPrice = $this->input->post('IsPrice');
+                $o->price_text = $this->input->post('price_text');
+                $o->area_text = $this->input->post('area_text');
+                $o->estatedirection_id = $this->input->post('estatedirection_id');
+                //$o->estateuser_id = $this->session->userdata('userLoginId');
+                $o->title = ucfirst( mb_strtolower( $this->input->post('title'), "utf-8" ) );
+                $o->description = $this->input->post('description');
+                if( $o->estatecatalogue_id == 1 )
+                    $o->price_type = $this->input->post('price_type');
+                else
+                    $o->price_type = $this->input->post('price_type_2');
 
-            $o->article_id = $this->input->post('article_id');
-            $o->created = date('Y-m-d H:i:s');
-            $o->updateTime = date('Y-m-d H:i:s');
+                $o->article_id = $this->input->post('article_id');
+                $o->created = date('Y-m-d H:i:s');
+                $o->updateTime = date('Y-m-d H:i:s');
 
 
-            if ($this->securimage->check($_POST['captcha_code']) == false){
-                $msg = '<div class="frm-error error-capcha">Vui lòng nhập đúng mã xác nhận !</div>';
-                $type = 0;
-            }
-            else{
-                // Change images default
-                if($_FILES['image']['name'] != ""){
-                    $folder = 'img/project/';
-                    $dataupload = $this->file_lib->upload('image', $folder, $rename_file = true);
-                    if(!is_array( $dataupload )){
-                        flash_message('error', $dataupload);
-                        $o->photo = '';
-                    }
-                    else{
-                        $o->photo = $folder.$dataupload['file_name'];
-                    }
+                if ($this->securimage->check($_POST['captcha_code']) == false){
+                    $msg = '<div class="frm-error error-capcha">Vui lòng nhập đúng mã xác nhận !</div>';
+                    $type = 0;
                 }
-                // Add thumbnail to slide
-                if($_FILES['thumb1']['name'] != ""){
-                    $folder = 'img/project/';
-                    $numfile = $this->input->post('numfile');
-                    foreach($numfile as $row) {
-                        $dataupload=$this->file_lib->upload('thumb'.$row, $folder, $rename_file = true);
-                        if(is_array($dataupload)) {
-                            $estate_photos= new Estate_photo();
-                            $estate_photos->estate_id = $o->id;
-                            $estate_photos->name = $folder.$dataupload['file_name'];
-                            $estate_photos->save();
-                            $estate_photos->clear();
+                else{
+                    // Change images default
+                    if($_FILES['image']['name'] != ""){
+                        $folder = 'img/project/';
+                        $dataupload = $this->file_lib->upload('image', $folder, $rename_file = true);
+                        if(!is_array( $dataupload )){
+                            flash_message('error', $dataupload);
+                            $o->photo = '';
+                        }
+                        else{
+                            $o->photo = $folder.$dataupload['file_name'];
+
+                            $img = getimagesize( $folder.$dataupload['file_name'] );
+                            if ( !empty( $img[2] ) )
+                                $typeImage = image_type_to_mime_type( $img[2] );
+
+                            $fileWatermark = 'img/watermark/chen-hinh-tin-rao.png';
+                            $fileImage = $folder.$dataupload['file_name'];
+                            $stamp = imagecreatefrompng($fileWatermark);
+                            
+                            if($typeImage == 'image/jpeg') {
+                                $im = imagecreatefromjpeg($fileImage);
+                            } else if($typeImage == 'image/gif') {
+                                $im = imagecreatefromgif($fileImage);
+                            } else {
+                                $im = imagecreatefrompng($fileImage);
+                            }
+
+                            // Get dimensions
+                            $sx = imagesx($im);
+                            $sy = imagesy($im);
+                            $sx1 = imagesx($stamp);
+                            $sy1 = imagesy($stamp);
+
+                            // width to calculate positioning of the stamp. 
+                            imagecopy($im, $stamp, ($sx - $sx1)/2, ($sy - $sy1)/2, 0, 0, imagesx($stamp), imagesy($stamp));
+                            // Output and free memory
+                            header('Content-type: image/png');
+                            imagejpeg($im, $fileImage, 100);
                         }
                     }
+                    // Add thumbnail to slide
+                    if($_FILES['thumb1']['name'] != ""){
+                        $folder = 'img/project/';
+                        $numfile = $this->input->post('numfile');
+                        foreach($numfile as $row) {
+                            $dataupload=$this->file_lib->upload('thumb'.$row, $folder, $rename_file = true);
+                            if(is_array($dataupload)) {
+                                $estate_photos= new Estate_photo();
+                                $estate_photos->estate_id = $o->id;
+                                $estate_photos->name = $folder.$dataupload['file_name'];
+                                $estate_photos->save();
+                                $estate_photos->clear();
+
+                                $img = getimagesize( $folder.$dataupload['file_name'] );
+                                if ( !empty( $img[2] ) )
+                                    $typeImage = image_type_to_mime_type( $img[2] );
+                                
+                                $fileWatermark = 'img/watermark/chen-hinh-tin-rao.png';
+                                $fileImage = $folder.$dataupload['file_name'];
+                                $stamp = imagecreatefrompng($fileWatermark);
+
+                                if($typeImage == 'image/jpeg') {
+                                    $im = imagecreatefromjpeg($fileImage);
+                                } else if($typeImage == 'image/gif') {
+                                    $im = imagecreatefromgif($fileImage);
+                                } else {
+                                    $im = imagecreatefrompng($fileImage);
+                                }
+
+                                // Get dimensions
+                                $sx = imagesx($im);
+                                $sy = imagesy($im);
+                                $sx1 = imagesx($stamp);
+                                $sy1 = imagesy($stamp);
+
+                                // width to calculate positioning of the stamp. 
+                                imagecopy($im, $stamp, ($sx - $sx1)/2, ($sy - $sy1)/2, 0, 0, imagesx($stamp), imagesy($stamp));
+                                
+                                // Output and free memory
+                                header('Content-type: image/png');
+                                imagejpeg($im, $fileImage, 100);
+                            }
+                        }
+                    }
+                    if($o->save()){
+                        redirect(base_url().'chinh-sua-tin-da-dang');
+                    }
                 }
-                if($o->save()){
-                    redirect(base_url().'chinh-sua-tin-da-dang');
-                }
+            } catch (Exception $e) {
+                echo 'Caught exception: ',  $e->getMessage(), "\n";
+                die;
             }
         }
 
@@ -609,6 +742,11 @@ class fuser extends MY_Controller{
 
     function changePassword()
     {
+        $customer = new Estateuser($this->session->userdata('userLoginId'));
+        if (!$customer->exists())
+            show_404();
+        $dis['customer'] = $customer;
+        
         $msg = "";
         if($_SERVER['REQUEST_METHOD']=="POST"){
             if($this->input->post('password') != $this->input->post('repassword') || $this->input->post('password') == '' ){
@@ -806,6 +944,11 @@ class fuser extends MY_Controller{
             redirect(base_url().'dang-nhap');
         }
 
+        $customer = new Estateuser($this->session->userdata('userLoginId'));
+        if (!$customer->exists())
+            show_404();
+        $dis['customer'] = $customer;
+
         $level = 1;
         $page = $this->uri->segment($level + 1,"") == "" ? 0 : $this->uri->segment($level + 1);
         $dis['page'] = $page;
@@ -904,6 +1047,21 @@ class fuser extends MY_Controller{
         exit;
     }
 
+    function titleCheck(){
+        $specialCharacter = array('"', '>', '<', '@', '#' , '$', '^');
+        $title = $this->input->post('title');
+        
+        foreach ($specialCharacter as $value){
+            if( strpos($title, $value) > -1 ) {
+                echo 'false'; die;
+            }
+        }
+
+        echo 'true';
+
+        exit;
+    }
+
 
     function phoneCheck() {
         $mobile = $this->input->post('mobile');
@@ -954,5 +1112,23 @@ class fuser extends MY_Controller{
 
     function getRoot(){
         echo $_SERVER['DOCUMENT_ROOT']; die;
+    }
+
+    function watermarkImages($fileImage, $fileWatermark) {
+        $stamp = imagecreatefrompng($fileWatermark);
+        $im = imagecreatefromjpeg($fileImage);
+
+        // Get dimensions
+        $imageWidth = imagesx($im);
+        $imageHeight = imagesy($im);
+
+        $sx = imagesx($stamp);
+        $sy = imagesy($stamp);
+        // Copy the stamp image onto our photo using the margin offsets and the photo 
+        // width to calculate positioning of the stamp. 
+        imagecopy($im, $stamp, ($imageWidth-$sx)/2, ($imageHeight-$sy)/2, 0, 0, imagesx($stamp), imagesy($stamp));
+        // Output and free memory
+        header('Content-type: image/png');
+        imagejpeg($im, $fileImage, 100);  // use best image quality (100)
     }
 }

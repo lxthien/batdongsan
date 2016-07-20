@@ -15,7 +15,4 @@
         <?php endforeach; unset($row); ?>
     </div>
     <?php echo $this->load->view('front/widget/search-estates'); ?>
-
-    <?php echo $this->load->view('front/includes/adv_right'); ?>
-
 </div>

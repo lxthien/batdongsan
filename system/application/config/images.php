@@ -65,24 +65,16 @@ $config["image_sizes"]["news_115_70"] = array(115,70);
 $config["image_sizes"]["news_202_106"] = array(200,104);
 $config["image_sizes"]["news_415_270"] = array(415,270);
 $config["image_sizes"]["news_195_100"] = array(195,100);
-$config["image_sizes"]["news_280_150"] = array(280, 150);
-$config["image_sizes"]["news_228_200"] = array(228, 200);
-$config["image_sizes"]["news_230_155"] = array(230, 155);
-$config["image_sizes"]["news_575_373"] = array(575, 373);
-$config["image_sizes"]["news_425_165"] = array(425, 165);
-$config["image_sizes"]["news_200_145"] = array(200, 145);
-$config["image_sizes"]["news_231_145"] = array(231, 145);
-$config["image_sizes"]["news_100_70"] = array(100, 70);
-$config["image_sizes"]["news_145_120"] = array(145, 120);
 
+
+$config["image_sizes"]["news_280_150"] = array(280, 150);
 $config["image_sizes"]["slide_580_380"] = array(580, 380);
 $config["image_sizes"]["slide_640_450"] = array(640, 450);
 $config["image_sizes"]["slide_65_45"] = array(65, 45);
+
+
 $config["image_sizes"]["slide_thumnails"] = array(86,60);
 $config["image_sizes"]["slide_big"] = array(411,274);
 $config["image_sizes"]["slide_zoom"] = array(593,396);
 
 $config["image_sizes"]["estate_120_95"] = array(120,95);
-$config["image_sizes"]["estate_355_232"] = array(355,232);
-$config["image_sizes"]["estate_165_130"] = array(165,130);
-$config["image_sizes"]["estate_200_145"] = array(200,145);

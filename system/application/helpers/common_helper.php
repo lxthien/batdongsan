@@ -1,31 +1,4 @@
 <?php
-
-function getNewsByCategory($categoryID) {
-    $CI =& get_instance();
-
-    $cat_news = new Article();
-    $cat_news->where(array('recycle'=>0));
-    $cat_news->where('newscatalogue_id', $categoryID);
-    $cat_news->order_by('created','desc');
-    $cat_news->get(4);
-    
-    return $cat_news;
-}
-
-function getEstatesByCategory($categoryID) {
-    $CI =& get_instance();
-
-    $estates = new Estate();
-    $estates->order_by('isVip', 'desc');
-    $estates->order_by('created', 'desc');
-    //$estates->where_related_estatecatalogue('id', $estatesCategoryId);
-    $estates->where_related_estatetype('id', $categoryID);
-    $estates->get(4);
-    
-    return $estates;
-}
-
-
 function count_static_by_area($url_type, $url_district, $url_areas){
     $CI =& get_instance();
 
@@ -149,6 +122,10 @@ function getpricetype($price_type){
             return 'Triệu/m2/tháng';
         case 16:
             return 'USD/m2/tháng';
+        case 17:
+            return 'Triệu';
+        case 18:
+            return 'Tỷ';
         default:
             return '';
     }

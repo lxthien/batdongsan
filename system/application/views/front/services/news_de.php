@@ -1,79 +1,46 @@
-<div class="linktop">
-    <div class="linkdautrang"><a href="<?=$base_url?>" title="Sàn nhà đất">Trang chủ</a></div>
-    <div class="linkdautrang"><a href="<?=$base_url?>dich-vu" title="Dịch vụ">Dịch vụ</a></div>
-    <div class="linkdautrang"><span class="linkdautrang-active"><?=$news->title_vietnamese;?></span></div>
-</div>
-
-<div class="main">
-    <div class="left">
-        <div class="tintuctop">
-            <div class="news-detail">
-                <h1 id="ctl27_ctl01_divSummary"><?=$news->title_vietnamese;?></h1>
-                <p class="date-time">Cập nhật <?=get_date_from_sql($news->created);?></p>
-                <div class="nutmangxahoi">
-                    <div>
-                        <!-- Button like facebook -->
-                        <div class="fb-like" data-href="<?php echo $this->url; ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-                        <!-- Button like facebook -->
-                        <!-- Place this tag where you want the +1 button to render. -->
-                        <div class="g-plusone" data-size="medium" data-href="<?php echo $this->url; ?>"></div>
-                        <!-- Place this tag where you want the +1 button to render. -->
-                        <!-- Button share facebook -->
-                        <div class="fb-share-button" data-href="<?php echo $this->url; ?>" data-layout="button"></div>
-                        <!-- Button share facebook -->
-                        <!-- Place this tag where you want the share button to render. -->
-                        <div class="g-plus" data-action="share" data-annotation="bubble" data-href="<?php echo $this->url; ?>"></div>
-                    </div>
+<div class="col-right main-article fl">
+    <div class="groupcol2">
+        <div class="constructioncol2">
+            <div class="titleconstructioncol2 title-nav-article">
+                <h1>
+                    <a title="<?=lang('home')?>" href="<?=$base_url?>"><?=lang('home')?></a> &raquo; <a title="<?=$category->{'name_'.$this->language}?>" href="<?=$this->lang->lang() == 'vi' ? $base_url.'vi/dich-vu' : $base_url.'en/services';?>"><?=$category->{'name_'.$this->language}?></a> &raquo; <a title="<?=$news->{'title_'.$this->language}?>" href="<?=$base_url.$this->lang->lang()?>/dich-vu/<?=$news->title_none.'.html'?>"><?=$news->{'title_'.$this->language}?></a>
+                </h1>
+                <div class="share-article">
+                    <span class='st_plusone_hcount' displayText='Google +1'></span>
+                    <span class='st_fblike_hcount' displayText='Facebook Like'></span>
                 </div>
-                <div id="divContents">
-                    <?=$news->full_vietnamese;?>
-                </div>
-                <div class="nutmangxahoi">
-                    <div>
-                        <!-- Button like facebook -->
-                        <div class="fb-like" data-href="<?php echo $this->url; ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-                        <!-- Button like facebook -->
-                        <!-- Place this tag where you want the +1 button to render. -->
-                        <div class="g-plusone" data-size="medium" data-href="<?php echo $this->url; ?>"></div>
-                        <!-- Place this tag where you want the +1 button to render. -->
-                        <!-- Button share facebook -->
-                        <div class="fb-share-button" data-href="<?php echo $this->url; ?>" data-layout="button"></div>
-                        <!-- Button share facebook -->
-                        <!-- Place this tag where you want the share button to render. -->
-                        <div class="g-plus" data-action="share" data-annotation="bubble" data-href="<?php echo $this->url; ?>"></div>
-                    </div>
-                </div>
-                <div class="sreentag">
-                    <div class="tag"></div>
-                    <p style="width:100%;margin-left:60px;margin-top:3px;">
-                        <?php $i=0; foreach($tag as $tagSub): $i++;?>
-                            <a title="<?=$tagSub;?>" href="<?=$base_url.'tags/'.remove_vn($tagSub)?>"><?=$tagSub;?></a> <?php echo $i<count($tag) ? ',':''; ?>
-                        <?php endforeach ?>
-                    </p>
-                </div>
-                <div class="cl"></div>
-                <div class="news-related">
-                    <h3 class="title-news-related">Các tin khác</h3>
-                    <?php
-                        $i=0; foreach ($related_news as $row): $i++;
-                        $cat = new Newscatalogue($row->newscatalogue_id);
-                    ?>
-                    <div class="sreenspkhac <?php echo $i%3==0 ? 'sreenspkhac-three' : ''; ?>">
-                        <div class="spkhac">
-                            <a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese?>">
-                                <img src="<?php echo image('img/news/'.$row->image, 'news_231_145') ?>" alt="<?=$row->title_vietnamese?>" />
-                            </a>
-                        </div>
-                        <div class="titleduankhac">
-                            <h4><a href="<?=$base_url?>tin-tuc/<?=$cat->name_none.'/'.$row->title_none?>.html" title="<?=$row->title_vietnamese?>"><?=$row->title_vietnamese?></a></h4>
-                        </div>
-                    </div>
-                    <?php if ($i%3==0): ?><div class="line"></div><?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-                <div class="cl"></div>
+            </div>
+            <span class="line730"></span>
+            <div class="titleconstructioncol2 title-news-de">
+                <h1 style="font-size: 15px"><?=$news->{'title_'.$this->language}?></h1>
+                <p><?=lang('createdDate')?>: (<?=$news->created?>)</p>
+            </div>
+            <div class="mainarticle">
+                <?=$news->{'full_'.$this->language};?>
+            </div>
+            <div class="share-to-social">
+                <span class='st_facebook_large' displayText='Facebook'></span>
+                <span class='st_googleplus_large' displayText='Google +'></span>
+                <span class='st_twitter_large' displayText='Tweet'></span>
+                <span class='st_linkedin_large' displayText='LinkedIn'></span>
+                <span class='st_email_large' displayText='Email'></span>
+            </div>
+            <div class="comment-facebook">
+                <div class="fb-comments" data-href="<?=$link?>" data-width="710" data-num-posts="20"></div>
             </div>
         </div>
     </div>
-    <?=$this->load->view('front/project/col-right')?>
+    <div class="groupcol2">
+        <div class="constructioncol2">
+            <div class="titleconstructioncol2 title-relate-news"><h1><?=lang('relatedNews')?></h1></div>
+            <div class="line730black"></div>
+            <div class="mainarticle newssame">
+                <ul>
+                    <?php foreach($related_news as $row): ?>
+                        <li><a title="<?=$row->{'title_'.$this->language};?>" href="<?=$this->lang->lang() == 'vi' ? $base_url.'vi/dich-vu/'.$row->title_none.'.html' : $base_url.'en/services/'.$row->title_none.'.html'; ?>"><?=$row->{'title_'.$this->language}?></a></li>
+                    <?php endforeach ?>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
